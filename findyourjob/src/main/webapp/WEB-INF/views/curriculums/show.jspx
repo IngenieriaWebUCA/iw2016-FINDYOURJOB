@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_findyourjob_domain_Curriculum" object="${curriculum}" path="/curriculums" z="gpSM5x3t235l+i5pQXKKIXuZdqM=">
+        <field:display field="trayectoria" id="s_es_uca_iw_findyourjob_domain_Curriculum_trayectoria" object="${curriculum}" z="5d8fxV+kUKzaU8RhW00NABLNqmk="/>
+        <field:display field="foto" id="s_es_uca_iw_findyourjob_domain_Curriculum_foto" object="${curriculum}" z="aUv9GYhfOpaPtnpxHcCwJaopmfE="/>
+        <field:display field="trabajos" id="s_es_uca_iw_findyourjob_domain_Curriculum_trabajos" object="${curriculum}" z="Yr0agdYtCvPBHTjopypvE76oArE="/>
+        <field:display field="formacion_academica" id="s_es_uca_iw_findyourjob_domain_Curriculum_formacion_academica" object="${curriculum}" z="L485gOacO1ra4o99WcoA1N9vCQI="/>
+        <field:display field="experiencia_profesional" id="s_es_uca_iw_findyourjob_domain_Curriculum_experiencia_profesional" object="${curriculum}" z="iXTwxPPguNQx2u76IjD2oFup1j0="/>
+    </page:show>
+</div>

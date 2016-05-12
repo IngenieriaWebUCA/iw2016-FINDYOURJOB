@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_findyourjob_domain_Demandante" items="${demandantes}" z="Be7S41cS7O5aF6MyPnkACPeCvCw=">
+        <table:table data="${demandantes}" id="l_es_uca_iw_findyourjob_domain_Demandante" path="/demandantes" z="HkfBmjhQVu43SdU9rzVPsurDBOk=">
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_nombre" property="nombre" z="UERpAsMWc5qRzewh2iKB4XgeoJE="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_apellidos" property="apellidos" z="evcMMwtpVCvMJLyWVKaDgN8fgO4="/>
+            <table:column date="true" dateTimePattern="${demandante_fecha_nacimiento_date_format}" id="c_es_uca_iw_findyourjob_domain_Demandante_fecha_nacimiento" property="fecha_nacimiento" z="Q0dwcqD8y17aNVFu7U0e17l5258="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_sexo" property="sexo" z="4QD3bmI/zCdj1LPzUH1RaqD3OuE="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_direccion" property="direccion" z="y/kiaIYjOnQM/y+Bj9m42x5QiVs="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_email" property="email" z="VIdmDD9drVsgnZwL7XoVRonNNi4="/>
+        </table:table>
+    </page:list>
+</div>

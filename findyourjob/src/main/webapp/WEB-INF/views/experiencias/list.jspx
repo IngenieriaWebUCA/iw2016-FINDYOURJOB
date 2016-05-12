@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_findyourjob_domain_Experiencia" items="${experiencias}" z="2XJzWT1rR18F3zuA6uPUnZSukYc=">
+        <table:table data="${experiencias}" id="l_es_uca_iw_findyourjob_domain_Experiencia" path="/experiencias" z="wttAhy8/qvv+tVG7b3eSPvcolIQ=">
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_nombre_empresa" property="nombre_empresa" z="LwMg8S3A6dOypdZtLMoc32BvMt8="/>
+            <table:column date="true" dateTimePattern="${experiencia_fecha_contrato_inicio_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_inicio" property="fecha_contrato_inicio" z="z4/KERRl3MWfq9yPKLuBGTwRV30="/>
+            <table:column date="true" dateTimePattern="${experiencia_fecha_contrato_fin_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_fin" property="fecha_contrato_fin" z="XXY0HE4IFRpjVScFXkzJidiFSN4="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_ado" property="ado" z="Flo+Kp4X82uaWbJ6INSKiYAYFdA="/>
+        </table:table>
+    </page:list>
+</div>

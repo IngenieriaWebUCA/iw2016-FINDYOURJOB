@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_curriculum" z="LktIPOcgSf6R03MYws0FOpXRymQ=">
+            <menu:item id="i_curriculum_new" messageCode="global_menu_new" url="/curriculums?form" z="CgoaCt/ZFSiTVLLesxgHSXy2Q/I="/>
+            <menu:item id="i_curriculum_list" messageCode="global_menu_list" url="/curriculums?page=1&amp;size=${empty param.size ? 10 : param.size}" z="mz8jOwvZQAQIzi0/ZAvTYX5pzFA="/>
+        </menu:category>
+        <menu:category id="c_experiencia" z="7VzRu69Pn14NUdTwSu3XRMs/sTI=">
+            <menu:item id="i_experiencia_new" messageCode="global_menu_new" url="/experiencias?form" z="Gj9nsB/aDd/9cC/oyGqhopJQZKQ="/>
+            <menu:item id="i_experiencia_list" messageCode="global_menu_list" url="/experiencias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3kfSOJO53kI+4hjcnrvpR+D+xW0="/>
+        </menu:category>
+        <menu:category id="c_demandante" z="ap7hcwTTE7QpwHyV1OnSKrPHdQc=">
+            <menu:item id="i_demandante_new" messageCode="global_menu_new" url="/demandantes?form" z="8+S2ulD0VSXmoyyhDfXJ+CNxgh8="/>
+            <menu:item id="i_demandante_list" messageCode="global_menu_list" url="/demandantes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1MtvqFaAsZmIa4hZR8pApwIOdDY="/>
+        </menu:category>
+        <menu:category id="c_inscripcion" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w=">
+            <menu:item id="i_inscripcion_new" messageCode="global_menu_new" url="/inscripcions?form" z="c/fKPa6XZ8IWr+NnUZsDmwBVAoo="/>
+            <menu:item id="i_inscripcion_list" messageCode="global_menu_list" url="/inscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EtJRFL7zVP9IpwmuzMtP1k1M0P0="/>
+        </menu:category>
+        <menu:category id="c_oferta" z="hAFpA26H1SoEOzHx9qIuh9xoiFY=">
+            <menu:item id="i_oferta_new" messageCode="global_menu_new" url="/ofertas?form" z="XL2la3mMU88KBAljrX+q6go8ogw="/>
+            <menu:item id="i_oferta_list" messageCode="global_menu_list" url="/ofertas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YFpuok8se1icruycVP1Ngny6x3c="/>
+        </menu:category>
+        <menu:category id="c_empresa" z="Xy2UIEQBwGL74OghlgyDNqDXG44=">
+            <menu:item id="i_empresa_new" messageCode="global_menu_new" url="/empresas?form" z="TBXez8QM+aB2tzcjHN1lQJYrewc="/>
+            <menu:item id="i_empresa_list" messageCode="global_menu_list" url="/empresas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/YQYlSdehDz3lrOGSSpWZYe++Zk="/>
+        </menu:category>
+        <menu:category id="c_formacion" z="IeUE1qUB60SvsVjUpyu3CKjAwcQ=">
+            <menu:item id="i_formacion_new" messageCode="global_menu_new" url="/formacions?form" z="J5LIhWh+qugo3BonD7DqT+MNhdk="/>
+            <menu:item id="i_formacion_list" messageCode="global_menu_list" url="/formacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HUwg6eWuyi/+bXE5Mnr+igrwIkc="/>
+        </menu:category>
+        <menu:category id="c_localizacion" z="Xz23btBvQalu0fOfODfDsPk458k=">
+            <menu:item id="i_localizacion_new" messageCode="global_menu_new" url="/localizacions?form" z="zkpqXsv93tOCNQokTOLb8lKILmQ="/>
+            <menu:item id="i_localizacion_list" messageCode="global_menu_list" url="/localizacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="InM8yKFoMAdXifon78tQEBD/Y28="/>
+        </menu:category>
+    </menu:menu>
+</div>

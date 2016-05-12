@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_es_uca_iw_findyourjob_domain_Oferta" modelAttribute="oferta" path="/ofertas" render="${empty dependencies}" z="yuNszLyOp354mxNl5NRdJX/LmM8=">
+        <field:input field="tipologia" id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" z="h/XBUNrQXbNTglXJucywgDd7lzE="/>
+        <field:input field="sueldo_bruto" id="c_es_uca_iw_findyourjob_domain_Oferta_sueldo_bruto" z="L21tFCQZE8C2kshtkwIL8h5Botw="/>
+        <field:datetime dateTimePattern="${oferta_fecha_inicio_actividad_date_format}" field="fecha_inicio_actividad" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_inicio_actividad" z="1AXwQDQkPPDNFGR5YecSY/uo68w="/>
+        <field:input field="vacantes" id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" z="VKeK1OTxP4mtP8Qn884XIpcH0Ss="/>
+        <field:input field="perfil" id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" z="Nh9vTXTxVKPl1S46/gUzjm+/1Oc="/>
+        <field:datetime dateTimePattern="${oferta_fecha_disponible_inicio_date_format}" field="fecha_disponible_inicio" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_inicio" z="XoxKnzPa3wcmGh8WaLIPjcKCSkE="/>
+        <field:datetime dateTimePattern="${oferta_fecha_disponible_fin_date_format}" field="fecha_disponible_fin" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_fin" z="pmG29uyrhRZZw5YqtfoZKmtPYZU="/>
+        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Oferta_estado" z="0ZrskcjhywSpb3f6ho/z0DpFhNY="/>
+        <field:input field="empresa" id="c_es_uca_iw_findyourjob_domain_Oferta_empresa" z="rudo0xLvpLXFnbhbqRLiEvPT/X0="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Oferta" render="${not empty dependencies}" z="tx4FcZ2C5C1OGgF0YUSj4XzCNYs="/>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_findyourjob_domain_Empresa" object="${empresa}" path="/empresas" z="pomEyUJjAbLlJVluT/ZXcdAi8gQ=">
+        <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Empresa_nombre" object="${empresa}" z="u1jO1JREEEGhR9h1TjnYIpyxeyo="/>
+        <field:display field="cif" id="s_es_uca_iw_findyourjob_domain_Empresa_cif" object="${empresa}" z="4ez7tjpZkSskFN9JOe3aCXd83A4="/>
+        <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Empresa_email" object="${empresa}" z="upaCJxF5tGg2zUdaIx9tcAgmVL4="/>
+        <field:display field="actividad_profesional" id="s_es_uca_iw_findyourjob_domain_Empresa_actividad_profesional" object="${empresa}" z="WCB+GlVPzpWC8CPKVe9ST0l2XDs="/>
+        <field:display field="numero_empleados" id="s_es_uca_iw_findyourjob_domain_Empresa_numero_empleados" object="${empresa}" z="oKsxoCKzqsg8nglxjHRZd6gI9fs="/>
+        <field:display field="localizaciones" id="s_es_uca_iw_findyourjob_domain_Empresa_localizaciones" object="${empresa}" z="wXbZfcg1y9mqrDU4T33aLuDRK60="/>
+        <field:display field="ofertas" id="s_es_uca_iw_findyourjob_domain_Empresa_ofertas" object="${empresa}" z="XjOEEnKKCk4VHBa9UWYXgZVPvFY="/>
+    </page:show>
+</div>

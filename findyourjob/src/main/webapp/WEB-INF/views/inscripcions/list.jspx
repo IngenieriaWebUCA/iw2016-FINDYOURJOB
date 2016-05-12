@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_findyourjob_domain_Inscripcion" items="${inscripcions}" z="VusZfVjYHRwVK8TJPiyn94palrM=">
+        <table:table data="${inscripcions}" id="l_es_uca_iw_findyourjob_domain_Inscripcion" path="/inscripcions" z="USwm719u/TUokvdcA4Vrz9ycI10=">
+            <table:column id="c_es_uca_iw_findyourjob_domain_Inscripcion_estado" property="estado" z="KCML01Er5UyU402wAgWa91PRoBo="/>
+            <table:column date="true" dateTimePattern="${inscripcion_fecha_date_format}" id="c_es_uca_iw_findyourjob_domain_Inscripcion_fecha" property="fecha" z="I6QmPwPenNnE4nL+UP+zRCr1pxg="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Inscripcion_oferta" property="oferta" z="qMdrb6ELNyXzv/t3TAdcU9paSUQ="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Inscripcion_demandante" property="demandante" z="st0q0bsMKJRtHRG3zQvfPA07T88="/>
+        </table:table>
+    </page:list>
+</div>

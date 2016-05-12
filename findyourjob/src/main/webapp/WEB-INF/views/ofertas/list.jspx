@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_findyourjob_domain_Oferta" items="${ofertas}" z="HQVTgBZvPE36whcarOS9Tqxzs6I=">
+        <table:table data="${ofertas}" id="l_es_uca_iw_findyourjob_domain_Oferta" path="/ofertas" z="BdSq7KZNmFIEaa/+RJyG21YMsHQ=">
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" property="tipologia" z="OVASZCY5xG1kydHAzU5ftKVx17E="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_sueldo_bruto" property="sueldo_bruto" z="VgDqvm5THblBwTZxb3ZH5A3ups4="/>
+            <table:column date="true" dateTimePattern="${oferta_fecha_inicio_actividad_date_format}" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_inicio_actividad" property="fecha_inicio_actividad" z="/ejS6nT+FJ4IRAvuAUb16Y9TS6I="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" property="vacantes" z="5q6JcqMl+wqo1kIjXUs5iSe9Reg="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
+            <table:column date="true" dateTimePattern="${oferta_fecha_disponible_inicio_date_format}" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_inicio" property="fecha_disponible_inicio" z="AFPJgfdQV/OmbhP7MLcs05EJ6x4="/>
+        </table:table>
+    </page:list>
+</div>
