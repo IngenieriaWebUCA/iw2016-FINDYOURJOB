@@ -84,11 +84,11 @@ privileged aspect Demandante_Roo_JavaBean {
     }
     
     public Curriculum Demandante.getDemandante() {
-        return this.demandante;
+        return this.curriculum;
     }
     
-    public void Demandante.setDemandante(Curriculum demandante) {
-        this.demandante = demandante;
+    public void Demandante.setDemandante(Curriculum curriculum) {
+        this.curriculum = curriculum;
     }
     
 }

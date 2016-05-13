@@ -5,24 +5,26 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import java.util.HashSet;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "EMPRESA_SEQ")
 public class Empresa {
+	@Id
+	private Integer id;
+    private String nombre;
 
-    String nombre;
+    private String cif;
 
-    String cif;
+    private String email;
 
-    String email;
+    private String actividad_profesional;
 
-    String actividad_profesional;
+    private String numero_empleados;
 
-    String numero_empleados;
-
-    Set<Localizacion> localizaciones;
+    private Set<Localizacion> localizaciones;
 
     /**
      */

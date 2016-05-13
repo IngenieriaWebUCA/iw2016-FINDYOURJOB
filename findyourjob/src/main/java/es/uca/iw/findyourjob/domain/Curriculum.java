@@ -8,20 +8,22 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "CURRICULUM_SEQ")
 public class Curriculum {
+	@Id
+	private Integer id;
+    private String trayectoria;
 
-    String trayectoria;
+    private String foto;
 
-    String foto;
+    private List<String> trabajos;
 
-    List<String> trabajos;
-
-    Formacion formacion_academica;
+    private Formacion formacion_academica;
 
     /**
      */

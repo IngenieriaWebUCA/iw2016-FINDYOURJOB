@@ -8,28 +8,30 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "OFERTA_SEQ")
 public class Oferta {
+	@Id
+	private Integer id;
+    private String tipologia;
 
-    String tipologia;
+    private float sueldo_bruto;
 
-    float sueldo_bruto;
+    private Date fecha_inicio_actividad;
 
-    Date fecha_inicio_actividad;
+    private int vacantes;
 
-    int vacantes;
+    private String perfil;
 
-    String perfil;
+    private Date fecha_disponible_inicio;
 
-    Date fecha_disponible_inicio;
+    private Date fecha_disponible_fin;
 
-    Date fecha_disponible_fin;
-
-    String estado;
+    private String estado;
 
     /**
      */

@@ -5,16 +5,18 @@ import org.springframework.roo.addon.tostring.RooToString;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "LOCALIZACION_SEQ")
 public class Localizacion {
+	@Id
+	private Integer id;
+    private String direccion;
 
-    String direccion;
-
-    String localidad;
+    private String localidad;
 
     /**
      */

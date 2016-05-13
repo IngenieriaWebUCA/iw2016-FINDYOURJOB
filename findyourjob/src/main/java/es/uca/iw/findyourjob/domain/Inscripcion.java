@@ -3,6 +3,8 @@ import java.util.Date;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
@@ -10,10 +12,11 @@ import javax.validation.constraints.NotNull;
 @RooToString
 @RooJpaActiveRecord(sequenceName = "INSCRIPCION_SEQ")
 public class Inscripcion {
+	@Id
+	private Integer id;
+    private String estado;
 
-    String estado;
-
-    Date fecha;
+    private Date fecha;
 
     /**
      */

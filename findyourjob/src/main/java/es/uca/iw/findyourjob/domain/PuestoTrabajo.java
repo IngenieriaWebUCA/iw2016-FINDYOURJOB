@@ -7,13 +7,16 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "PUESTOTRABAJO_SEQ")
 public class PuestoTrabajo {
-
+	@Id
+	private Integer id;
+	private String nombre;
     /**
      */
     @NotNull

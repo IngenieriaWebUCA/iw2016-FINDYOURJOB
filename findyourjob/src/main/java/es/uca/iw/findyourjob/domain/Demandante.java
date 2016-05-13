@@ -6,6 +6,7 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import java.util.HashSet;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
@@ -14,31 +15,27 @@ import javax.validation.constraints.NotNull;
 @RooToString
 @RooJpaActiveRecord(sequenceName = "DEMANDANTE_SEQ")
 public class Demandante {
+	@Id
+	private Integer id;
+    private String nombre;
 
-    String nombre;
+    private String apellidos;
 
-    String apellidos;
+    private Date fecha_nacimiento;
 
-    Date fecha_nacimiento;
+    private String sexo;
 
-    String sexo;
+    private String direccion;
 
-    String direccion;
+    private String email;
 
-    String email;
+    private double telefono;
 
-    double telefono;
-
-    Curriculum curriculum;
+    private Curriculum curriculum;
 
     /**
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "demandante")
     private Set<Inscripcion> inscripciones = new HashSet<Inscripcion>();
 
-    /**
-     */
-    @NotNull
-    @ManyToOne
-    private Curriculum demandante;
 }

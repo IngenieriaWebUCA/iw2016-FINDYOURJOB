@@ -8,20 +8,22 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ")
 public class Experiencia {
+	@Id
+	private Integer id;
+    private String nombre_empresa;
 
-    String nombre_empresa;
+    private Date fecha_contrato_inicio;
 
-    Date fecha_contrato_inicio;
+    private Date fecha_contrato_fin;
 
-    Date fecha_contrato_fin;
-
-    String trabajo_desempenado;
+    private String trabajo_desempenado;
 
     /**
      */
