@@ -11,6 +11,7 @@ import es.uca.iw.findyourjob.domain.Formacion;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.findyourjob.domain.Puesto;
 import es.uca.iw.findyourjob.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -23,7 +24,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Curriculum, String> ApplicationConversionServiceFactoryBean.getCurriculumToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Curriculum, java.lang.String>() {
             public String convert(Curriculum curriculum) {
-                return new StringBuilder().append(curriculum.getTrayectoria()).append(' ').append(curriculum.getFoto()).toString();
+                return new StringBuilder().append(curriculum.getDireccion()).append(' ').append(curriculum.getFecha()).append(' ').append(curriculum.getEstado()).toString();
             }
         };
     }
@@ -47,7 +48,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Demandante, String> ApplicationConversionServiceFactoryBean.getDemandanteToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Demandante, java.lang.String>() {
             public String convert(Demandante demandante) {
-                return new StringBuilder().append(demandante.getNombre()).append(' ').append(demandante.getApellidos()).append(' ').append(demandante.getFecha_nacimiento()).append(' ').append(demandante.getSexo()).toString();
+                return new StringBuilder().append(demandante.getNombre()).append(' ').append(demandante.getApellidos()).append(' ').append(demandante.getFechaNacimiento()).append(' ').append(demandante.getSexo()).toString();
             }
         };
     }
@@ -71,7 +72,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Empresa, String> ApplicationConversionServiceFactoryBean.getEmpresaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Empresa, java.lang.String>() {
             public String convert(Empresa empresa) {
-                return new StringBuilder().append(empresa.getNombre()).append(' ').append(empresa.getCif()).append(' ').append(empresa.getEmail()).append(' ').append(empresa.getActividad_profesional()).toString();
+                return "(no displayable fields)";
             }
         };
     }
@@ -95,7 +96,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Experiencia, String> ApplicationConversionServiceFactoryBean.getExperienciaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Experiencia, java.lang.String>() {
             public String convert(Experiencia experiencia) {
-                return new StringBuilder().append(experiencia.getNombre_empresa()).append(' ').append(experiencia.getFecha_contrato_inicio()).append(' ').append(experiencia.getFecha_contrato_fin()).append(' ').append(experiencia.getTrabajo_desempenado()).toString();
+                return new StringBuilder().append(experiencia.getNombreEmpresa()).append(' ').append(experiencia.getFechaContratoInicio()).append(' ').append(experiencia.getFechaContratoFin()).toString();
             }
         };
     }
@@ -119,7 +120,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Formacion, String> ApplicationConversionServiceFactoryBean.getFormacionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Formacion, java.lang.String>() {
             public String convert(Formacion formacion) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(formacion.getTitulosAcademicos()).append(' ').append(formacion.getCursosIdiomas()).toString();
             }
         };
     }
@@ -143,7 +144,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Inscripcion, String> ApplicationConversionServiceFactoryBean.getInscripcionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Inscripcion, java.lang.String>() {
             public String convert(Inscripcion inscripcion) {
-                return new StringBuilder().append(inscripcion.getEstado()).append(' ').append(inscripcion.getFecha()).toString();
+                return new StringBuilder().append(inscripcion.getFecha()).append(' ').append(inscripcion.getEstado()).toString();
             }
         };
     }
@@ -167,7 +168,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Localizacion, String> ApplicationConversionServiceFactoryBean.getLocalizacionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Localizacion, java.lang.String>() {
             public String convert(Localizacion localizacion) {
-                return new StringBuilder().append(localizacion.getDireccion()).append(' ').append(localizacion.getLocalidad()).toString();
+                return new StringBuilder().append(localizacion.getDireccion()).append(' ').append(localizacion.getLocalidad()).append(' ').append(localizacion.getNombre()).append(' ').append(localizacion.getCif()).toString();
             }
         };
     }
@@ -191,7 +192,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Oferta, String> ApplicationConversionServiceFactoryBean.getOfertaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Oferta, java.lang.String>() {
             public String convert(Oferta oferta) {
-                return new StringBuilder().append(oferta.getTipologia()).append(' ').append(oferta.getSueldo_bruto()).append(' ').append(oferta.getFecha_inicio_actividad()).append(' ').append(oferta.getVacantes()).toString();
+                return new StringBuilder().append(oferta.getTipologia()).append(' ').append(oferta.getSueldoBruto()).append(' ').append(oferta.getFechaInicioActividad()).append(' ').append(oferta.getVacantes()).toString();
             }
         };
     }
@@ -208,6 +209,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.findyourjob.domain.Oferta>() {
             public es.uca.iw.findyourjob.domain.Oferta convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Oferta.class);
+            }
+        };
+    }
+    
+    public Converter<Puesto, String> ApplicationConversionServiceFactoryBean.getPuestoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Puesto, java.lang.String>() {
+            public String convert(Puesto puesto) {
+                return new StringBuilder().append(puesto.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Puesto> ApplicationConversionServiceFactoryBean.getIdToPuestoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.findyourjob.domain.Puesto>() {
+            public es.uca.iw.findyourjob.domain.Puesto convert(java.lang.Long id) {
+                return Puesto.findPuesto(id);
+            }
+        };
+    }
+    
+    public Converter<String, Puesto> ApplicationConversionServiceFactoryBean.getStringToPuestoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.findyourjob.domain.Puesto>() {
+            public es.uca.iw.findyourjob.domain.Puesto convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Puesto.class);
             }
         };
     }
@@ -237,6 +262,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getOfertaToStringConverter());
         registry.addConverter(getIdToOfertaConverter());
         registry.addConverter(getStringToOfertaConverter());
+        registry.addConverter(getPuestoToStringConverter());
+        registry.addConverter(getIdToPuestoConverter());
+        registry.addConverter(getStringToPuestoConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

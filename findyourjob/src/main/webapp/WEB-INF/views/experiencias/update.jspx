@@ -3,11 +3,10 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Experiencia" modelAttribute="experiencia" path="/experiencias" versionField="Version" z="eMBlp5XpDVP4sTEUB6PAICpolwg=">
-        <field:input field="nombre_empresa" id="c_es_uca_iw_findyourjob_domain_Experiencia_nombre_empresa" z="bCUmSJerHBLtKscPI6U/9jHv5Fk="/>
-        <field:datetime dateTimePattern="${experiencia_fecha_contrato_inicio_date_format}" field="fecha_contrato_inicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_inicio" z="BXKS/p73T93XazkS0Bfth7vKLjc="/>
-        <field:datetime dateTimePattern="${experiencia_fecha_contrato_fin_date_format}" field="fecha_contrato_fin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_fin" z="Q+zi+tQK/OQBsSgR0Xhh5175CkM="/>
-        <field:input field="trabajo_desempenado" id="c_es_uca_iw_findyourjob_domain_Experiencia_trabajo_desempenado" z="QmBF96MVREmv3yyZ7XXDj6DhWLQ="/>
+        <field:input field="nombreEmpresa" id="c_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" max="30" min="3" required="true" z="Vu/ZQwVcpasJZ/RmILY6NmimFwc="/>
+        <field:input field="fechaContratoInicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" max="30" min="3" required="true" z="+NUijYdH4YSFzY6lqLmukehWCLc="/>
+        <field:input field="fechaContratoFin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" max="30" min="3" required="true" z="3/50ujTo7So4zL2Co7HOdbyvkFs="/>
         <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="jwhADT6saPQprIAYa3mRqyHklZk="/>
-        <field:simple field="puestosTrabajos" id="c_es_uca_iw_findyourjob_domain_Experiencia_puestosTrabajos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto Trabajo" z="0B/FmQEjFPpzIxveDsQqORveirc="/>
+        <field:simple field="puestos" id="c_es_uca_iw_findyourjob_domain_Experiencia_puestos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="yyMmZiJITcNwshmRfl/lVnSaALI="/>
     </form:update>
 </div>

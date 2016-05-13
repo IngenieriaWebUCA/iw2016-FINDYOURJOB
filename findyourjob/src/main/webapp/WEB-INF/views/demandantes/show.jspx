@@ -5,12 +5,10 @@
     <page:show id="ps_es_uca_iw_findyourjob_domain_Demandante" object="${demandante}" path="/demandantes" z="uQZNrz1/nEwdscEPZME8bRnpbq4=">
         <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Demandante_nombre" object="${demandante}" z="gBAy9UQ31v5VhAae0P3R0cRPHXI="/>
         <field:display field="apellidos" id="s_es_uca_iw_findyourjob_domain_Demandante_apellidos" object="${demandante}" z="XtNid3DuMcVtaGJLKe6D4/chcdw="/>
-        <field:display date="true" dateTimePattern="${demandante_fecha_nacimiento_date_format}" field="fecha_nacimiento" id="s_es_uca_iw_findyourjob_domain_Demandante_fecha_nacimiento" object="${demandante}" z="wxWCdF025SEXU0qZndLyg93nbPU="/>
+        <field:display field="fechaNacimiento" id="s_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" object="${demandante}" z="A++FqPyNSqLGK/c1l9E/75W3+W0="/>
         <field:display field="sexo" id="s_es_uca_iw_findyourjob_domain_Demandante_sexo" object="${demandante}" z="UcfNYoevvb3VXXtK3HJxb52dpx4="/>
-        <field:display field="direccion" id="s_es_uca_iw_findyourjob_domain_Demandante_direccion" object="${demandante}" z="bGTshHRThBv2KRrK5enJdX9DAwk="/>
         <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Demandante_email" object="${demandante}" z="kEXEjrPUirxCKh96+WCk4rSicqg="/>
         <field:display field="telefono" id="s_es_uca_iw_findyourjob_domain_Demandante_telefono" object="${demandante}" z="+U8H280kxV8rFXpZ5JDqXqpGF0M="/>
-        <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Demandante_curriculum" object="${demandante}" z="Yd6Fm6Kt7fR3TeKL5wZnP0t9Ur8="/>
         <field:display field="demandante" id="s_es_uca_iw_findyourjob_domain_Demandante_demandante" object="${demandante}" z="iWRiCAF/s7XM5vXKBoy/aGQaCOw="/>
     </page:show>
 </div>

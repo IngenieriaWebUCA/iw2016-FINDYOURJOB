@@ -5,24 +5,23 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Formacion;
-import java.util.List;
 
 privileged aspect Formacion_Roo_JavaBean {
     
-    public List<String> Formacion.getTitulos_academicos() {
-        return this.titulos_academicos;
+    public String Formacion.getTitulosAcademicos() {
+        return this.titulosAcademicos;
     }
     
-    public void Formacion.setTitulos_academicos(List<String> titulos_academicos) {
-        this.titulos_academicos = titulos_academicos;
+    public void Formacion.setTitulosAcademicos(String titulosAcademicos) {
+        this.titulosAcademicos = titulosAcademicos;
     }
     
-    public List<String> Formacion.getCursos_idiomas() {
-        return this.cursos_idiomas;
+    public String Formacion.getCursosIdiomas() {
+        return this.cursosIdiomas;
     }
     
-    public void Formacion.setCursos_idiomas(List<String> cursos_idiomas) {
-        this.cursos_idiomas = cursos_idiomas;
+    public void Formacion.setCursosIdiomas(String cursosIdiomas) {
+        this.cursosIdiomas = cursosIdiomas;
     }
     
     public Curriculum Formacion.getCurriculum() {

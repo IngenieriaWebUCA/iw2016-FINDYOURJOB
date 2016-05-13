@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Inscripcion" modelAttribute="inscripcion" path="/inscripcions" versionField="Version" z="crG/ETJhZkE9njjjFxFc11IjpLg=">
-        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Inscripcion_estado" z="NCNSx6jE3POY24k0UTvh54zOpDQ="/>
-        <field:datetime dateTimePattern="${inscripcion_fecha_date_format}" field="fecha" id="c_es_uca_iw_findyourjob_domain_Inscripcion_fecha" z="lpkLTK0ha81u/pKTvP/sEFgY/+E="/>
+        <field:input field="fecha" id="c_es_uca_iw_findyourjob_domain_Inscripcion_fecha" max="30" min="3" required="true" z="wcVK3KgDEnEAeaRCOjXpBD+SXM0="/>
+        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Inscripcion_estado" max="30" min="3" required="true" z="q2PgqgREL+MB36qE6ddeijEZPPI="/>
         <field:select field="oferta" id="c_es_uca_iw_findyourjob_domain_Inscripcion_oferta" itemValue="id" items="${ofertas}" path="/ofertas" required="true" z="bw0i5zK1a2CGGrGa0HWedKgJYFk="/>
         <field:select field="demandante" id="c_es_uca_iw_findyourjob_domain_Inscripcion_demandante" itemValue="id" items="${demandantes}" path="/demandantes" required="true" z="1nJzREQp/oTIsp0iwqrQJKC6uyQ="/>
     </form:update>

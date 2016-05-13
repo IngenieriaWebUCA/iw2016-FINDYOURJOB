@@ -3,14 +3,12 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Demandante" modelAttribute="demandante" path="/demandantes" versionField="Version" z="s/eb/TDDRa9ysk7rZnPCi/UkzBQ=">
-        <field:input field="nombre" id="c_es_uca_iw_findyourjob_domain_Demandante_nombre" z="5+cEee+jUcGGzrpMLQB1x6V1GEQ="/>
-        <field:input field="apellidos" id="c_es_uca_iw_findyourjob_domain_Demandante_apellidos" z="++Hx7/3huLU+zKJbWwwtZBLNG5I="/>
-        <field:datetime dateTimePattern="${demandante_fecha_nacimiento_date_format}" field="fecha_nacimiento" id="c_es_uca_iw_findyourjob_domain_Demandante_fecha_nacimiento" z="n+OalHOR6dY4dFO/Knd44HQfZhM="/>
-        <field:input field="sexo" id="c_es_uca_iw_findyourjob_domain_Demandante_sexo" z="GMuGRQSGjHk0vFFn03ZPwJ/72ok="/>
-        <field:input field="direccion" id="c_es_uca_iw_findyourjob_domain_Demandante_direccion" z="fZ7twPJww0CKA8Q4+GeSwlS51Vw="/>
-        <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Demandante_email" validationMessageCode="field_invalid_email" z="xMcAHpJ3Fpjg0at+9AFF4g14Xt8="/>
-        <field:input field="telefono" id="c_es_uca_iw_findyourjob_domain_Demandante_telefono" z="lFZy3PwZJBISfiabsSGcKJx0qwc="/>
-        <field:input field="curriculum" id="c_es_uca_iw_findyourjob_domain_Demandante_curriculum" z="OiPREfJ+IFUUY46iad95HyDvF/I="/>
+        <field:input field="nombre" id="c_es_uca_iw_findyourjob_domain_Demandante_nombre" max="30" min="3" required="true" z="vYbiX6N5QhYD4VrmVOwm9vcKz48="/>
+        <field:input field="apellidos" id="c_es_uca_iw_findyourjob_domain_Demandante_apellidos" max="30" min="3" required="true" z="3iEXnIUD94dN8CLeCGupsNPukZo="/>
+        <field:input field="fechaNacimiento" id="c_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" max="30" min="3" required="true" z="hPLcqBrj3xtA9PbcDA5Xe1wj+U4="/>
+        <field:input field="sexo" id="c_es_uca_iw_findyourjob_domain_Demandante_sexo" max="30" min="3" required="true" z="Adn0kFWNeokxyqHc+ggHNGt/CVk="/>
+        <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Demandante_email" max="30" min="3" required="true" validationMessageCode="field_invalid_email" z="9W16uwOdgUXFzsaNvuIlQJcOA6A="/>
+        <field:input field="telefono" id="c_es_uca_iw_findyourjob_domain_Demandante_telefono" min="0" required="true" validationMessageCode="field_invalid_number" z="xxJFRYPSGYA09JH++JO3GCVI+/c="/>
         <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Demandante_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="RBthg2e0NuzYFJDeFmpVsVtf9EE="/>
         <field:select field="demandante" id="c_es_uca_iw_findyourjob_domain_Demandante_demandante" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="QsSMP6KJwh9zxxihNCPwDuHh9gg="/>
     </form:update>

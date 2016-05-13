@@ -5,7 +5,7 @@ package es.uca.iw.findyourjob.web;
 
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
+import es.uca.iw.findyourjob.domain.Puesto;
 import es.uca.iw.findyourjob.web.ExperienciaController;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -96,7 +96,7 @@ privileged aspect ExperienciaController_Roo_Controller {
     void ExperienciaController.populateEditForm(Model uiModel, Experiencia experiencia) {
         uiModel.addAttribute("experiencia", experiencia);
         uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
-        uiModel.addAttribute("puestotrabajoes", PuestoTrabajo.findAllPuestoTrabajoes());
+        uiModel.addAttribute("puestoes", Puesto.findAllPuestoes());
     }
     
     String ExperienciaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

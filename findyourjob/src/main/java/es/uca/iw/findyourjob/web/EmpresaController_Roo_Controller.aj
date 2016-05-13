@@ -4,7 +4,6 @@
 package es.uca.iw.findyourjob.web;
 
 import es.uca.iw.findyourjob.domain.Empresa;
-import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.web.EmpresaController;
 import java.io.UnsupportedEncodingException;
@@ -88,7 +87,6 @@ privileged aspect EmpresaController_Roo_Controller {
     
     void EmpresaController.populateEditForm(Model uiModel, Empresa empresa) {
         uiModel.addAttribute("empresa", empresa);
-        uiModel.addAttribute("localizacions", Localizacion.findAllLocalizacions());
         uiModel.addAttribute("ofertas", Oferta.findAllOfertas());
     }
     

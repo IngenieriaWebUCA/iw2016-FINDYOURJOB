@@ -6,6 +6,10 @@
         <table:table data="${localizacions}" id="l_es_uca_iw_findyourjob_domain_Localizacion" path="/localizacions" z="M8CGYXtJUWUCMCowaFxBMY+vKF8=">
             <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_direccion" property="direccion" z="Lx4Ge4sJPWs99ytHcnM0KudCNCM="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_localidad" property="localidad" z="O178OjDQTXaZRiZX69tCbZFKGGQ="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_nombre" property="nombre" z="qxEKBa26WoOY7pqJV+f+QNDDVaQ="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_cif" property="cif" z="COHr4AUA0qoFX3acE46BYyiVcuk="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_email" property="email" z="1Ssu0VYHH8U5paGQ+ZcoWZEwUh4="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_actividadProfesional" property="actividadProfesional" z="I4LwOaOQbJ9T5TCALe6DmX5U5XA="/>
         </table:table>
     </page:list>
 </div>

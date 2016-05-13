@@ -3,12 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_findyourjob_domain_Empresa" modelAttribute="empresa" path="/empresas" render="${empty dependencies}" z="S7mEPuv50dmP/YjAYyst+DiepjE=">
-        <field:input field="nombre" id="c_es_uca_iw_findyourjob_domain_Empresa_nombre" z="VL/HpSwvDqp8wwQdRiNcL/Aak50="/>
-        <field:input field="cif" id="c_es_uca_iw_findyourjob_domain_Empresa_cif" z="+nrWxwPerU1sEyaQ61RMvcArykY="/>
-        <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Empresa_email" validationMessageCode="field_invalid_email" z="MWtA6XyImZrCVWJRmTQHbCiS764="/>
-        <field:input field="actividad_profesional" id="c_es_uca_iw_findyourjob_domain_Empresa_actividad_profesional" z="0ea2tajiNzWVrhOI44r8O/jd6bY="/>
-        <field:input field="numero_empleados" id="c_es_uca_iw_findyourjob_domain_Empresa_numero_empleados" z="r927GocNPPcLkf7McAmsXljKBqA="/>
-        <field:input field="localizaciones" id="c_es_uca_iw_findyourjob_domain_Empresa_localizaciones" z="d1fudBfF5kTQHV0o0MgccwpnV6A="/>
         <field:simple field="ofertas" id="c_es_uca_iw_findyourjob_domain_Empresa_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" z="8RhGx8pygW+sEfct75MX7dJ3KLk="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Empresa" render="${not empty dependencies}" z="r9++XDftEDBxu3NVHgwzqdq6VCM="/>

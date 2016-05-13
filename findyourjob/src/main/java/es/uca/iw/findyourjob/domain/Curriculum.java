@@ -1,40 +1,43 @@
 package es.uca.iw.findyourjob.domain;
-import java.util.List;
-import java.util.Set;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.persistence.ManyToOne;
 import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.CascadeType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "CURRICULUM_SEQ")
 public class Curriculum {
-	@Id
-	private Long id;
-    private String trayectoria;
 
-    private String foto;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String direccion;
 
-    private List<String> trabajos;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String fecha;
 
-    private Formacion formacion_academica;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String estado;
 
     /**
      */
     @NotNull
     @ManyToOne
     private Demandante demandante;
-
-    /**
-     */
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "curriculum")
-    private Set<PuestoTrabajo> puestosTrabajos = new HashSet<PuestoTrabajo>();
 
     /**
      */

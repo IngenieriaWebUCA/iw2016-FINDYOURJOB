@@ -2,21 +2,60 @@ package es.uca.iw.findyourjob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Min;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "LOCALIZACION_SEQ")
 public class Localizacion {
-	@Id
-	private Long id;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
     private String direccion;
 
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
     private String localidad;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String nombre;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String cif;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String email;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String actividadProfesional;
+
+    /**
+     */
+    @NotNull
+    @Min(0L)
+    private int numeroEmpleados;
 
     /**
      */

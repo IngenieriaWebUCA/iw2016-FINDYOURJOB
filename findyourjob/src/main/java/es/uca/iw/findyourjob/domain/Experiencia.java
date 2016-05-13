@@ -1,29 +1,37 @@
 package es.uca.iw.findyourjob.domain;
-import java.util.Date;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.persistence.ManyToOne;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ")
 public class Experiencia {
-	@Id
-	private Long id;
-    private String nombre_empresa;
 
-    private Date fecha_contrato_inicio;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String nombreEmpresa;
 
-    private Date fecha_contrato_fin;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String fechaContratoInicio;
 
-    private String trabajo_desempenado;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String fechaContratoFin;
 
     /**
      */
@@ -34,5 +42,5 @@ public class Experiencia {
     /**
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "experiencia")
-    private Set<PuestoTrabajo> puestosTrabajos = new HashSet<PuestoTrabajo>();
+    private Set<Puesto> puestos = new HashSet<Puesto>();
 }

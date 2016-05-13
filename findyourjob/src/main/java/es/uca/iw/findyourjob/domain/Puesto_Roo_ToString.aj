@@ -3,13 +3,13 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
+import es.uca.iw.findyourjob.domain.Puesto;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-privileged aspect PuestoTrabajo_Roo_ToString {
+privileged aspect Puesto_Roo_ToString {
     
-    public String PuestoTrabajo.toString() {
+    public String Puesto.toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     

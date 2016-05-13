@@ -3,11 +3,11 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
+import es.uca.iw.findyourjob.domain.Puesto;
 import org.springframework.beans.factory.annotation.Configurable;
 
-privileged aspect PuestoTrabajo_Roo_Configurable {
+privileged aspect Puesto_Roo_Configurable {
     
-    declare @type: PuestoTrabajo: @Configurable;
+    declare @type: Puesto: @Configurable;
     
 }

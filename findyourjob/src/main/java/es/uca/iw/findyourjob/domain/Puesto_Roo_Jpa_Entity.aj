@@ -3,7 +3,7 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
+import es.uca.iw.findyourjob.domain.Puesto;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,33 +12,33 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Version;
 
-privileged aspect PuestoTrabajo_Roo_Jpa_Entity {
+privileged aspect Puesto_Roo_Jpa_Entity {
     
-    declare @type: PuestoTrabajo: @Entity;
+    declare @type: Puesto: @Entity;
     
     @Id
-    @SequenceGenerator(name = "puestoTrabajoGen", sequenceName = "PUESTOTRABAJO_SEQ")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "puestoTrabajoGen")
+    @SequenceGenerator(name = "puestoGen", sequenceName = "PUESTO_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "puestoGen")
     @Column(name = "id")
-    private Long PuestoTrabajo.id;
+    private Long Puesto.id;
     
     @Version
     @Column(name = "version")
-    private Integer PuestoTrabajo.version;
+    private Integer Puesto.version;
     
-    public Long PuestoTrabajo.getId() {
+    public Long Puesto.getId() {
         return this.id;
     }
     
-    public void PuestoTrabajo.setId(Long id) {
+    public void Puesto.setId(Long id) {
         this.id = id;
     }
     
-    public Integer PuestoTrabajo.getVersion() {
+    public Integer Puesto.getVersion() {
         return this.version;
     }
     
-    public void PuestoTrabajo.setVersion(Integer version) {
+    public void Puesto.setVersion(Integer version) {
         this.version = version;
     }
     

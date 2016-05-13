@@ -4,59 +4,10 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
-import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import java.util.Set;
 
 privileged aspect Empresa_Roo_JavaBean {
-    
-    public String Empresa.getNombre() {
-        return this.nombre;
-    }
-    
-    public void Empresa.setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    public String Empresa.getCif() {
-        return this.cif;
-    }
-    
-    public void Empresa.setCif(String cif) {
-        this.cif = cif;
-    }
-    
-    public String Empresa.getEmail() {
-        return this.email;
-    }
-    
-    public void Empresa.setEmail(String email) {
-        this.email = email;
-    }
-    
-    public String Empresa.getActividad_profesional() {
-        return this.actividad_profesional;
-    }
-    
-    public void Empresa.setActividad_profesional(String actividad_profesional) {
-        this.actividad_profesional = actividad_profesional;
-    }
-    
-    public String Empresa.getNumero_empleados() {
-        return this.numero_empleados;
-    }
-    
-    public void Empresa.setNumero_empleados(String numero_empleados) {
-        this.numero_empleados = numero_empleados;
-    }
-    
-    public Set<Localizacion> Empresa.getLocalizaciones() {
-        return this.localizaciones;
-    }
-    
-    public void Empresa.setLocalizaciones(Set<Localizacion> localizaciones) {
-        this.localizaciones = localizaciones;
-    }
     
     public Set<Oferta> Empresa.getOfertas() {
         return this.ofertas;

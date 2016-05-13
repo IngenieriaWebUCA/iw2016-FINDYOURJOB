@@ -3,97 +3,97 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
+import es.uca.iw.findyourjob.domain.Puesto;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect PuestoTrabajo_Roo_Jpa_ActiveRecord {
+privileged aspect Puesto_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager PuestoTrabajo.entityManager;
+    transient EntityManager Puesto.entityManager;
     
-    public static final List<String> PuestoTrabajo.fieldNames4OrderClauseFilter = java.util.Arrays.asList("curriculum", "experiencia", "ofertas");
+    public static final List<String> Puesto.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "experiencia");
     
-    public static final EntityManager PuestoTrabajo.entityManager() {
-        EntityManager em = new PuestoTrabajo().entityManager;
+    public static final EntityManager Puesto.entityManager() {
+        EntityManager em = new Puesto().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long PuestoTrabajo.countPuestoTrabajoes() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM PuestoTrabajo o", Long.class).getSingleResult();
+    public static long Puesto.countPuestoes() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Puesto o", Long.class).getSingleResult();
     }
     
-    public static List<PuestoTrabajo> PuestoTrabajo.findAllPuestoTrabajoes() {
-        return entityManager().createQuery("SELECT o FROM PuestoTrabajo o", PuestoTrabajo.class).getResultList();
+    public static List<Puesto> Puesto.findAllPuestoes() {
+        return entityManager().createQuery("SELECT o FROM Puesto o", Puesto.class).getResultList();
     }
     
-    public static List<PuestoTrabajo> PuestoTrabajo.findAllPuestoTrabajoes(String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM PuestoTrabajo o";
+    public static List<Puesto> Puesto.findAllPuestoes(String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Puesto o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, PuestoTrabajo.class).getResultList();
+        return entityManager().createQuery(jpaQuery, Puesto.class).getResultList();
     }
     
-    public static PuestoTrabajo PuestoTrabajo.findPuestoTrabajo(Long id) {
+    public static Puesto Puesto.findPuesto(Long id) {
         if (id == null) return null;
-        return entityManager().find(PuestoTrabajo.class, id);
+        return entityManager().find(Puesto.class, id);
     }
     
-    public static List<PuestoTrabajo> PuestoTrabajo.findPuestoTrabajoEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM PuestoTrabajo o", PuestoTrabajo.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Puesto> Puesto.findPuestoEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Puesto o", Puesto.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
-    public static List<PuestoTrabajo> PuestoTrabajo.findPuestoTrabajoEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
-        String jpaQuery = "SELECT o FROM PuestoTrabajo o";
+    public static List<Puesto> Puesto.findPuestoEntries(int firstResult, int maxResults, String sortFieldName, String sortOrder) {
+        String jpaQuery = "SELECT o FROM Puesto o";
         if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
             jpaQuery = jpaQuery + " ORDER BY " + sortFieldName;
             if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
                 jpaQuery = jpaQuery + " " + sortOrder;
             }
         }
-        return entityManager().createQuery(jpaQuery, PuestoTrabajo.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery(jpaQuery, Puesto.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void PuestoTrabajo.persist() {
+    public void Puesto.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void PuestoTrabajo.remove() {
+    public void Puesto.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            PuestoTrabajo attached = PuestoTrabajo.findPuestoTrabajo(this.id);
+            Puesto attached = Puesto.findPuesto(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void PuestoTrabajo.flush() {
+    public void Puesto.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void PuestoTrabajo.clear() {
+    public void Puesto.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public PuestoTrabajo PuestoTrabajo.merge() {
+    public Puesto Puesto.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        PuestoTrabajo merged = this.entityManager.merge(this);
+        Puesto merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

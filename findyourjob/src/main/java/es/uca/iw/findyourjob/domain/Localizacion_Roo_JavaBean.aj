@@ -25,6 +25,46 @@ privileged aspect Localizacion_Roo_JavaBean {
         this.localidad = localidad;
     }
     
+    public String Localizacion.getNombre() {
+        return this.nombre;
+    }
+    
+    public void Localizacion.setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String Localizacion.getCif() {
+        return this.cif;
+    }
+    
+    public void Localizacion.setCif(String cif) {
+        this.cif = cif;
+    }
+    
+    public String Localizacion.getEmail() {
+        return this.email;
+    }
+    
+    public void Localizacion.setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String Localizacion.getActividadProfesional() {
+        return this.actividadProfesional;
+    }
+    
+    public void Localizacion.setActividadProfesional(String actividadProfesional) {
+        this.actividadProfesional = actividadProfesional;
+    }
+    
+    public int Localizacion.getNumeroEmpleados() {
+        return this.numeroEmpleados;
+    }
+    
+    public void Localizacion.setNumeroEmpleados(int numeroEmpleados) {
+        this.numeroEmpleados = numeroEmpleados;
+    }
+    
     public Set<Oferta> Localizacion.getOfertas() {
         return this.ofertas;
     }

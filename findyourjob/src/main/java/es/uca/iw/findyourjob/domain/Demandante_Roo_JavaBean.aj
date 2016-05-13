@@ -6,7 +6,6 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
-import java.util.Date;
 import java.util.Set;
 
 privileged aspect Demandante_Roo_JavaBean {
@@ -27,12 +26,12 @@ privileged aspect Demandante_Roo_JavaBean {
         this.apellidos = apellidos;
     }
     
-    public Date Demandante.getFecha_nacimiento() {
-        return this.fecha_nacimiento;
+    public String Demandante.getFechaNacimiento() {
+        return this.fechaNacimiento;
     }
     
-    public void Demandante.setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void Demandante.setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
     
     public String Demandante.getSexo() {
@@ -43,14 +42,6 @@ privileged aspect Demandante_Roo_JavaBean {
         this.sexo = sexo;
     }
     
-    public String Demandante.getDireccion() {
-        return this.direccion;
-    }
-    
-    public void Demandante.setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-    
     public String Demandante.getEmail() {
         return this.email;
     }
@@ -59,20 +50,12 @@ privileged aspect Demandante_Roo_JavaBean {
         this.email = email;
     }
     
-    public double Demandante.getTelefono() {
+    public Double Demandante.getTelefono() {
         return this.telefono;
     }
     
-    public void Demandante.setTelefono(double telefono) {
+    public void Demandante.setTelefono(Double telefono) {
         this.telefono = telefono;
-    }
-    
-    public Curriculum Demandante.getCurriculum() {
-        return this.curriculum;
-    }
-    
-    public void Demandante.setCurriculum(Curriculum curriculum) {
-        this.curriculum = curriculum;
     }
     
     public Set<Inscripcion> Demandante.getInscripciones() {
@@ -84,11 +67,11 @@ privileged aspect Demandante_Roo_JavaBean {
     }
     
     public Curriculum Demandante.getDemandante() {
-        return this.curriculum;
+        return this.demandante;
     }
     
-    public void Demandante.setDemandante(Curriculum curriculum) {
-        this.curriculum = curriculum;
+    public void Demandante.setDemandante(Curriculum demandante) {
+        this.demandante = demandante;
     }
     
 }

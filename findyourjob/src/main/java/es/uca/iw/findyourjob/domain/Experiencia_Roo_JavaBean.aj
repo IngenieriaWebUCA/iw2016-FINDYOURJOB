@@ -5,42 +5,33 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
-import java.util.Date;
+import es.uca.iw.findyourjob.domain.Puesto;
 import java.util.Set;
 
 privileged aspect Experiencia_Roo_JavaBean {
     
-    public String Experiencia.getNombre_empresa() {
-        return this.nombre_empresa;
+    public String Experiencia.getNombreEmpresa() {
+        return this.nombreEmpresa;
     }
     
-    public void Experiencia.setNombre_empresa(String nombre_empresa) {
-        this.nombre_empresa = nombre_empresa;
+    public void Experiencia.setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
     }
     
-    public Date Experiencia.getFecha_contrato_inicio() {
-        return this.fecha_contrato_inicio;
+    public String Experiencia.getFechaContratoInicio() {
+        return this.fechaContratoInicio;
     }
     
-    public void Experiencia.setFecha_contrato_inicio(Date fecha_contrato_inicio) {
-        this.fecha_contrato_inicio = fecha_contrato_inicio;
+    public void Experiencia.setFechaContratoInicio(String fechaContratoInicio) {
+        this.fechaContratoInicio = fechaContratoInicio;
     }
     
-    public Date Experiencia.getFecha_contrato_fin() {
-        return this.fecha_contrato_fin;
+    public String Experiencia.getFechaContratoFin() {
+        return this.fechaContratoFin;
     }
     
-    public void Experiencia.setFecha_contrato_fin(Date fecha_contrato_fin) {
-        this.fecha_contrato_fin = fecha_contrato_fin;
-    }
-    
-    public String Experiencia.getTrabajo_desempenado() {
-        return this.trabajo_desempenado;
-    }
-    
-    public void Experiencia.setTrabajo_desempenado(String trabajo_desempenado) {
-        this.trabajo_desempenado = trabajo_desempenado;
+    public void Experiencia.setFechaContratoFin(String fechaContratoFin) {
+        this.fechaContratoFin = fechaContratoFin;
     }
     
     public Curriculum Experiencia.getCurriculum() {
@@ -51,12 +42,12 @@ privileged aspect Experiencia_Roo_JavaBean {
         this.curriculum = curriculum;
     }
     
-    public Set<PuestoTrabajo> Experiencia.getPuestosTrabajos() {
-        return this.puestosTrabajos;
+    public Set<Puesto> Experiencia.getPuestos() {
+        return this.puestos;
     }
     
-    public void Experiencia.setPuestosTrabajos(Set<PuestoTrabajo> puestosTrabajos) {
-        this.puestosTrabajos = puestosTrabajos;
+    public void Experiencia.setPuestos(Set<Puesto> puestos) {
+        this.puestos = puestos;
     }
     
 }

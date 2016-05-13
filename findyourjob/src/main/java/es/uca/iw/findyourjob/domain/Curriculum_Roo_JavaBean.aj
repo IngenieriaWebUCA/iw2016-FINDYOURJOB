@@ -7,42 +7,32 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Formacion;
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
-import java.util.List;
 import java.util.Set;
 
 privileged aspect Curriculum_Roo_JavaBean {
     
-    public String Curriculum.getTrayectoria() {
-        return this.trayectoria;
+    public String Curriculum.getDireccion() {
+        return this.direccion;
     }
     
-    public void Curriculum.setTrayectoria(String trayectoria) {
-        this.trayectoria = trayectoria;
+    public void Curriculum.setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     
-    public String Curriculum.getFoto() {
-        return this.foto;
+    public String Curriculum.getFecha() {
+        return this.fecha;
     }
     
-    public void Curriculum.setFoto(String foto) {
-        this.foto = foto;
+    public void Curriculum.setFecha(String fecha) {
+        this.fecha = fecha;
     }
     
-    public List<String> Curriculum.getTrabajos() {
-        return this.trabajos;
+    public String Curriculum.getEstado() {
+        return this.estado;
     }
     
-    public void Curriculum.setTrabajos(List<String> trabajos) {
-        this.trabajos = trabajos;
-    }
-    
-    public Formacion Curriculum.getFormacion_academica() {
-        return this.formacion_academica;
-    }
-    
-    public void Curriculum.setFormacion_academica(Formacion formacion_academica) {
-        this.formacion_academica = formacion_academica;
+    public void Curriculum.setEstado(String estado) {
+        this.estado = estado;
     }
     
     public Demandante Curriculum.getDemandante() {
@@ -51,14 +41,6 @@ privileged aspect Curriculum_Roo_JavaBean {
     
     public void Curriculum.setDemandante(Demandante demandante) {
         this.demandante = demandante;
-    }
-    
-    public Set<PuestoTrabajo> Curriculum.getPuestosTrabajos() {
-        return this.puestosTrabajos;
-    }
-    
-    public void Curriculum.setPuestosTrabajos(Set<PuestoTrabajo> puestosTrabajos) {
-        this.puestosTrabajos = puestosTrabajos;
     }
     
     public Formacion Curriculum.getFormacion() {

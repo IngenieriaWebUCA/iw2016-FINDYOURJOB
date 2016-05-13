@@ -3,17 +3,16 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Oferta" modelAttribute="oferta" path="/ofertas" versionField="Version" z="CqYkY5q9HOPYN+hPO5FSlnXoimc=">
-        <field:input field="tipologia" id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" z="h/XBUNrQXbNTglXJucywgDd7lzE="/>
-        <field:input field="sueldo_bruto" id="c_es_uca_iw_findyourjob_domain_Oferta_sueldo_bruto" z="L21tFCQZE8C2kshtkwIL8h5Botw="/>
-        <field:datetime dateTimePattern="${oferta_fecha_inicio_actividad_date_format}" field="fecha_inicio_actividad" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_inicio_actividad" z="1AXwQDQkPPDNFGR5YecSY/uo68w="/>
-        <field:input field="vacantes" id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" z="VKeK1OTxP4mtP8Qn884XIpcH0Ss="/>
-        <field:input field="perfil" id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" z="Nh9vTXTxVKPl1S46/gUzjm+/1Oc="/>
-        <field:datetime dateTimePattern="${oferta_fecha_disponible_inicio_date_format}" field="fecha_disponible_inicio" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_inicio" z="XoxKnzPa3wcmGh8WaLIPjcKCSkE="/>
-        <field:datetime dateTimePattern="${oferta_fecha_disponible_fin_date_format}" field="fecha_disponible_fin" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_fin" z="pmG29uyrhRZZw5YqtfoZKmtPYZU="/>
-        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Oferta_estado" z="0ZrskcjhywSpb3f6ho/z0DpFhNY="/>
+        <field:input field="tipologia" id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" max="30" min="3" required="true" z="CgBRQoDQF31YEbjb2/lo8c28RKY="/>
+        <field:input field="sueldoBruto" id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" min="0" required="true" validationMessageCode="field_invalid_number" z="fojLW7CqsKRI1J9swetgFBHFXqs="/>
+        <field:input field="fechaInicioActividad" id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" max="30" min="3" required="true" z="fL4Uf16AwpaOVqWc2Unoy4rYkLY="/>
+        <field:input field="vacantes" id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" max="30" min="3" required="true" z="i3BqJxHbHYfmibe5U8S93fg27k4="/>
+        <field:input field="perfil" id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" max="30" min="3" required="true" z="sr/89I4B/w27L3bR5Z/K27P34VE="/>
+        <field:input field="fechaDisponibleInicio" id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" max="30" min="3" required="true" z="ZE69QvT+xwTJEUHOtpSovMRs9Cg="/>
+        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Oferta_estado" max="30" min="3" required="true" z="CbSUtCJxP54ABLBD0TEOAnpph6o="/>
         <field:select field="localizacion" id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" itemValue="id" items="${localizacions}" path="/localizacions" required="true" z="P3F+O/84GdgW+jIERMLP3HAzmcw="/>
         <field:select field="empresa" id="c_es_uca_iw_findyourjob_domain_Oferta_empresa" itemValue="id" items="${empresas}" path="/empresas" required="true" z="Q31YAYf+cz/L+e2sUGuuYAtE8/k="/>
         <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Oferta_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="KpFNOuw8Ny9KWq4wJHGHlem9y04="/>
-        <field:select field="puestoTrabajo" id="c_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" itemValue="id" items="${puestotrabajoes}" path="/puestotrabajoes" required="true" z="ykqyw+Cr3WudMYtZDDzHtgIsM7k="/>
+        <field:select field="puestoTrabajo" id="c_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" itemValue="id" items="${puestoes}" path="/puestoes" required="true" z="8pwNyRMS6l5T8Ge1AzYxY/ZBFxo="/>
     </form:update>
 </div>

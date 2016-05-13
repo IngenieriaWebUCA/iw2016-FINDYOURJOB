@@ -3,10 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Experiencia" object="${experiencia}" path="/experiencias" z="+CyMQ6DiNJT+9ZFmxQg0ejt4dZg=">
-        <field:display field="nombre_empresa" id="s_es_uca_iw_findyourjob_domain_Experiencia_nombre_empresa" object="${experiencia}" z="28Lgpq9H0QgIdG+wbh6fwqcg3eM="/>
-        <field:display date="true" dateTimePattern="${experiencia_fecha_contrato_inicio_date_format}" field="fecha_contrato_inicio" id="s_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_inicio" object="${experiencia}" z="tFldxDJIiztwjWxKfhTKvaXgLVg="/>
-        <field:display date="true" dateTimePattern="${experiencia_fecha_contrato_fin_date_format}" field="fecha_contrato_fin" id="s_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_fin" object="${experiencia}" z="9QfDngWfgXEH1azt0yvwRTc4GK4="/>
-        <field:display field="trabajo_desempenado" id="s_es_uca_iw_findyourjob_domain_Experiencia_trabajo_desempenado" object="${experiencia}" z="lACjB2KPyNu/h7l/81H3b/9M3Rk="/>
+        <field:display field="nombreEmpresa" id="s_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" object="${experiencia}" z="OWXhwnAoFWVynpazodCmC5X1sog="/>
+        <field:display field="fechaContratoInicio" id="s_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" object="${experiencia}" z="vHg86D3p1bSTDQ9burGvTPW63Tk="/>
+        <field:display field="fechaContratoFin" id="s_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" object="${experiencia}" z="Pn8AcTi0c/stDObq54xLnO3sJck="/>
         <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Experiencia_curriculum" object="${experiencia}" z="lppea/juCWYVO8JAePRs+zQM+vU="/>
     </page:show>
 </div>

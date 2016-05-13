@@ -1,74 +1,71 @@
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2016-05-03 16:21:58
-project --topLevelPackage es.uca.iw.findyourjob --projectName findyourjob --java 7 --packaging JAR
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2016-05-03 16:21:59
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2016-05-03 16:22:06
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-13 19:05:16
+project --topLevelPackage es.uca.iw.findyourjob --projectName findyourjob --java 7 --packaging WAR
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-13 19:05:17
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-13 19:05:25
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-13 19:11:02
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-13 19:18:15
 jpa setup --provider HIBERNATE --database MYSQL
-entity jpa --class ~.domain.Pet --sequenceName PET_SEQ
-jpa setup --provider HIBERNATE --database MYSQL --databaseName findyourjob --userName root --password
-jpa setup --provider HIBERNATE --database MYSQL --databaseName findyourjob --userName root --password
-entity jpa --class ~.domain.Pet --sequenceName PET_SEQ
-entity jpa --class ~.domain.Empresa --sequenceName EMPRESA_SEQ
 entity jpa --class ~.domain.Localizacion --sequenceName LOCALIZACION_SEQ
 entity jpa --class ~.domain.Oferta --sequenceName OFERTA_SEQ
-entity jpa --class ~.Inscripcion.Oferta --sequenceName INSCRIPCION_SEQ
-entity jpa --class ~.Demandante.Oferta --sequenceName DEMANDANTE_SEQ
-entity jpa --class ~.Demandante.Curriculum --sequenceName CURRICULUM_SEQ
-entity jpa --class ~.Formacion.Curriculum --sequenceName FORMACION_SEQ
-entity jpa --class ~.Experiencia.Curriculum --sequenceName EXPERIENCIA_SEQ
-entity jpa --class ~.domain.Demandante --sequenceName DEMANDANTE_SEQ
-entity jpa --class ~.domain.Experiencia --sequenceName EXPERIENCIA_SEQ
-entity jpa --class ~.domain.Formacion --sequenceName FORMACION_SEQ
+entity jpa --class ~.domain.Empresa --sequenceName EMPRESA_SEQ
 entity jpa --class ~.domain.Inscripcion --sequenceName INSCRIPCION_SEQ
+entity jpa --class ~.domain.Demandante --sequenceName DEMANDANTE_SEQ
 entity jpa --class ~.domain.Curriculum --sequenceName CURRICULUM_SEQ
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2016-05-03 19:08:32
-web mvc setup
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2016-05-03 19:25:06
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log opened at 2016-05-03 19:26:13
-hint
-// Spring Roo 1.3.1.RC1 [rev 4877cfb] log closed at 2016-05-03 19:32:28
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-03 19:32:51
-web mvc all --package ~.web
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-05 13:53:23
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-09 13:26:42
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-09 14:01:44
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-09 16:16:08
-jpa setup --provider HIBERNATE --database MYSQL --databaseName findyourjob --userName root --password
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-09 18:58:34
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-10 14:25:52
-hint
-help
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-12 16:13:47
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-12 16:23:06
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-12 16:48:20
-security setup
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-12 18:08:43
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-12 18:21:35
-// [failed] focus --class es.ua.jtech.jbib.model.Empresa
-// [failed] focus --class es.uca.iw.findyourjob.Empresa
-// [failed] focus --class es.uca.iw.findyourjob.model.Empresa
+entity jpa --class ~.domain.Formacion --sequenceName FORMACION_SEQ
+entity jpa --class ~.domain.Experiencia --sequenceName EXPERIENCIA_SEQ
+entity jpa --class ~.domain.Puesto --sequenceName PUESTO_SEQ
+field string --fieldName direccion --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Localizacion
+field string --fieldName localidad --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName nombre --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Localizacion
+field string --fieldName cif --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName email --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName actividadProfesional --notNull --sizeMin 3 --sizeMax 30
+field number --fieldName numeroEmpleados --type java.lang.Int --notNull --min 0
+field string --fieldName tipologia --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Oferta
+field number --fieldName sueldoBruto --type java.lang.Float --notNull --min 0
+field string --fieldName fechaInicioActividad --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName vacantes --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName perfil --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName fechaDisponibleInicio --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName estado --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName fecha --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Inscripcion
+field string --fieldName estado --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName nombre --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Demandante
+field string --fieldName apellidos --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName fechaNacimiento --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName sexo --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName email --notNull --sizeMin 3 --sizeMax 30
+field number --fieldName telefono --type java.lang.Double --notNull --min 0
+field string --fieldName direccion --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Curriculum
+field string --fieldName fecha --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName estado --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName titulosAcademicos --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Formacion
+field string --fieldName cursosIdiomas --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName nombreEmpresa --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Experiencia
+field string --fieldName fechaContratoInicio --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName fechaContratoFin --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName nombre --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Puesto
 field reference --fieldName localizacion --type ~.domain.Localizacion --notNull --class ~.domain.Oferta
 field set --class ~.domain.Localizacion --fieldName ofertas --type ~.domain.Oferta --mappedBy localizacion --notNull false --cardinality ONE_TO_MANY
 field reference --fieldName empresa --type ~.domain.Empresa --notNull --class ~.domain.Oferta
 field set --class ~.domain.Empresa --fieldName ofertas --type ~.domain.Oferta --mappedBy empresa --notNull false --cardinality ONE_TO_MANY
-// [failed] field reference --fieldName oferta --type ~.domain.Oferta --notNull --class ~.domain.Inscripcion
-// [failed] field reference --fieldName oferta --type ~.domain.Oferta --notNull --class ~.domain.Inscripcion
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-13 15:21:44
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-13 15:25:15
 field reference --fieldName oferta --type ~.domain.Oferta --notNull --class ~.domain.Inscripcion
 field set --class ~.domain.Oferta --fieldName inscripciones --type ~.domain.Inscripcion --mappedBy oferta --notNull false --cardinality ONE_TO_MANY
 field reference --fieldName demandante --type ~.domain.Demandante --notNull --class ~.domain.Inscripcion
 field set --class ~.domain.Demandante --fieldName inscripciones --type ~.domain.Inscripcion --mappedBy demandante --notNull false --cardinality ONE_TO_MANY
 field reference --fieldName demandante --type ~.domain.Demandante --notNull --class ~.domain.Curriculum
 field reference --fieldName demandante --type ~.domain.Curriculum --notNull --class ~.domain.Demandante
-entity jpa --class ~.domain.PuestoTrabajo --sequenceName PUESTOTRABAJO_SEQ
-field reference --fieldName curriculum --type ~.domain.Curriculum --notNull --class ~.domain.PuestoTrabajo
-field set --class ~.domain.Curriculum --fieldName puestosTrabajos --type ~.domain.PuestoTrabajo --mappedBy curriculum --notNull false --cardinality ONE_TO_MANY
+// [failed] field reference --fieldName curriculum --type ~.domain.Curriculum --notNull --class ~.domain.PuestoTrabajo
+// [failed] field set --class ~.domain.Curriculum --fieldName puestosTrabajos --type ~.domain.PuestoTrabajo --mappedBy curriculum --notNull false --cardinality ONE_TO_MANY
 field reference --fieldName formacion --type ~.domain.Formacion --notNull --class ~.domain.Curriculum
 field reference --fieldName curriculum --type ~.domain.Curriculum --notNull --class ~.domain.Formacion
 field reference --fieldName curriculum --type ~.domain.Curriculum --notNull --class ~.domain.Experiencia
 field set --class ~.domain.Curriculum --fieldName experiencias --type ~.domain.Experiencia --mappedBy curriculum --notNull false --cardinality ONE_TO_MANY
-field reference --fieldName experiencia --type ~.domain.Experiencia --notNull --class ~.domain.PuestoTrabajo
-field set --class ~.domain.Experiencia --fieldName puestosTrabajos --type ~.domain.PuestoTrabajo --mappedBy experiencia --notNull false --cardinality ONE_TO_MANY
-field reference --fieldName puestoTrabajo --type ~.domain.PuestoTrabajo --notNull --class ~.domain.Oferta
-field set --class ~.domain.PuestoTrabajo --fieldName ofertas --type ~.domain.Oferta --mappedBy puestoTrabajo --notNull false --cardinality ONE_TO_MANY
-// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-13 15:54:44
+field reference --fieldName experiencia --type ~.domain.Experiencia --notNull --class ~.domain.Puesto
+field set --class ~.domain.Experiencia --fieldName puestos --type ~.domain.Puesto --mappedBy experiencia --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName puestoTrabajo --type ~.domain.Puesto --notNull --class ~.domain.Oferta
+// [failed] field set --class ~.domain.PuestoTrabajo --fieldName ofertas --type ~.domain.Oferta --mappedBy puestoTrabajo --notNull false --cardinality ONE_TO_MANY
+web mvc setup
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-13 19:31:45
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-13 19:36:32

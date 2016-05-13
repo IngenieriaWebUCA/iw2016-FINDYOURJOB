@@ -7,8 +7,7 @@ import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
-import java.util.Date;
+import es.uca.iw.findyourjob.domain.Puesto;
 import java.util.Set;
 
 privileged aspect Oferta_Roo_JavaBean {
@@ -21,27 +20,27 @@ privileged aspect Oferta_Roo_JavaBean {
         this.tipologia = tipologia;
     }
     
-    public float Oferta.getSueldo_bruto() {
-        return this.sueldo_bruto;
+    public Float Oferta.getSueldoBruto() {
+        return this.sueldoBruto;
     }
     
-    public void Oferta.setSueldo_bruto(float sueldo_bruto) {
-        this.sueldo_bruto = sueldo_bruto;
+    public void Oferta.setSueldoBruto(Float sueldoBruto) {
+        this.sueldoBruto = sueldoBruto;
     }
     
-    public Date Oferta.getFecha_inicio_actividad() {
-        return this.fecha_inicio_actividad;
+    public String Oferta.getFechaInicioActividad() {
+        return this.fechaInicioActividad;
     }
     
-    public void Oferta.setFecha_inicio_actividad(Date fecha_inicio_actividad) {
-        this.fecha_inicio_actividad = fecha_inicio_actividad;
+    public void Oferta.setFechaInicioActividad(String fechaInicioActividad) {
+        this.fechaInicioActividad = fechaInicioActividad;
     }
     
-    public int Oferta.getVacantes() {
+    public String Oferta.getVacantes() {
         return this.vacantes;
     }
     
-    public void Oferta.setVacantes(int vacantes) {
+    public void Oferta.setVacantes(String vacantes) {
         this.vacantes = vacantes;
     }
     
@@ -53,20 +52,12 @@ privileged aspect Oferta_Roo_JavaBean {
         this.perfil = perfil;
     }
     
-    public Date Oferta.getFecha_disponible_inicio() {
-        return this.fecha_disponible_inicio;
+    public String Oferta.getFechaDisponibleInicio() {
+        return this.fechaDisponibleInicio;
     }
     
-    public void Oferta.setFecha_disponible_inicio(Date fecha_disponible_inicio) {
-        this.fecha_disponible_inicio = fecha_disponible_inicio;
-    }
-    
-    public Date Oferta.getFecha_disponible_fin() {
-        return this.fecha_disponible_fin;
-    }
-    
-    public void Oferta.setFecha_disponible_fin(Date fecha_disponible_fin) {
-        this.fecha_disponible_fin = fecha_disponible_fin;
+    public void Oferta.setFechaDisponibleInicio(String fechaDisponibleInicio) {
+        this.fechaDisponibleInicio = fechaDisponibleInicio;
     }
     
     public String Oferta.getEstado() {
@@ -101,11 +92,11 @@ privileged aspect Oferta_Roo_JavaBean {
         this.inscripciones = inscripciones;
     }
     
-    public PuestoTrabajo Oferta.getPuestoTrabajo() {
+    public Puesto Oferta.getPuestoTrabajo() {
         return this.puestoTrabajo;
     }
     
-    public void Oferta.setPuestoTrabajo(PuestoTrabajo puestoTrabajo) {
+    public void Oferta.setPuestoTrabajo(Puesto puestoTrabajo) {
         this.puestoTrabajo = puestoTrabajo;
     }
     

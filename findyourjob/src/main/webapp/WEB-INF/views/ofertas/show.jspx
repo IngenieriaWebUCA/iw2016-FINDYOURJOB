@@ -4,12 +4,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Oferta" object="${oferta}" path="/ofertas" z="HQX5sFKRW/bPp6chOuVHb1Sx+R0=">
         <field:display field="tipologia" id="s_es_uca_iw_findyourjob_domain_Oferta_tipologia" object="${oferta}" z="oF6G1qEWTrC8iVPssV14c7fUkDk="/>
-        <field:display field="sueldo_bruto" id="s_es_uca_iw_findyourjob_domain_Oferta_sueldo_bruto" object="${oferta}" z="BOGNP63AEYCWj9aXRs6Hr3xMVig="/>
-        <field:display date="true" dateTimePattern="${oferta_fecha_inicio_actividad_date_format}" field="fecha_inicio_actividad" id="s_es_uca_iw_findyourjob_domain_Oferta_fecha_inicio_actividad" object="${oferta}" z="gm2Ldu16dzeoabm5ctR7DXe2g58="/>
+        <field:display field="sueldoBruto" id="s_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" object="${oferta}" z="OcUsDXw+2d2rBkvhQzl6z47H1Y4="/>
+        <field:display field="fechaInicioActividad" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" object="${oferta}" z="PRu5DDbErM3lNhUQrQTPshrU2yE="/>
         <field:display field="vacantes" id="s_es_uca_iw_findyourjob_domain_Oferta_vacantes" object="${oferta}" z="1Ji8a6+2t6m5wQx/E4iKms/8f3Y="/>
         <field:display field="perfil" id="s_es_uca_iw_findyourjob_domain_Oferta_perfil" object="${oferta}" z="4L8OaUWRk3fwKsnXUmUbax32uXw="/>
-        <field:display date="true" dateTimePattern="${oferta_fecha_disponible_inicio_date_format}" field="fecha_disponible_inicio" id="s_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_inicio" object="${oferta}" z="jA/2wulGZgAVfzd/uvFJIAPyUgs="/>
-        <field:display date="true" dateTimePattern="${oferta_fecha_disponible_fin_date_format}" field="fecha_disponible_fin" id="s_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_fin" object="${oferta}" z="/Hc9hzWGeeylo2uCezaLdUikvOM="/>
+        <field:display field="fechaDisponibleInicio" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" object="${oferta}" z="Jgf6rbSmLrnaLfd8F5SjU4d1oEg="/>
         <field:display field="estado" id="s_es_uca_iw_findyourjob_domain_Oferta_estado" object="${oferta}" z="aHXj+qk9Q/KkVcuFTAjayMXKnm0="/>
         <field:display field="localizacion" id="s_es_uca_iw_findyourjob_domain_Oferta_localizacion" object="${oferta}" z="4gp/hODGaAJZKhcw+5jrev+/9V8="/>
         <field:display field="empresa" id="s_es_uca_iw_findyourjob_domain_Oferta_empresa" object="${oferta}" z="XIxD1kaeDfp6fn2y4PfutDNO1oQ="/>

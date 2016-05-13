@@ -4,11 +4,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Curriculum" items="${curriculums}" z="mEB7km2eY4/nP8h+shUHFYJV6X4=">
         <table:table data="${curriculums}" id="l_es_uca_iw_findyourjob_domain_Curriculum" path="/curriculums" z="bOf8+JHyyGSgZakVX53LulVyqPs=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_trayectoria" property="trayectoria" z="Q8rYjs2WiLn7b4Y22FJVOUDdbT8="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_foto" property="foto" z="q9bNBWruiPUNdPh+Cp+X7w0cvqU="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_trabajos" property="trabajos" z="MWcDjMby/MBMkXVeTY2dA0D7BUQ="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_formacion_academica" property="formacion_academica" z="nEIqLnjjBO7O5OFQap9qE2RusYM="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_direccion" property="direccion" z="LPApNXS+dN5Nzc+bvKeWRNDMsOs="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_fecha" property="fecha" z="Oxz1EXdOP4BQ0WGjOUTR9o4Jodw="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_estado" property="estado" z="Em6QV0+NqnJTD1MuRwV9r/AYMsE="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_demandante" property="demandante" z="MnqZqbcorofhptDMo+S5xvJw5Vc="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_formacion" property="formacion" z="P2b2+dLv/wxTu9gFFXBEp67Jzog="/>
         </table:table>
     </page:list>
 </div>

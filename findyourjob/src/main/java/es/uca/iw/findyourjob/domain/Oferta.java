@@ -1,36 +1,61 @@
 package es.uca.iw.findyourjob.domain;
-import java.util.Date;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Min;
+import javax.persistence.ManyToOne;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "OFERTA_SEQ")
 public class Oferta {
-	@Id
-	private Long id;
+
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
     private String tipologia;
 
-    private float sueldo_bruto;
+    /**
+     */
+    @NotNull
+    @Min(0L)
+    private Float sueldoBruto;
 
-    private Date fecha_inicio_actividad;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String fechaInicioActividad;
 
-    private int vacantes;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String vacantes;
 
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
     private String perfil;
 
-    private Date fecha_disponible_inicio;
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
+    private String fechaDisponibleInicio;
 
-    private Date fecha_disponible_fin;
-
+    /**
+     */
+    @NotNull
+    @Size(min = 3, max = 30)
     private String estado;
 
     /**
@@ -54,5 +79,5 @@ public class Oferta {
      */
     @NotNull
     @ManyToOne
-    private PuestoTrabajo puestoTrabajo;
+    private Puesto puestoTrabajo;
 }

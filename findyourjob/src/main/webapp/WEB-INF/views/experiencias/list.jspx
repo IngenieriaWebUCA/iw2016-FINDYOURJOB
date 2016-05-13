@@ -4,10 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Experiencia" items="${experiencias}" z="2XJzWT1rR18F3zuA6uPUnZSukYc=">
         <table:table data="${experiencias}" id="l_es_uca_iw_findyourjob_domain_Experiencia" path="/experiencias" z="wttAhy8/qvv+tVG7b3eSPvcolIQ=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_nombre_empresa" property="nombre_empresa" z="LwMg8S3A6dOypdZtLMoc32BvMt8="/>
-            <table:column date="true" dateTimePattern="${experiencia_fecha_contrato_inicio_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_inicio" property="fecha_contrato_inicio" z="z4/KERRl3MWfq9yPKLuBGTwRV30="/>
-            <table:column date="true" dateTimePattern="${experiencia_fecha_contrato_fin_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_fin" property="fecha_contrato_fin" z="XXY0HE4IFRpjVScFXkzJidiFSN4="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_trabajo_desempenado" property="trabajo_desempenado" z="H5kPsh6sBMrtgY09uQAot2+HX6Y="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" property="nombreEmpresa" z="QBOihj8C392Qonu+D7zy2slY57M="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" property="fechaContratoInicio" z="MK3/ulEFGi8s7XBltNedazMIcmo="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" property="fechaContratoFin" z="NKUuvJkI1oowXq3zBBG9QoEwxAQ="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" property="curriculum" z="J1aL5jlV82O/odhZQlQS8Yw/pFQ="/>
         </table:table>
     </page:list>

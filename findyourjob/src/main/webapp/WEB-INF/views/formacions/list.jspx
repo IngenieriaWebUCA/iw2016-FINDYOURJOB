@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Formacion" items="${formacions}" z="wwxQF6nNrhodMkxIfEN99KjETxk=">
         <table:table data="${formacions}" id="l_es_uca_iw_findyourjob_domain_Formacion" path="/formacions" z="TWd1Wya3a36rEKttP6hoaAt+pco=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Formacion_titulos_academicos" property="titulos_academicos" z="Dfg9EoajDCLuKmPQtWhqV9h6Iek="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Formacion_cursos_idiomas" property="cursos_idiomas" z="NBD8fmGsYX5UxulwLkDhozdqVaQ="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Formacion_titulosAcademicos" property="titulosAcademicos" z="5Dfap2F4pdvOv1MjQR6A9WslCIU="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Formacion_cursosIdiomas" property="cursosIdiomas" z="Oh6ldWkhhbyMSx+chhNrzhE5yOI="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Formacion_curriculum" property="curriculum" z="ZXEQt+gTienBLwO9XhR97Zu73xU="/>
         </table:table>
     </page:list>

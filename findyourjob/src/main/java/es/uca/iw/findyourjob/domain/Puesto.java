@@ -8,24 +8,18 @@ import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "FORMACION_SEQ")
-public class Formacion {
+@RooJpaActiveRecord(sequenceName = "PUESTO_SEQ")
+public class Puesto {
 
     /**
      */
     @NotNull
     @Size(min = 3, max = 30)
-    private String titulosAcademicos;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String cursosIdiomas;
+    private String nombre;
 
     /**
      */
     @NotNull
     @ManyToOne
-    private Curriculum curriculum;
+    private Experiencia experiencia;
 }

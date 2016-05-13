@@ -7,7 +7,6 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Formacion;
-import es.uca.iw.findyourjob.domain.PuestoTrabajo;
 import es.uca.iw.findyourjob.web.CurriculumController;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -41,10 +40,10 @@ privileged aspect CurriculumController_Roo_Controller {
         populateEditForm(uiModel, new Curriculum());
         List<String[]> dependencies = new ArrayList<String[]>();
         if (Demandante.countDemandantes() == 0) {
-            dependencies.add(new String[] { "formacion_academica", "demandantes" });
+            dependencies.add(new String[] { "demandante", "demandantes" });
         }
         if (Formacion.countFormacions() == 0) {
-            dependencies.add(new String[] { "demandante", "formacions" });
+            dependencies.add(new String[] { "formacion", "formacions" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "curriculums/create";
@@ -103,7 +102,6 @@ privileged aspect CurriculumController_Roo_Controller {
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
         uiModel.addAttribute("experiencias", Experiencia.findAllExperiencias());
         uiModel.addAttribute("formacions", Formacion.findAllFormacions());
-        uiModel.addAttribute("puestotrabajoes", PuestoTrabajo.findAllPuestoTrabajoes());
     }
     
     String CurriculumController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

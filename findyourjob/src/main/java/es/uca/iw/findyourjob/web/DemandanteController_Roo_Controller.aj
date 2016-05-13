@@ -39,7 +39,7 @@ privileged aspect DemandanteController_Roo_Controller {
         populateEditForm(uiModel, new Demandante());
         List<String[]> dependencies = new ArrayList<String[]>();
         if (Curriculum.countCurriculums() == 0) {
-            dependencies.add(new String[] { "curriculum", "curriculums" });
+            dependencies.add(new String[] { "demandante", "curriculums" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "demandantes/create";
