@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 @RooJpaActiveRecord(sequenceName = "OFERTA_SEQ")
 public class Oferta {
 	@Id
-	private Integer id;
+	private Long id;
     private String tipologia;
 
     private float sueldo_bruto;

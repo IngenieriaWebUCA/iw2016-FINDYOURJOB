@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 @RooJpaActiveRecord(sequenceName = "LOCALIZACION_SEQ")
 public class Localizacion {
 	@Id
-	private Integer id;
+	private Long id;
     private String direccion;
 
     private String localidad;

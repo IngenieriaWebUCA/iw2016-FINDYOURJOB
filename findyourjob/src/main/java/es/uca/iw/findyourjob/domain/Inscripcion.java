@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @RooJpaActiveRecord(sequenceName = "INSCRIPCION_SEQ")
 public class Inscripcion {
 	@Id
-	private Integer id;
+	private Long id;
     private String estado;
 
     private Date fecha;

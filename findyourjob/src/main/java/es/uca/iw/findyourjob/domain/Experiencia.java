@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 @RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ")
 public class Experiencia {
 	@Id
-	private Integer id;
+	private Long id;
     private String nombre_empresa;
 
     private Date fecha_contrato_inicio;

@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 @RooJpaActiveRecord(sequenceName = "DEMANDANTE_SEQ")
 public class Demandante {
 	@Id
-	private Integer id;
+	private Long id;
     private String nombre;
 
     private String apellidos;

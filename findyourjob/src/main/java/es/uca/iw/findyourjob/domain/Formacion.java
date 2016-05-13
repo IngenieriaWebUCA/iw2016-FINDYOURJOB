@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @RooJpaActiveRecord(sequenceName = "FORMACION_SEQ")
 public class Formacion {
 	@Id
-	private Integer id;
+	private Long id;
     private List<String> titulos_academicos;
 
     private List<String> cursos_idiomas;

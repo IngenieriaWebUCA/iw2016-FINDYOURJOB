@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 @RooJpaActiveRecord(sequenceName = "CURRICULUM_SEQ")
 public class Curriculum {
 	@Id
-	private Integer id;
+	private Long id;
     private String trayectoria;
 
     private String foto;
