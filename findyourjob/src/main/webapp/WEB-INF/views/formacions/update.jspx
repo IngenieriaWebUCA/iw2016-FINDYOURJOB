@@ -5,6 +5,6 @@
     <form:update id="fu_es_uca_iw_findyourjob_domain_Formacion" modelAttribute="formacion" path="/formacions" versionField="Version" z="mR/1fwOOyHPIhJoScGLto6uJPgQ=">
         <field:input field="titulos_academicos" id="c_es_uca_iw_findyourjob_domain_Formacion_titulos_academicos" z="90S3HDsICQsjOW3VS45d7sMfh4o="/>
         <field:input field="cursos_idiomas" id="c_es_uca_iw_findyourjob_domain_Formacion_cursos_idiomas" z="154X7gBCftT3qxMbwSy8i1s+aBQ="/>
-        <field:input field="curriculum" id="c_es_uca_iw_findyourjob_domain_Formacion_curriculum" z="PfM9ltdZOX8ExHrG9OFYL9Dzh18="/>
+        <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Formacion_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="0oEqqS5W6poAx1IDiPbsqJDbYu8="/>
     </form:update>
 </div>

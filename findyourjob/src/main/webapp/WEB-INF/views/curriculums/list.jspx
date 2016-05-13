@@ -8,7 +8,7 @@
             <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_foto" property="foto" z="q9bNBWruiPUNdPh+Cp+X7w0cvqU="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_trabajos" property="trabajos" z="MWcDjMby/MBMkXVeTY2dA0D7BUQ="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_formacion_academica" property="formacion_academica" z="nEIqLnjjBO7O5OFQap9qE2RusYM="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_experiencia_profesional" property="experiencia_profesional" z="4DDKlykgDTY3hIRv/gLJ0HRFk9c="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Curriculum_demandante" property="demandante" z="MnqZqbcorofhptDMo+S5xvJw5Vc="/>
         </table:table>
     </page:list>
 </div>

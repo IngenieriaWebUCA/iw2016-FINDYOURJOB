@@ -5,7 +5,7 @@
     <form:update id="fu_es_uca_iw_findyourjob_domain_Inscripcion" modelAttribute="inscripcion" path="/inscripcions" versionField="Version" z="crG/ETJhZkE9njjjFxFc11IjpLg=">
         <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Inscripcion_estado" z="NCNSx6jE3POY24k0UTvh54zOpDQ="/>
         <field:datetime dateTimePattern="${inscripcion_fecha_date_format}" field="fecha" id="c_es_uca_iw_findyourjob_domain_Inscripcion_fecha" z="lpkLTK0ha81u/pKTvP/sEFgY/+E="/>
-        <field:input field="oferta" id="c_es_uca_iw_findyourjob_domain_Inscripcion_oferta" z="Ea68uoT3XHWynFrHCfvIoO+qOR0="/>
-        <field:input field="demandante" id="c_es_uca_iw_findyourjob_domain_Inscripcion_demandante" z="FTC1ldG5W2VskJCJZr2F5rXSfbg="/>
+        <field:select field="oferta" id="c_es_uca_iw_findyourjob_domain_Inscripcion_oferta" itemValue="id" items="${ofertas}" path="/ofertas" required="true" z="bw0i5zK1a2CGGrGa0HWedKgJYFk="/>
+        <field:select field="demandante" id="c_es_uca_iw_findyourjob_domain_Inscripcion_demandante" itemValue="id" items="${demandantes}" path="/demandantes" required="true" z="1nJzREQp/oTIsp0iwqrQJKC6uyQ="/>
     </form:update>
 </div>

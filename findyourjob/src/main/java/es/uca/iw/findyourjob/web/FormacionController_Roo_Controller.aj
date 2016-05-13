@@ -7,6 +7,8 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Formacion;
 import es.uca.iw.findyourjob.web.FormacionController;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -34,6 +36,11 @@ privileged aspect FormacionController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String FormacionController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Formacion());
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Curriculum.countCurriculums() == 0) {
+            dependencies.add(new String[] { "curriculum", "curriculums" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "formacions/create";
     }
     

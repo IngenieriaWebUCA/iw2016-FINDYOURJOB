@@ -3,9 +3,11 @@
 
 package es.uca.iw.findyourjob.domain;
 
+import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
-import es.uca.iw.findyourjob.domain.trabajo_desempe√;
+import es.uca.iw.findyourjob.domain.PuestoTrabajo;
 import java.util.Date;
+import java.util.Set;
 
 privileged aspect Experiencia_Roo_JavaBean {
     
@@ -33,12 +35,28 @@ privileged aspect Experiencia_Roo_JavaBean {
         this.fecha_contrato_fin = fecha_contrato_fin;
     }
     
-    public trabajo_desempe√ Experiencia.getAdo() {
-        return this.ado;
+    public String Experiencia.getTrabajo_desempenado() {
+        return this.trabajo_desempenado;
     }
     
-    public void Experiencia.setAdo(trabajo_desempe√ ado) {
-        this.ado = ado;
+    public void Experiencia.setTrabajo_desempenado(String trabajo_desempenado) {
+        this.trabajo_desempenado = trabajo_desempenado;
+    }
+    
+    public Curriculum Experiencia.getCurriculum() {
+        return this.curriculum;
+    }
+    
+    public void Experiencia.setCurriculum(Curriculum curriculum) {
+        this.curriculum = curriculum;
+    }
+    
+    public Set<PuestoTrabajo> Experiencia.getPuestosTrabajos() {
+        return this.puestosTrabajos;
+    }
+    
+    public void Experiencia.setPuestosTrabajos(Set<PuestoTrabajo> puestosTrabajos) {
+        this.puestosTrabajos = puestosTrabajos;
     }
     
 }

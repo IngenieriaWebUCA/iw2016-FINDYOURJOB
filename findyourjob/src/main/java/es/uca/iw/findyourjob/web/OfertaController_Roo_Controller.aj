@@ -4,9 +4,14 @@
 package es.uca.iw.findyourjob.web;
 
 import es.uca.iw.findyourjob.domain.Empresa;
+import es.uca.iw.findyourjob.domain.Inscripcion;
+import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.findyourjob.domain.PuestoTrabajo;
 import es.uca.iw.findyourjob.web.OfertaController;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -34,6 +39,17 @@ privileged aspect OfertaController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String OfertaController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Oferta());
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Localizacion.countLocalizacions() == 0) {
+            dependencies.add(new String[] { "localizacion", "localizacions" });
+        }
+        if (Empresa.countEmpresas() == 0) {
+            dependencies.add(new String[] { "empresa", "empresas" });
+        }
+        if (PuestoTrabajo.countPuestoTrabajoes() == 0) {
+            dependencies.add(new String[] { "puestoTrabajo", "puestotrabajoes" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "ofertas/create";
     }
     
@@ -88,6 +104,9 @@ privileged aspect OfertaController_Roo_Controller {
     void OfertaController.populateEditForm(Model uiModel, Oferta oferta) {
         uiModel.addAttribute("oferta", oferta);
         uiModel.addAttribute("empresas", Empresa.findAllEmpresas());
+        uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
+        uiModel.addAttribute("localizacions", Localizacion.findAllLocalizacions());
+        uiModel.addAttribute("puestotrabajoes", PuestoTrabajo.findAllPuestoTrabajoes());
     }
     
     String OfertaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -4,8 +4,10 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Curriculum;
+import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Formacion;
+import es.uca.iw.findyourjob.domain.PuestoTrabajo;
 import java.util.List;
 import java.util.Set;
 
@@ -43,12 +45,36 @@ privileged aspect Curriculum_Roo_JavaBean {
         this.formacion_academica = formacion_academica;
     }
     
-    public Set<Experiencia> Curriculum.getExperiencia_profesional() {
-        return this.experiencia_profesional;
+    public Demandante Curriculum.getDemandante() {
+        return this.demandante;
     }
     
-    public void Curriculum.setExperiencia_profesional(Set<Experiencia> experiencia_profesional) {
-        this.experiencia_profesional = experiencia_profesional;
+    public void Curriculum.setDemandante(Demandante demandante) {
+        this.demandante = demandante;
+    }
+    
+    public Set<PuestoTrabajo> Curriculum.getPuestosTrabajos() {
+        return this.puestosTrabajos;
+    }
+    
+    public void Curriculum.setPuestosTrabajos(Set<PuestoTrabajo> puestosTrabajos) {
+        this.puestosTrabajos = puestosTrabajos;
+    }
+    
+    public Formacion Curriculum.getFormacion() {
+        return this.formacion;
+    }
+    
+    public void Curriculum.setFormacion(Formacion formacion) {
+        this.formacion = formacion;
+    }
+    
+    public Set<Experiencia> Curriculum.getExperiencias() {
+        return this.experiencias;
+    }
+    
+    public void Curriculum.setExperiencias(Set<Experiencia> experiencias) {
+        this.experiencias = experiencias;
     }
     
 }

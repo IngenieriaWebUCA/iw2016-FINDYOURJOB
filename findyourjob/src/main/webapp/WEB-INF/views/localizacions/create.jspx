@@ -5,7 +5,7 @@
     <form:create id="fc_es_uca_iw_findyourjob_domain_Localizacion" modelAttribute="localizacion" path="/localizacions" render="${empty dependencies}" z="/I5IPMrfcamjOVAdcHwekMhA4KI=">
         <field:input field="direccion" id="c_es_uca_iw_findyourjob_domain_Localizacion_direccion" z="ETj9MF2eIktzSjFVkDwA7yicG3M="/>
         <field:input field="localidad" id="c_es_uca_iw_findyourjob_domain_Localizacion_localidad" z="jtVoYrHQoMXiaIvfCprkBweyX0s="/>
-        <field:input field="empresa" id="c_es_uca_iw_findyourjob_domain_Localizacion_empresa" z="haC7vpSaya51ryx+2Bp8i7iUMFQ="/>
+        <field:simple field="ofertas" id="c_es_uca_iw_findyourjob_domain_Localizacion_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" z="JUqPJUbcCAbWzjYTPhWwYSYcw6s="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Localizacion" render="${not empty dependencies}" z="wRiCautDEpg1IeVuuLJM1DqA3pg="/>
 </div>

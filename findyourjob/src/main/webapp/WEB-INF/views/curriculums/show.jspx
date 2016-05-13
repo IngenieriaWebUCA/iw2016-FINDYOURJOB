@@ -7,6 +7,7 @@
         <field:display field="foto" id="s_es_uca_iw_findyourjob_domain_Curriculum_foto" object="${curriculum}" z="aUv9GYhfOpaPtnpxHcCwJaopmfE="/>
         <field:display field="trabajos" id="s_es_uca_iw_findyourjob_domain_Curriculum_trabajos" object="${curriculum}" z="Yr0agdYtCvPBHTjopypvE76oArE="/>
         <field:display field="formacion_academica" id="s_es_uca_iw_findyourjob_domain_Curriculum_formacion_academica" object="${curriculum}" z="L485gOacO1ra4o99WcoA1N9vCQI="/>
-        <field:display field="experiencia_profesional" id="s_es_uca_iw_findyourjob_domain_Curriculum_experiencia_profesional" object="${curriculum}" z="iXTwxPPguNQx2u76IjD2oFup1j0="/>
+        <field:display field="demandante" id="s_es_uca_iw_findyourjob_domain_Curriculum_demandante" object="${curriculum}" z="4XzKRxCG3oyXCt76QoKwdrHjfDY="/>
+        <field:display field="formacion" id="s_es_uca_iw_findyourjob_domain_Curriculum_formacion" object="${curriculum}" z="DIFY77Z1IXNrwRLwZKRTnJjyFEI="/>
     </page:show>
 </div>

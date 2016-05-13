@@ -6,6 +6,8 @@
         <field:input field="nombre_empresa" id="c_es_uca_iw_findyourjob_domain_Experiencia_nombre_empresa" z="bCUmSJerHBLtKscPI6U/9jHv5Fk="/>
         <field:datetime dateTimePattern="${experiencia_fecha_contrato_inicio_date_format}" field="fecha_contrato_inicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_inicio" z="BXKS/p73T93XazkS0Bfth7vKLjc="/>
         <field:datetime dateTimePattern="${experiencia_fecha_contrato_fin_date_format}" field="fecha_contrato_fin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_fin" z="Q+zi+tQK/OQBsSgR0Xhh5175CkM="/>
-        <field:input field="ado" id="c_es_uca_iw_findyourjob_domain_Experiencia_ado" z="Ps96bK0JVZT7iJCoIkF4GLTHFC8="/>
+        <field:input field="trabajo_desempenado" id="c_es_uca_iw_findyourjob_domain_Experiencia_trabajo_desempenado" z="QmBF96MVREmv3yyZ7XXDj6DhWLQ="/>
+        <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="jwhADT6saPQprIAYa3mRqyHklZk="/>
+        <field:simple field="puestosTrabajos" id="c_es_uca_iw_findyourjob_domain_Experiencia_puestosTrabajos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto Trabajo" z="0B/FmQEjFPpzIxveDsQqORveirc="/>
     </form:update>
 </div>

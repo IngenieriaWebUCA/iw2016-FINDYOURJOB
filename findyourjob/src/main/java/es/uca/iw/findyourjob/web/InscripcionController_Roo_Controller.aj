@@ -8,6 +8,8 @@ import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.web.InscripcionController;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -35,6 +37,14 @@ privileged aspect InscripcionController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String InscripcionController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Inscripcion());
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Oferta.countOfertas() == 0) {
+            dependencies.add(new String[] { "oferta", "ofertas" });
+        }
+        if (Demandante.countDemandantes() == 0) {
+            dependencies.add(new String[] { "demandante", "demandantes" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "inscripcions/create";
     }
     

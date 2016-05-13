@@ -5,6 +5,5 @@
     <page:show id="ps_es_uca_iw_findyourjob_domain_Localizacion" object="${localizacion}" path="/localizacions" z="4w+RL967ea65YBlgbHOJkx6KmdY=">
         <field:display field="direccion" id="s_es_uca_iw_findyourjob_domain_Localizacion_direccion" object="${localizacion}" z="ok0j94KuiEso5BKEIrPknZDI3x8="/>
         <field:display field="localidad" id="s_es_uca_iw_findyourjob_domain_Localizacion_localidad" object="${localizacion}" z="R7jHyhPcS/XcFY6ftZ/BfN7rwIA="/>
-        <field:display field="empresa" id="s_es_uca_iw_findyourjob_domain_Localizacion_empresa" object="${localizacion}" z="auDt9ee4SktQU86Vk0nmIsTzsBI="/>
     </page:show>
 </div>

@@ -11,6 +11,9 @@
         <field:datetime dateTimePattern="${oferta_fecha_disponible_inicio_date_format}" field="fecha_disponible_inicio" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_inicio" z="XoxKnzPa3wcmGh8WaLIPjcKCSkE="/>
         <field:datetime dateTimePattern="${oferta_fecha_disponible_fin_date_format}" field="fecha_disponible_fin" id="c_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_fin" z="pmG29uyrhRZZw5YqtfoZKmtPYZU="/>
         <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Oferta_estado" z="0ZrskcjhywSpb3f6ho/z0DpFhNY="/>
-        <field:input field="empresa" id="c_es_uca_iw_findyourjob_domain_Oferta_empresa" z="rudo0xLvpLXFnbhbqRLiEvPT/X0="/>
+        <field:select field="localizacion" id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" itemValue="id" items="${localizacions}" path="/localizacions" required="true" z="P3F+O/84GdgW+jIERMLP3HAzmcw="/>
+        <field:select field="empresa" id="c_es_uca_iw_findyourjob_domain_Oferta_empresa" itemValue="id" items="${empresas}" path="/empresas" required="true" z="Q31YAYf+cz/L+e2sUGuuYAtE8/k="/>
+        <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Oferta_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="KpFNOuw8Ny9KWq4wJHGHlem9y04="/>
+        <field:select field="puestoTrabajo" id="c_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" itemValue="id" items="${puestotrabajoes}" path="/puestotrabajoes" required="true" z="ykqyw+Cr3WudMYtZDDzHtgIsM7k="/>
     </form:update>
 </div>

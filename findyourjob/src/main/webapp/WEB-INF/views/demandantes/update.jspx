@@ -11,6 +11,7 @@
         <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Demandante_email" validationMessageCode="field_invalid_email" z="xMcAHpJ3Fpjg0at+9AFF4g14Xt8="/>
         <field:input field="telefono" id="c_es_uca_iw_findyourjob_domain_Demandante_telefono" z="lFZy3PwZJBISfiabsSGcKJx0qwc="/>
         <field:input field="curriculum" id="c_es_uca_iw_findyourjob_domain_Demandante_curriculum" z="OiPREfJ+IFUUY46iad95HyDvF/I="/>
-        <field:input field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Demandante_inscripciones" z="S6HRLEzckbjo9QTKdT0S58IzHnI="/>
+        <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Demandante_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="RBthg2e0NuzYFJDeFmpVsVtf9EE="/>
+        <field:select field="demandante" id="c_es_uca_iw_findyourjob_domain_Demandante_demandante" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="QsSMP6KJwh9zxxihNCPwDuHh9gg="/>
     </form:update>
 </div>

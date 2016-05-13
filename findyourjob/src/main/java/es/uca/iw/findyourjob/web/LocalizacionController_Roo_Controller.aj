@@ -3,8 +3,8 @@
 
 package es.uca.iw.findyourjob.web;
 
-import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.Localizacion;
+import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.web.LocalizacionController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -87,7 +87,7 @@ privileged aspect LocalizacionController_Roo_Controller {
     
     void LocalizacionController.populateEditForm(Model uiModel, Localizacion localizacion) {
         uiModel.addAttribute("localizacion", localizacion);
-        uiModel.addAttribute("empresas", Empresa.findAllEmpresas());
+        uiModel.addAttribute("ofertas", Oferta.findAllOfertas());
     }
     
     String LocalizacionController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

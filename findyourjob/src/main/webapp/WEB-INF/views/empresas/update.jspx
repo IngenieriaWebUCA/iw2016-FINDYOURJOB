@@ -9,6 +9,6 @@
         <field:input field="actividad_profesional" id="c_es_uca_iw_findyourjob_domain_Empresa_actividad_profesional" z="0ea2tajiNzWVrhOI44r8O/jd6bY="/>
         <field:input field="numero_empleados" id="c_es_uca_iw_findyourjob_domain_Empresa_numero_empleados" z="r927GocNPPcLkf7McAmsXljKBqA="/>
         <field:input field="localizaciones" id="c_es_uca_iw_findyourjob_domain_Empresa_localizaciones" z="d1fudBfF5kTQHV0o0MgccwpnV6A="/>
-        <field:input field="ofertas" id="c_es_uca_iw_findyourjob_domain_Empresa_ofertas" z="s6soOCRGCX0OESp3V4AR7zAzxTM="/>
+        <field:simple field="ofertas" id="c_es_uca_iw_findyourjob_domain_Empresa_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" z="8RhGx8pygW+sEfct75MX7dJ3KLk="/>
     </form:update>
 </div>

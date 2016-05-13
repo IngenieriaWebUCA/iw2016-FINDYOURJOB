@@ -3,9 +3,13 @@
 
 package es.uca.iw.findyourjob.web;
 
+import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
+import es.uca.iw.findyourjob.domain.PuestoTrabajo;
 import es.uca.iw.findyourjob.web.ExperienciaController;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -33,6 +37,11 @@ privileged aspect ExperienciaController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String ExperienciaController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Experiencia());
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Curriculum.countCurriculums() == 0) {
+            dependencies.add(new String[] { "curriculum", "curriculums" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "experiencias/create";
     }
     
@@ -86,6 +95,8 @@ privileged aspect ExperienciaController_Roo_Controller {
     
     void ExperienciaController.populateEditForm(Model uiModel, Experiencia experiencia) {
         uiModel.addAttribute("experiencia", experiencia);
+        uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
+        uiModel.addAttribute("puestotrabajoes", PuestoTrabajo.findAllPuestoTrabajoes());
     }
     
     String ExperienciaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

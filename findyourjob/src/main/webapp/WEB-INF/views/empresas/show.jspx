@@ -9,6 +9,5 @@
         <field:display field="actividad_profesional" id="s_es_uca_iw_findyourjob_domain_Empresa_actividad_profesional" object="${empresa}" z="WCB+GlVPzpWC8CPKVe9ST0l2XDs="/>
         <field:display field="numero_empleados" id="s_es_uca_iw_findyourjob_domain_Empresa_numero_empleados" object="${empresa}" z="oKsxoCKzqsg8nglxjHRZd6gI9fs="/>
         <field:display field="localizaciones" id="s_es_uca_iw_findyourjob_domain_Empresa_localizaciones" object="${empresa}" z="wXbZfcg1y9mqrDU4T33aLuDRK60="/>
-        <field:display field="ofertas" id="s_es_uca_iw_findyourjob_domain_Empresa_ofertas" object="${empresa}" z="XjOEEnKKCk4VHBa9UWYXgZVPvFY="/>
     </page:show>
 </div>

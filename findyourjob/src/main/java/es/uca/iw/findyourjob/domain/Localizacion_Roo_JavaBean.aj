@@ -3,8 +3,9 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.Localizacion;
+import es.uca.iw.findyourjob.domain.Oferta;
+import java.util.Set;
 
 privileged aspect Localizacion_Roo_JavaBean {
     
@@ -24,12 +25,12 @@ privileged aspect Localizacion_Roo_JavaBean {
         this.localidad = localidad;
     }
     
-    public Empresa Localizacion.getEmpresa() {
-        return this.empresa;
+    public Set<Oferta> Localizacion.getOfertas() {
+        return this.ofertas;
     }
     
-    public void Localizacion.setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
+    public void Localizacion.setOfertas(Set<Oferta> ofertas) {
+        this.ofertas = ofertas;
     }
     
 }

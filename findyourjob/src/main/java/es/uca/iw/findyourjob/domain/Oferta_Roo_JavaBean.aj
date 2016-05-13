@@ -4,8 +4,12 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
+import es.uca.iw.findyourjob.domain.Inscripcion;
+import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.findyourjob.domain.PuestoTrabajo;
 import java.util.Date;
+import java.util.Set;
 
 privileged aspect Oferta_Roo_JavaBean {
     
@@ -73,12 +77,36 @@ privileged aspect Oferta_Roo_JavaBean {
         this.estado = estado;
     }
     
+    public Localizacion Oferta.getLocalizacion() {
+        return this.localizacion;
+    }
+    
+    public void Oferta.setLocalizacion(Localizacion localizacion) {
+        this.localizacion = localizacion;
+    }
+    
     public Empresa Oferta.getEmpresa() {
         return this.empresa;
     }
     
     public void Oferta.setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+    
+    public Set<Inscripcion> Oferta.getInscripciones() {
+        return this.inscripciones;
+    }
+    
+    public void Oferta.setInscripciones(Set<Inscripcion> inscripciones) {
+        this.inscripciones = inscripciones;
+    }
+    
+    public PuestoTrabajo Oferta.getPuestoTrabajo() {
+        return this.puestoTrabajo;
+    }
+    
+    public void Oferta.setPuestoTrabajo(PuestoTrabajo puestoTrabajo) {
+        this.puestoTrabajo = puestoTrabajo;
     }
     
 }

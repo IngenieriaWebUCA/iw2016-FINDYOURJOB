@@ -7,6 +7,9 @@
         <field:input field="foto" id="c_es_uca_iw_findyourjob_domain_Curriculum_foto" z="mZjZ2yU6A6DZrC4G4T/6HioQEI0="/>
         <field:input field="trabajos" id="c_es_uca_iw_findyourjob_domain_Curriculum_trabajos" z="/5AwPEp0/HUc9duLOtHTedp6sfU="/>
         <field:input field="formacion_academica" id="c_es_uca_iw_findyourjob_domain_Curriculum_formacion_academica" z="Vlv3fk6fTRXU/FOkSRElTZp3qDU="/>
-        <field:input field="experiencia_profesional" id="c_es_uca_iw_findyourjob_domain_Curriculum_experiencia_profesional" z="Kw4rVpIU0Ft/uQhrCbRaCbN0YGs="/>
+        <field:select field="demandante" id="c_es_uca_iw_findyourjob_domain_Curriculum_demandante" itemValue="id" items="${demandantes}" path="/demandantes" required="true" z="uFAoNfL6CxRoF+LTHby0OPlIh24="/>
+        <field:simple field="puestosTrabajos" id="c_es_uca_iw_findyourjob_domain_Curriculum_puestosTrabajos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto Trabajo" z="45qRLcjCHzz8tBa8RmxMPqJ7A6w="/>
+        <field:select field="formacion" id="c_es_uca_iw_findyourjob_domain_Curriculum_formacion" itemValue="id" items="${formacions}" path="/formacions" required="true" z="jj7O95rM+USivjal0tq3bnYmQhU="/>
+        <field:simple field="experiencias" id="c_es_uca_iw_findyourjob_domain_Curriculum_experiencias" messageCode="entity_reference_not_managed" messageCodeAttribute="Experiencia" z="QPFxT7YhNbwlEgIRp9i2+2HC7vs="/>
     </form:update>
 </div>

@@ -6,6 +6,7 @@
         <field:display field="nombre_empresa" id="s_es_uca_iw_findyourjob_domain_Experiencia_nombre_empresa" object="${experiencia}" z="28Lgpq9H0QgIdG+wbh6fwqcg3eM="/>
         <field:display date="true" dateTimePattern="${experiencia_fecha_contrato_inicio_date_format}" field="fecha_contrato_inicio" id="s_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_inicio" object="${experiencia}" z="tFldxDJIiztwjWxKfhTKvaXgLVg="/>
         <field:display date="true" dateTimePattern="${experiencia_fecha_contrato_fin_date_format}" field="fecha_contrato_fin" id="s_es_uca_iw_findyourjob_domain_Experiencia_fecha_contrato_fin" object="${experiencia}" z="9QfDngWfgXEH1azt0yvwRTc4GK4="/>
-        <field:display field="ado" id="s_es_uca_iw_findyourjob_domain_Experiencia_ado" object="${experiencia}" z="cQ9j4wVzqjRHKLUo9SjyeQb4iDw="/>
+        <field:display field="trabajo_desempenado" id="s_es_uca_iw_findyourjob_domain_Experiencia_trabajo_desempenado" object="${experiencia}" z="lACjB2KPyNu/h7l/81H3b/9M3Rk="/>
+        <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Experiencia_curriculum" object="${experiencia}" z="lppea/juCWYVO8JAePRs+zQM+vU="/>
     </page:show>
 </div>

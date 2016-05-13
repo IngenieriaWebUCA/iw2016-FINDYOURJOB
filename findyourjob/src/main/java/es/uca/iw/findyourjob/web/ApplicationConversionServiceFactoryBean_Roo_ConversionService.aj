@@ -95,7 +95,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Experiencia, String> ApplicationConversionServiceFactoryBean.getExperienciaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Experiencia, java.lang.String>() {
             public String convert(Experiencia experiencia) {
-                return new StringBuilder().append(experiencia.getNombre_empresa()).append(' ').append(experiencia.getFecha_contrato_inicio()).append(' ').append(experiencia.getFecha_contrato_fin()).append(' ').append(experiencia.getAdo()).toString();
+                return new StringBuilder().append(experiencia.getNombre_empresa()).append(' ').append(experiencia.getFecha_contrato_inicio()).append(' ').append(experiencia.getFecha_contrato_fin()).append(' ').append(experiencia.getTrabajo_desempenado()).toString();
             }
         };
     }

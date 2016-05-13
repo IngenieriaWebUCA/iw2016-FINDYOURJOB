@@ -11,6 +11,8 @@
         <field:display date="true" dateTimePattern="${oferta_fecha_disponible_inicio_date_format}" field="fecha_disponible_inicio" id="s_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_inicio" object="${oferta}" z="jA/2wulGZgAVfzd/uvFJIAPyUgs="/>
         <field:display date="true" dateTimePattern="${oferta_fecha_disponible_fin_date_format}" field="fecha_disponible_fin" id="s_es_uca_iw_findyourjob_domain_Oferta_fecha_disponible_fin" object="${oferta}" z="/Hc9hzWGeeylo2uCezaLdUikvOM="/>
         <field:display field="estado" id="s_es_uca_iw_findyourjob_domain_Oferta_estado" object="${oferta}" z="aHXj+qk9Q/KkVcuFTAjayMXKnm0="/>
+        <field:display field="localizacion" id="s_es_uca_iw_findyourjob_domain_Oferta_localizacion" object="${oferta}" z="4gp/hODGaAJZKhcw+5jrev+/9V8="/>
         <field:display field="empresa" id="s_es_uca_iw_findyourjob_domain_Oferta_empresa" object="${oferta}" z="XIxD1kaeDfp6fn2y4PfutDNO1oQ="/>
+        <field:display field="puestoTrabajo" id="s_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" object="${oferta}" z="sk2l/fcglwvFXJAXv5im3lUc/P8="/>
     </page:show>
 </div>
