@@ -9,6 +9,46 @@ import java.util.Set;
 
 privileged aspect Empresa_Roo_JavaBean {
     
+    public String Empresa.getNombre() {
+        return this.nombre;
+    }
+    
+    public void Empresa.setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String Empresa.getCif() {
+        return this.cif;
+    }
+    
+    public void Empresa.setCif(String cif) {
+        this.cif = cif;
+    }
+    
+    public String Empresa.getEmail() {
+        return this.email;
+    }
+    
+    public void Empresa.setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String Empresa.getActividadProfesional() {
+        return this.actividadProfesional;
+    }
+    
+    public void Empresa.setActividadProfesional(String actividadProfesional) {
+        this.actividadProfesional = actividadProfesional;
+    }
+    
+    public int Empresa.getNumeroEmpleados() {
+        return this.numeroEmpleados;
+    }
+    
+    public void Empresa.setNumeroEmpleados(int numeroEmpleados) {
+        this.numeroEmpleados = numeroEmpleados;
+    }
+    
     public Set<Oferta> Empresa.getOfertas() {
         return this.ofertas;
     }

@@ -72,7 +72,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Empresa, String> ApplicationConversionServiceFactoryBean.getEmpresaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Empresa, java.lang.String>() {
             public String convert(Empresa empresa) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(empresa.getNombre()).append(' ').append(empresa.getCif()).append(' ').append(empresa.getEmail()).append(' ').append(empresa.getActividadProfesional()).toString();
             }
         };
     }
@@ -168,7 +168,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Localizacion, String> ApplicationConversionServiceFactoryBean.getLocalizacionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Localizacion, java.lang.String>() {
             public String convert(Localizacion localizacion) {
-                return new StringBuilder().append(localizacion.getDireccion()).append(' ').append(localizacion.getLocalidad()).append(' ').append(localizacion.getNombre()).append(' ').append(localizacion.getCif()).toString();
+                return new StringBuilder().append(localizacion.getDireccion()).append(' ').append(localizacion.getLocalidad()).toString();
             }
         };
     }

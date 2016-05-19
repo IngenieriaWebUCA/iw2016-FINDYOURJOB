@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Localizacion" object="${localizacion}" path="/localizacions" z="4w+RL967ea65YBlgbHOJkx6KmdY=">
         <field:display field="direccion" id="s_es_uca_iw_findyourjob_domain_Localizacion_direccion" object="${localizacion}" z="ok0j94KuiEso5BKEIrPknZDI3x8="/>
         <field:display field="localidad" id="s_es_uca_iw_findyourjob_domain_Localizacion_localidad" object="${localizacion}" z="R7jHyhPcS/XcFY6ftZ/BfN7rwIA="/>
-        <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Localizacion_nombre" object="${localizacion}" z="nMgDZLRRQOGE3TCDE7uiqk913cE="/>
-        <field:display field="cif" id="s_es_uca_iw_findyourjob_domain_Localizacion_cif" object="${localizacion}" z="G8w7r2ZTB8EKnrOkGkFya2XV1tk="/>
-        <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Localizacion_email" object="${localizacion}" z="YVa8upu+H3Nj1u6TGuBzuxtAuJM="/>
-        <field:display field="actividadProfesional" id="s_es_uca_iw_findyourjob_domain_Localizacion_actividadProfesional" object="${localizacion}" z="jN+qhjKtfgC0ZhGfs8SZYUdkvlY="/>
-        <field:display field="numeroEmpleados" id="s_es_uca_iw_findyourjob_domain_Localizacion_numeroEmpleados" object="${localizacion}" z="mvLHpS5NgL5dQSfs1VfcQqfWOhY="/>
     </page:show>
 </div>

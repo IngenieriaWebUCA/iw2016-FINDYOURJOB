@@ -27,36 +27,7 @@ public class Localizacion {
     @Size(min = 3, max = 30)
     private String localidad;
 
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String nombre;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String cif;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String email;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String actividadProfesional;
-
-    /**
-     */
-    @NotNull
-    @Min(0L)
-    private int numeroEmpleados;
-
+  
     /**
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "localizacion")

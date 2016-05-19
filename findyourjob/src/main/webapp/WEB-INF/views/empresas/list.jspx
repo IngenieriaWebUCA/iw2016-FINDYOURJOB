@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Empresa" items="${empresas}" z="9DOolGBsThjJTJ9I+mgGZoMfjBI=">
-        <table:table data="${empresas}" id="l_es_uca_iw_findyourjob_domain_Empresa" path="/empresas" z="LFpbUiVethSgdxqSGa4JZa1MNlE="/>
+        <table:table data="${empresas}" id="l_es_uca_iw_findyourjob_domain_Empresa" path="/empresas" z="LFpbUiVethSgdxqSGa4JZa1MNlE=">
+            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_nombre" property="nombre" z="km5YPGTItTKGc7bBEgIhvhDkbWE="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_cif" property="cif" z="xTfDbi0AySpFH5N+XsPlVcdHAm8="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_email" property="email" z="6/qnZdVKNWe3wNk3Vzm5Y1mWzhs="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" property="actividadProfesional" z="WYEeCqnd0zlKg1KHxFdGnN5MCSU="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" property="numeroEmpleados" z="HtdZvm7naVPuEbQKmajhpY+JHnE="/>
+        </table:table>
     </page:list>
 </div>
