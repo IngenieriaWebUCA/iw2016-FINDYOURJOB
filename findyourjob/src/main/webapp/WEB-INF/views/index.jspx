@@ -10,5 +10,9 @@
             <p><spring:message code="welcome_text"/></p>
         </div>
 
-
+		<div>
+		   <h2>Regístrate</h2>
+		   <h3><a href="/findyourjob/demandantes?form">Registrarse como demandante</a></h3>
+		   <h3><a href="/findyourjob/empresas?form">Registrarse como empresa</a></h3>
+		</div>
 </div>
