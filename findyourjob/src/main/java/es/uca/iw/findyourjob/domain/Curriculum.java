@@ -19,19 +19,15 @@ public class Curriculum {
      */
     @NotNull
     @Size(min = 3, max = 30)
-    private String direccion;
+    private String trayectoria;
 
     /**
      */
     @NotNull
     @Size(min = 3, max = 30)
-    private String fecha;
+    private String foto;
 
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String estado;
+
 
     /**
      */
@@ -41,7 +37,7 @@ public class Curriculum {
 
     /**
      */
-    @NotNull
+   
     @ManyToOne
     private Formacion formacion;
 

@@ -7,8 +7,6 @@ import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Puesto;
 import es.uca.iw.findyourjob.web.PuestoController;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -36,11 +34,6 @@ privileged aspect PuestoController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String PuestoController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Puesto());
-        List<String[]> dependencies = new ArrayList<String[]>();
-        if (Experiencia.countExperiencias() == 0) {
-            dependencies.add(new String[] { "experiencia", "experiencias" });
-        }
-        uiModel.addAttribute("dependencies", dependencies);
         return "puestoes/create";
     }
     

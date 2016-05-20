@@ -24,7 +24,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Curriculum, String> ApplicationConversionServiceFactoryBean.getCurriculumToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Curriculum, java.lang.String>() {
             public String convert(Curriculum curriculum) {
-                return new StringBuilder().append(curriculum.getDireccion()).append(' ').append(curriculum.getFecha()).append(' ').append(curriculum.getEstado()).toString();
+                return new StringBuilder().append(curriculum.getTrayectoria()).append(' ').append(curriculum.getFoto()).toString();
             }
         };
     }

@@ -81,3 +81,18 @@ web mvc bootstrap setup
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-19 16:29:45
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-19 17:01:02
 security setup
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-19 18:33:15
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-19 18:39:37
+web mvc language --code es
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-19 19:00:08
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-19 19:05:20
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-19 19:30:11
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-20 15:48:39
+entity jpa --class ~.domain.Usuario --sequenceName PUESTO_SEQ
+field string --fieldName username --notNull --sizeMin 3 --sizeMax 30 --class ~.domain.Usuario
+field string --fieldName password --notNull --sizeMin 3 --sizeMax 30
+field number --fieldName rol --type java.lang.Double --notNull --min 0
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-20 17:14:16
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-20 17:23:06
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-20 17:43:23
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-20 17:59:43

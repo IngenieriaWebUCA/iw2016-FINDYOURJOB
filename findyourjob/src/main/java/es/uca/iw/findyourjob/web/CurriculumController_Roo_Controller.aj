@@ -42,9 +42,6 @@ privileged aspect CurriculumController_Roo_Controller {
         if (Demandante.countDemandantes() == 0) {
             dependencies.add(new String[] { "demandante", "demandantes" });
         }
-        if (Formacion.countFormacions() == 0) {
-            dependencies.add(new String[] { "formacion", "formacions" });
-        }
         uiModel.addAttribute("dependencies", dependencies);
         return "curriculums/create";
     }

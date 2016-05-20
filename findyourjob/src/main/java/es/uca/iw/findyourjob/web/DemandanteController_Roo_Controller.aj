@@ -8,8 +8,6 @@ import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.web.DemandanteController;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -37,11 +35,6 @@ privileged aspect DemandanteController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String DemandanteController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Demandante());
-        List<String[]> dependencies = new ArrayList<String[]>();
-        if (Curriculum.countCurriculums() == 0) {
-            dependencies.add(new String[] { "demandante", "curriculums" });
-        }
-        uiModel.addAttribute("dependencies", dependencies);
         return "demandantes/create";
     }
     

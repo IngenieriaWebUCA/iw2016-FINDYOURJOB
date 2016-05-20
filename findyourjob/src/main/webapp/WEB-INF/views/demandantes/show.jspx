@@ -9,6 +9,6 @@
         <field:display field="sexo" id="s_es_uca_iw_findyourjob_domain_Demandante_sexo" object="${demandante}" z="UcfNYoevvb3VXXtK3HJxb52dpx4="/>
         <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Demandante_email" object="${demandante}" z="kEXEjrPUirxCKh96+WCk4rSicqg="/>
         <field:display field="telefono" id="s_es_uca_iw_findyourjob_domain_Demandante_telefono" object="${demandante}" z="+U8H280kxV8rFXpZ5JDqXqpGF0M="/>
-        <field:display field="demandante" id="s_es_uca_iw_findyourjob_domain_Demandante_demandante" object="${demandante}" z="iWRiCAF/s7XM5vXKBoy/aGQaCOw="/>
+        <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Demandante_curriculum" object="${demandante}" z="Yd6Fm6Kt7fR3TeKL5wZnP0t9Ur8="/>
     </page:show>
 </div>

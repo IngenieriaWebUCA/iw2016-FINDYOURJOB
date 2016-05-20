@@ -3,10 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Curriculum" object="${curriculum}" path="/curriculums" z="gpSM5x3t235l+i5pQXKKIXuZdqM=">
-        <field:display field="direccion" id="s_es_uca_iw_findyourjob_domain_Curriculum_direccion" object="${curriculum}" z="hIKbORuZ6eu1oq5WOllBLvB6rwA="/>
-        <field:display field="fecha" id="s_es_uca_iw_findyourjob_domain_Curriculum_fecha" object="${curriculum}" z="XQA9mse1jfPQjx+i+p1Nflr37gQ="/>
-        <field:display field="estado" id="s_es_uca_iw_findyourjob_domain_Curriculum_estado" object="${curriculum}" z="V+Wv4Z6+ewOaFvP1rXnFXvo0Erg="/>
         <field:display field="demandante" id="s_es_uca_iw_findyourjob_domain_Curriculum_demandante" object="${curriculum}" z="4XzKRxCG3oyXCt76QoKwdrHjfDY="/>
         <field:display field="formacion" id="s_es_uca_iw_findyourjob_domain_Curriculum_formacion" object="${curriculum}" z="DIFY77Z1IXNrwRLwZKRTnJjyFEI="/>
+        <field:display field="trayectoria" id="s_es_uca_iw_findyourjob_domain_Curriculum_trayectoria" object="${curriculum}" z="5d8fxV+kUKzaU8RhW00NABLNqmk="/>
+        <field:display field="foto" id="s_es_uca_iw_findyourjob_domain_Curriculum_foto" object="${curriculum}" z="aUv9GYhfOpaPtnpxHcCwJaopmfE="/>
     </page:show>
 </div>

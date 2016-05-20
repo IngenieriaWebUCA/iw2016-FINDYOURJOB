@@ -59,7 +59,7 @@ public class Demandante {
 
     /**
      */
-    @NotNull
+
     @ManyToOne
-    private Curriculum demandante;
+    private Curriculum curriculum;
 }

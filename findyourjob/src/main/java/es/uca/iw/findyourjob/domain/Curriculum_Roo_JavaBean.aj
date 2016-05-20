@@ -11,28 +11,20 @@ import java.util.Set;
 
 privileged aspect Curriculum_Roo_JavaBean {
     
-    public String Curriculum.getDireccion() {
-        return this.direccion;
+    public String Curriculum.getTrayectoria() {
+        return this.trayectoria;
     }
     
-    public void Curriculum.setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void Curriculum.setTrayectoria(String trayectoria) {
+        this.trayectoria = trayectoria;
     }
     
-    public String Curriculum.getFecha() {
-        return this.fecha;
+    public String Curriculum.getFoto() {
+        return this.foto;
     }
     
-    public void Curriculum.setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-    
-    public String Curriculum.getEstado() {
-        return this.estado;
-    }
-    
-    public void Curriculum.setEstado(String estado) {
-        this.estado = estado;
+    public void Curriculum.setFoto(String foto) {
+        this.foto = foto;
     }
     
     public Demandante Curriculum.getDemandante() {

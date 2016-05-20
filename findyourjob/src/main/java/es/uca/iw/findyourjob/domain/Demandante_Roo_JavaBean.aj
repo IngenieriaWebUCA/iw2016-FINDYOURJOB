@@ -66,12 +66,12 @@ privileged aspect Demandante_Roo_JavaBean {
         this.inscripciones = inscripciones;
     }
     
-    public Curriculum Demandante.getDemandante() {
-        return this.demandante;
+    public Curriculum Demandante.getCurriculum() {
+        return this.curriculum;
     }
     
-    public void Demandante.setDemandante(Curriculum demandante) {
-        this.demandante = demandante;
+    public void Demandante.setCurriculum(Curriculum curriculum) {
+        this.curriculum = curriculum;
     }
     
 }

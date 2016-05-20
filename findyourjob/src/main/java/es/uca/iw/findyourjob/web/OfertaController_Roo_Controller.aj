@@ -46,9 +46,6 @@ privileged aspect OfertaController_Roo_Controller {
         if (Empresa.countEmpresas() == 0) {
             dependencies.add(new String[] { "empresa", "empresas" });
         }
-        if (Puesto.countPuestoes() == 0) {
-            dependencies.add(new String[] { "puestoTrabajo", "puestoes" });
-        }
         uiModel.addAttribute("dependencies", dependencies);
         return "ofertas/create";
     }

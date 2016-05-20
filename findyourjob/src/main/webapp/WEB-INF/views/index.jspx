@@ -10,4 +10,5 @@
             <p><spring:message code="welcome_text"/></p>
         </div>
 
+
 </div>

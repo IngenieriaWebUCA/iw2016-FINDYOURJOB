@@ -77,7 +77,6 @@ public class Oferta {
 
     /**
      */
-    @NotNull
     @ManyToOne
     private Puesto puestoTrabajo;
 }
