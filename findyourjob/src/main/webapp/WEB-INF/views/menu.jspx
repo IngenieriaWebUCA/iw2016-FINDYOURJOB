@@ -44,14 +44,7 @@
                 <menu:item id="i_usuario_new" messageCode="global_menu_new" url="/usuarios?form" z="RG1gCsiZQjg1HLDzXbHKht6yDkw="/>
                 <menu:item id="i_usuario_list" messageCode="global_menu_list" url="/usuarios?page=1&amp;size=${empty param.size ? 10 : param.size}" z="P7ZIPrcTTBR41JYD0QldbYgsZrM="/>
             </menu:category>
-            <menu:category id="c_loguser" z="Ya37W2Dk3lcEcn0gGjq3sCqfdxc=">
-                <menu:item id="i_loguser_new" messageCode="global_menu_new" url="/logusers?form" z="YxH3QphXpDJh34UhJibtVutDlQw="/>
-                <menu:item id="i_loguser_list" messageCode="global_menu_list" url="/logusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="De/VBRYqUuix4e1/Lcmen2eTqFY="/>
-            </menu:category>
-            <menu:category id="c_loguserrole" z="3/Zp/Qx8fK+gTuaRZCFbzw0xK1w=">
-                <menu:item id="i_loguserrole_new" messageCode="global_menu_new" url="/loguserroles?form" z="95p6IqtGNKLJl2xo8dUu4gx2rMI="/>
-                <menu:item id="i_loguserrole_list" messageCode="global_menu_list" url="/loguserroles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="s8t8R61GxDpSBiCXxQN09B1MUpA="/>
-            </menu:category>
+
         </menu:menu>
     </div>
 </div>

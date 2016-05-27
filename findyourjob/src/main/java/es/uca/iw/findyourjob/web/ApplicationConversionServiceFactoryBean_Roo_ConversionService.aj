@@ -190,7 +190,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    
     public Converter<Oferta, String> ApplicationConversionServiceFactoryBean.getOfertaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Oferta, java.lang.String>() {
             public String convert(Oferta oferta) {

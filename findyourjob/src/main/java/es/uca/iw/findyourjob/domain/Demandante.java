@@ -63,12 +63,12 @@ public class Demandante {
     @ManyToOne
     private Curriculum curriculum;
     
-    private String username;
+    /*private String username;
     private String password;
     private String rol;
     
     @OneToOne(cascade={CascadeType.ALL})
-    private Usuario usuario;
+    private Usuario usuario;*/
     
  
     

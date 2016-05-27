@@ -26,8 +26,8 @@
             </user-service>
   			<password-encoder hash="sha-256" />
     			<jdbc-user-service data-source-ref="dataSource"
-      				users-by-username-query="SELECT username, password from usuario where username=?"
-            		authorities-by-username-query="SELECT username, rol from usuario WHERE username=?" />
+      				users-by-username-query="SELECT username, password from usuario where name=?"
+            		authorities-by-username-query="SELECT username, rol from usuario WHERE name=?" />
 		</authentication-provider>
         <!--  <authentication-provider>
             <password-encoder hash="sha-256" />

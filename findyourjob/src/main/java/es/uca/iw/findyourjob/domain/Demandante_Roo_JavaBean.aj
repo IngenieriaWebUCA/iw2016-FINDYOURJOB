@@ -6,7 +6,6 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
-import es.uca.iw.findyourjob.domain.Usuario;
 import java.util.Set;
 
 privileged aspect Demandante_Roo_JavaBean {
@@ -73,38 +72,6 @@ privileged aspect Demandante_Roo_JavaBean {
     
     public void Demandante.setCurriculum(Curriculum curriculum) {
         this.curriculum = curriculum;
-    }
-    
-    public String Demandante.getUsername() {
-        return this.username;
-    }
-    
-    public void Demandante.setUsername(String username) {
-        this.username = username;
-    }
-    
-    public String Demandante.getPassword() {
-        return this.password;
-    }
-    
-    public void Demandante.setPassword(String password) {
-        this.password = password;
-    }
-    
-    public String Demandante.getRol() {
-        return this.rol;
-    }
-    
-    public void Demandante.setRol(String rol) {
-        this.rol = rol;
-    }
-    
-    public Usuario Demandante.getUsuario() {
-        return this.usuario;
-    }
-    
-    public void Demandante.setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
     
 }
