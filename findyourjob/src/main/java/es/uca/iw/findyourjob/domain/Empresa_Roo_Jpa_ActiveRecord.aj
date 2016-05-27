@@ -6,15 +6,11 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Empresa;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Empresa_Roo_Jpa_ActiveRecord {
     
-    @PersistenceContext
-    transient EntityManager Empresa.entityManager;
-    
-    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "cif", "email", "actividadProfesional", "numeroEmpleados", "ofertas");
+    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "cif", "email", "actividadProfesional", "numeroEmpleados", "ofertas", "entityManager");
     
     public static final EntityManager Empresa.entityManager() {
         EntityManager em = new Empresa().entityManager;

@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 
 @RooJavaBean
@@ -22,6 +23,8 @@ public class Demandante {
     @Size(min = 3, max = 30)
     private String nombre;
 
+
+    
     /**
      */
     @NotNull
@@ -57,9 +60,17 @@ public class Demandante {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "demandante")
     private Set<Inscripcion> inscripciones = new HashSet<Inscripcion>();
 
-    /**
-     */
-
     @ManyToOne
     private Curriculum curriculum;
+    
+    private String username;
+    private String password;
+    private String rol;
+    
+    @OneToOne(cascade={CascadeType.ALL})
+    private Usuario usuario;
+    
+ 
+    
+    
 }

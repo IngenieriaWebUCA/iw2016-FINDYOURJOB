@@ -12,6 +12,7 @@ import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.domain.Puesto;
+import es.uca.iw.findyourjob.domain.Usuario;
 import es.uca.iw.findyourjob.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -189,6 +190,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    
     public Converter<Oferta, String> ApplicationConversionServiceFactoryBean.getOfertaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Oferta, java.lang.String>() {
             public String convert(Oferta oferta) {
@@ -237,6 +239,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Usuario, String> ApplicationConversionServiceFactoryBean.getUsuarioToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Usuario, java.lang.String>() {
+            public String convert(Usuario usuario) {
+                return new StringBuilder().append(usuario.getUsername()).append(' ').append(usuario.getPassword()).append(' ').append(usuario.getRol()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Usuario> ApplicationConversionServiceFactoryBean.getIdToUsuarioConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.findyourjob.domain.Usuario>() {
+            public es.uca.iw.findyourjob.domain.Usuario convert(java.lang.Long id) {
+                return Usuario.findUsuario(id);
+            }
+        };
+    }
+    
+    public Converter<String, Usuario> ApplicationConversionServiceFactoryBean.getStringToUsuarioConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.findyourjob.domain.Usuario>() {
+            public es.uca.iw.findyourjob.domain.Usuario convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Usuario.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getCurriculumToStringConverter());
         registry.addConverter(getIdToCurriculumConverter());
@@ -265,6 +291,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getPuestoToStringConverter());
         registry.addConverter(getIdToPuestoConverter());
         registry.addConverter(getStringToPuestoConverter());
+        registry.addConverter(getUsuarioToStringConverter());
+        registry.addConverter(getIdToUsuarioConverter());
+        registry.addConverter(getStringToUsuarioConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

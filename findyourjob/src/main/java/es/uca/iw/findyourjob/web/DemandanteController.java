@@ -1,8 +1,13 @@
 package es.uca.iw.findyourjob.web;
 import es.uca.iw.findyourjob.domain.Demandante;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
 
 @RequestMapping("/demandantes")
@@ -10,4 +15,20 @@ import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
 @RooWebScaffold(path = "demandantes", formBackingObject = Demandante.class)
 @GvNIXWebJQuery
 public class DemandanteController {
+
+    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
+    public String create(@Valid Demandante demandante, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            populateEditForm(uiModel, demandante);
+            return "demandantes/create";
+        }
+        uiModel.asMap().clear();
+
+       /* demandante.getUsuario().setRol("Demandante");
+        demandante.getUsuario().setUsername(demandante.getUsername());
+        demandante.getUsuario().setPassword(demandante.getPassword());
+        demandante.getUsuario().persist();*/
+        demandante.persist();
+        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId().toString(), httpServletRequest);
+    }
 }

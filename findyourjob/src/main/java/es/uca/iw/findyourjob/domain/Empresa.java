@@ -5,7 +5,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.EntityManager;
 import javax.persistence.OneToMany;
+import javax.persistence.PersistenceContext;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -49,4 +51,8 @@ public class Empresa {
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "empresa")
     private Set<Oferta> ofertas = new HashSet<Oferta>();
+    
+    @PersistenceContext
+    transient EntityManager entityManager;
+    
 }

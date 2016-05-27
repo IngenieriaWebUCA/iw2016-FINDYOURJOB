@@ -23,11 +23,11 @@ privileged aspect Usuario_Roo_JavaBean {
         this.password = password;
     }
     
-    public int Usuario.getRol() {
+    public String Usuario.getRol() {
         return this.rol;
     }
     
-    public void Usuario.setRol(int rol) {
+    public void Usuario.setRol(String rol) {
         this.rol = rol;
     }
     

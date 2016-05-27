@@ -4,13 +4,19 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.validation.constraints.Min;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "PUESTO_SEQ")
 public class Usuario {
-
+	/*public enum Rol{
+		ADMINISTRADOR, INVITADO, DEMANDANTE, GESTOR_EMPRESA, GESTOR_ETT
+	}*/
+    public Usuario(String username , String password, String rol){
+    	this.username = username;
+    	this.password = password;
+    	this.rol = rol;
+    }
     /**
      */
     @NotNull
@@ -25,13 +31,8 @@ public class Usuario {
 
     /**
      */
-    @NotNull
-    @Min(0L)
-    private int rol;
+    private String rol;
+
+
     
-    public Usuario(String username , String password, int rol ){
-    	this.username = username;
-    	this.password = password;
-    	this.rol = rol;
-    }
 }

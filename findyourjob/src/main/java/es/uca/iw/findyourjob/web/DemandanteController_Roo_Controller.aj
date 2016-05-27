@@ -6,6 +6,7 @@ package es.uca.iw.findyourjob.web;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
+import es.uca.iw.findyourjob.domain.Usuario;
 import es.uca.iw.findyourjob.web.DemandanteController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,17 +21,6 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect DemandanteController_Roo_Controller {
-    
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String DemandanteController.create(@Valid Demandante demandante, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, demandante);
-            return "demandantes/create";
-        }
-        uiModel.asMap().clear();
-        demandante.persist();
-        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId().toString(), httpServletRequest);
-    }
     
     @RequestMapping(params = "form", produces = "text/html")
     public String DemandanteController.createForm(Model uiModel) {
@@ -90,6 +80,7 @@ privileged aspect DemandanteController_Roo_Controller {
         uiModel.addAttribute("demandante", demandante);
         uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
+        uiModel.addAttribute("usuarios", Usuario.findAllUsuarios());
     }
     
     String DemandanteController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -96,3 +96,46 @@ field number --fieldName rol --type java.lang.Double --notNull --min 0
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-20 17:23:06
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-20 17:43:23
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-20 17:59:43
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-20 18:47:09
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-24 12:18:45
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-24 15:10:52
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-26 17:44:00
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-26 19:21:05
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-26 20:17:14
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-26 20:38:57
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-26 21:07:06
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-26 23:41:44
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-27 12:52:22
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-27 15:23:36
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-27 15:23:56
+entity jpa --class ~.domain.LogUserRole 
+field string --fieldName roleName
+test integration
+// [failed] focus --class ~.domain.LogUser
+field boolean --fieldName enabled --notNull true
+// [failed] field boolean --fieldName enabled --notNull true
+entity jpa --class ~.domain.LogUser
+field string --fieldName username
+field string --fieldName password
+field boolean --fieldName enabled
+// [failed] field string --fieldName password
+// [failed] field string --fieldName username
+focus --class ~.domain.LogUser
+focus --class ~.domain.LogUser
+// [failed] field boolean --fieldName enabled --notNull true
+field set --fieldName roles --type ~.domain.LogUserRole
+// [failed] perform tests
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-27 18:26:01
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-27 18:29:38
+// [failed] entity jpa --class ~.domain.LogUserRole 
+focus --class ~.domain.LogUser
+// [failed] field boolean --fieldName enabled --notNull true
+// [failed] field set --fieldName roles --type ~.domain.LogUserRole
+// [failed] entity jpa --class ~.domain.LogUser
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-27 18:39:40
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-27 18:41:17
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-27 18:41:18
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-05-27 18:41:38
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-27 21:16:01
