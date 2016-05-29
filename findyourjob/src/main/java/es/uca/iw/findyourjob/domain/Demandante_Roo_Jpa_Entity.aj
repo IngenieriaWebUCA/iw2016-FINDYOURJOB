@@ -4,42 +4,10 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Demandante;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Version;
 
 privileged aspect Demandante_Roo_Jpa_Entity {
     
     declare @type: Demandante: @Entity;
-    
-    @Id
-    @SequenceGenerator(name = "demandanteGen", sequenceName = "DEMANDANTE_SEQ")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "demandanteGen")
-    @Column(name = "id")
-    private Long Demandante.id;
-    
-    @Version
-    @Column(name = "version")
-    private Integer Demandante.version;
-    
-    public Long Demandante.getId() {
-        return this.id;
-    }
-    
-    public void Demandante.setId(Long id) {
-        this.id = id;
-    }
-    
-    public Integer Demandante.getVersion() {
-        return this.version;
-    }
-    
-    public void Demandante.setVersion(Integer version) {
-        this.version = version;
-    }
     
 }

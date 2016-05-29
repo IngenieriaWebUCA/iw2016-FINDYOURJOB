@@ -57,4 +57,12 @@ privileged aspect Empresa_Roo_JavaBean {
         this.ofertas = ofertas;
     }
     
+    public boolean Empresa.isGestion_propia() {
+        return this.gestion_propia;
+    }
+    
+    public void Empresa.setGestion_propia(boolean gestion_propia) {
+        this.gestion_propia = gestion_propia;
+    }
+    
 }

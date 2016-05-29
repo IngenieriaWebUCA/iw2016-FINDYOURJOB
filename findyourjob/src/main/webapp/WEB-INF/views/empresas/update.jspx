@@ -9,5 +9,6 @@
         <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Empresa_email" max="30" min="3" required="true" validationMessageCode="field_invalid_email" z="fr2cVZgelboAzPbnK5zFXnNDWUs="/>
         <field:input field="actividadProfesional" id="c_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" max="30" min="3" required="true" z="7lndUu9UFc3odtFhJIXwUOBWaQc="/>
         <field:input field="numeroEmpleados" id="c_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" min="0" required="true" z="uACmGhl0pTrUCWjkfzijfLu31NY="/>
+        <field:checkbox field="gestion_propia" id="c_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" z="hOKkKiTcFDIp6xeE2hkDHJ4nwNM="/>
     </form:update>
 </div>

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Empresa_Roo_Jpa_ActiveRecord {
     
-    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "cif", "email", "actividadProfesional", "numeroEmpleados", "ofertas", "entityManager");
+    public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "cif", "email", "actividadProfesional", "numeroEmpleados", "ofertas", "entityManager", "gestion_propia");
     
     public static final EntityManager Empresa.entityManager() {
         EntityManager em = new Empresa().entityManager;

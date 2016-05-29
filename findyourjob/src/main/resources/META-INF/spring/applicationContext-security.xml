@@ -10,10 +10,36 @@
         <logout logout-url="/resources/j_spring_security_logout" />
         <!-- Configure these elements to secure URIs in your application -->
         <intercept-url pattern="/resources/.*" access="permitAll" />
+        
+        <intercept-url pattern="\A/empresas\?form.*\Z" access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT')" />
+        <intercept-url pattern="\A/empresas\?page=\d*.*\Z" access="permitAll" />
+        
+        <intercept-url pattern="\A/usuarios\?form.*\Z" access="hasRole('ADMINISTRADOR')"/>      
+        <intercept-url pattern="\A/usuarios\?page=\d*.*\Z" access="hasRole('ADMINISTRADOR')" /> 
+		
+		<intercept-url pattern="\A/ofertas\?form.*\Z" access="hasAnyRole('ADMINISTRADOR', 'GESTOR_EMPRESA')" />       
+        <intercept-url pattern="\A/ofertas\?page=\d*.*\Z" access="permitAll" />
+        
         <intercept-url pattern="\A/demandantes\?form.*\Z" access="permitAll" />
+        <intercept-url pattern="\A/demandantes\?page=\d*.*\Z" access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />
+        
+        <intercept-url pattern="\A/curriculums\?form.*\Z" access="hasRole('DEMANDANTE')" />
+        <intercept-url pattern="\A/curriculums\?page=\d*.*\Z" access="hasRole('DEMANDANTE')" />
+       
+		<intercept-url pattern="\A/experiencias\?form.*\Z" access="hasRole('DEMANDANTE')" />
+        <intercept-url pattern="\A/experiencias\?page=\d*.*\Z" access="hasRole('DEMANDANTE')" />       
+       
+        <intercept-url pattern="\A/puestoes\?form.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />
+        <intercept-url pattern="\A/puestoes\?page=\d*.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />        
+        
+        <intercept-url pattern="\A/inscripcions\?form.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />
+        <intercept-url pattern="\A/inscripcions\?page=\d*.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />        
+        
+        <intercept-url pattern="\A/localizacions\?form.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />
+        <intercept-url pattern="\A/localizacions\?page=\d*.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />        
+        
         <intercept-url pattern="\A/login.*\Z" access="permitAll" />
-        <intercept-url pattern="\A/usuarios\?form.*\Z" access="permitAll" />
-        <intercept-url pattern="/.*\Z" access="hasAnyRole('ROLE_ADMIN', 'ROLE_INVITADO')"/> <!--  "isAuthenticated()"/> -->
+        <intercept-url pattern="/.*\Z" access="isAuthenticated()"/> 
     </http>
     <!-- Configure Authentication mechanism -->
     <authentication-manager alias="authenticationManager">

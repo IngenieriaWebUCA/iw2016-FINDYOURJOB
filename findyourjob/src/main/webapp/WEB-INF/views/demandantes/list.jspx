@@ -6,10 +6,10 @@
         <table:table data="${demandantes}" id="l_es_uca_iw_findyourjob_domain_Demandante" path="/demandantes" z="HkfBmjhQVu43SdU9rzVPsurDBOk=">
             <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_nombre" property="nombre" z="UERpAsMWc5qRzewh2iKB4XgeoJE="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_apellidos" property="apellidos" z="evcMMwtpVCvMJLyWVKaDgN8fgO4="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" property="fechaNacimiento" z="eOheKgka+jP8MFrlBse4FWLucao="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_sexo" property="sexo" z="4QD3bmI/zCdj1LPzUH1RaqD3OuE="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_email" property="email" z="VIdmDD9drVsgnZwL7XoVRonNNi4="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_telefono" property="telefono" z="4l7uUUYMPsjmTOOwgbqF4D8zm5c="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_username" property="username" z="ivFN4r0Htek+nbadCWfFHUEieS4="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_password" property="password" z="B98UGLVXzaQilwqeDg5BxRzQrEA="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_rol" property="rol" z="oA/J+Q6o/9DJAPq975NwOan2PAU="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_enabled" property="enabled" z="bOi7omGLU3PvVTR+vu/jyOA51lQ="/>
         </table:table>
     </page:list>
 </div>

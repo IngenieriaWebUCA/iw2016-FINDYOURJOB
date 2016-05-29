@@ -5,8 +5,8 @@
     <form:create id="fc_es_uca_iw_findyourjob_domain_Usuario" modelAttribute="usuario" path="/usuarios" render="${empty dependencies}" z="l4SqSm6lmT7srJKdtLQV91rCf9Y=">
         <field:input field="username" id="c_es_uca_iw_findyourjob_domain_Usuario_username" max="10" min="5" required="true" z="N6q1q+nOIos81GpetXtqID69/y0="/>
         <field:input field="password" id="c_es_uca_iw_findyourjob_domain_Usuario_password" max="10" min="5" required="true" z="7ZVDmPDo85Pi4sDUit9bDctgVkk="/>
-        <field:input field="rol" id="c_es_uca_iw_findyourjob_domain_Usuario_rol" z="P07DJAWQTiga3GIsdVV6FcaV+JU="/>
         <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_Usuario_enabled" z="Z5aXFU7mEUKtzxs4ZpEC618VRAE="/>
+        <field:input field="rol" id="c_es_uca_iw_findyourjob_domain_Usuario_rol" z="P07DJAWQTiga3GIsdVV6FcaV+JU="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Usuario" render="${not empty dependencies}" z="yzJ9NbqOJqrY6wj2nBR3vCEN/XM="/>
 </div>

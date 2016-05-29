@@ -5,22 +5,11 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Demandante;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Demandante_Roo_Jpa_ActiveRecord {
     
-    @PersistenceContext
-    transient EntityManager Demandante.entityManager;
-    
     public static final List<String> Demandante.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "apellidos", "fechaNacimiento", "sexo", "email", "telefono", "inscripciones", "curriculum");
-    
-    public static final EntityManager Demandante.entityManager() {
-        EntityManager em = new Demandante().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
-    }
     
     public static long Demandante.countDemandantes() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Demandante o", Long.class).getSingleResult();
@@ -59,35 +48,6 @@ privileged aspect Demandante_Roo_Jpa_ActiveRecord {
             }
         }
         return entityManager().createQuery(jpaQuery, Demandante.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
-    @Transactional
-    public void Demandante.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
-    }
-    
-    @Transactional
-    public void Demandante.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Demandante attached = Demandante.findDemandante(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Demandante.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Demandante.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
     }
     
     @Transactional

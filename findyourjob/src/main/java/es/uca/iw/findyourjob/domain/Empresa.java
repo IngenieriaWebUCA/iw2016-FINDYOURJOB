@@ -55,4 +55,8 @@ public class Empresa {
     @PersistenceContext
     transient EntityManager entityManager;
     
+    /**
+     */
+    @NotNull
+    private boolean gestion_propia;
 }

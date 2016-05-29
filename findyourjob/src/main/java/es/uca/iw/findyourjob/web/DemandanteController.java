@@ -23,10 +23,8 @@ public class DemandanteController {
             return "demandantes/create";
         }
         uiModel.asMap().clear();
-        /* demandante.getUsuario().setRol("Demandante");
-         demandante.getUsuario().setUsername(demandante.getUsername());
-         demandante.getUsuario().setPassword(demandante.getPassword());
-         demandante.getUsuario().persist();*/
+        demandante.setRol("DEMANDANTE");
+        demandante.setEnabled(true);
         demandante.persist();
         return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId().toString(), httpServletRequest);
     }

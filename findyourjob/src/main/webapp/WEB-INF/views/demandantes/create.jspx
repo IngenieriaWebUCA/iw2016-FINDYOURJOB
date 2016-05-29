@@ -9,11 +9,12 @@
         <field:input field="sexo" id="c_es_uca_iw_findyourjob_domain_Demandante_sexo" max="30" min="3" required="true" z="Adn0kFWNeokxyqHc+ggHNGt/CVk="/>
         <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Demandante_email" max="30" min="3" required="true" validationMessageCode="field_invalid_email" z="9W16uwOdgUXFzsaNvuIlQJcOA6A="/>
         <field:input field="telefono" id="c_es_uca_iw_findyourjob_domain_Demandante_telefono" min="0" required="true" validationMessageCode="field_invalid_number" z="xxJFRYPSGYA09JH++JO3GCVI+/c="/>
-        <!--  <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Demandante_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="RBthg2e0NuzYFJDeFmpVsVtf9EE="/> -->
-        <!--  <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Demandante_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="BAxoza6H/Q3mPtN6k8po/haf1sk="/>  -->
-        <!--  <field:select field="usuario" id="c_es_uca_iw_findyourjob_domain_Demandante_usuario" itemValue="id" items="${usuarios}" path="/usuarios" z="/1q9v02uL0xSwxDeJsRnEt065Cw="/> -->
-        <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Demandante_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="RBthg2e0NuzYFJDeFmpVsVtf9EE="/>
+        <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Demandante_inscripciones" render="false" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="RBthg2e0NuzYFJDeFmpVsVtf9EE="/>
         <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Demandante_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" z="7RJB8xdqBGOpWWjzznFDAybQk6k="/>
+        <field:input field="username" id="c_es_uca_iw_findyourjob_domain_Demandante_username" max="10" min="5" required="true" z="Yt9AH3ueb5el7eaZ8uH1Xiojlmc="/>
+        <field:input field="password" id="c_es_uca_iw_findyourjob_domain_Demandante_password" max="10" min="5" required="true" z="dGbqjOUEItLfBEV6KOR1SFkdpdM="/>
+        <field:input field="rol" id="c_es_uca_iw_findyourjob_domain_Demandante_rol" render="false" z="mddBK2X4fqQzg9Twa756KC6soXk="/>
+        <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_Demandante_enabled" render="false" z="KkFJ3DVEw/DDy36zPFiHW0zZ878="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Demandante" render="${not empty dependencies}" z="xwHoCzs3pQeTM7IEQswtFJqAbmk="/>
 </div>

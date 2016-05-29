@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "DEMANDANTE_SEQ")
-public class Demandante {
+public class Demandante extends Usuario{
 
     /**
      */

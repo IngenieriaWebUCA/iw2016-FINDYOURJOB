@@ -54,7 +54,8 @@
 
       </form>
 <div>
-   <h2>Regístrate</h2>
-		   <h3><a href="/findyourjob/demandantes?form">Registrarse como demandante</a></h3>
+   <h2><a href="/findyourjob/demandantes?form">Registrarse como demandante</a></h2>
+   <!-- <h2><a href="/findyourjob/ofertas?page=1&size=10">Ver ofertas disponibles</a></h2>   
+    <h2><a href="/findyourjob/empresas?page=1&size=10">Información sobre las empresas</a></h2> --> 
 </div>
 </div>
