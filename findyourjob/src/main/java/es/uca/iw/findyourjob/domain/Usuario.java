@@ -33,6 +33,7 @@ public class Usuario {
      */
     private String rol;
 
+    public boolean enabled;
 
     
 }

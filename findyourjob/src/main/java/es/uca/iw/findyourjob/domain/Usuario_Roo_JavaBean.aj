@@ -31,4 +31,12 @@ privileged aspect Usuario_Roo_JavaBean {
         this.rol = rol;
     }
     
+    public boolean Usuario.isEnabled() {
+        return this.enabled;
+    }
+    
+    public void Usuario.setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+    
 }
