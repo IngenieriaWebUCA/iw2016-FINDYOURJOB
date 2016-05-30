@@ -35,7 +35,7 @@
         <intercept-url pattern="\A/inscripcions\?form.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />
         <intercept-url pattern="\A/inscripcions\?page=\d*.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />        
         
-        <intercept-url pattern="\A/localizacions\?form.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />
+        <intercept-url pattern="\A/localizacions\?form.*\Z" access="permitAll"/>
         <intercept-url pattern="\A/localizacions\?page=\d*.*\Z" access="hasRole('DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')" />        
         
         <intercept-url pattern="\A/login.*\Z" access="permitAll" />

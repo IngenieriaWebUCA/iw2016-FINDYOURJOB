@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.springframework.org/schema/security" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:sec="http://www.springframework.org/security/tags" id="menu" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <div>
         <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
-            <menu:category id="c_inscripcion" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w=">
+        <sec:authorize ifAllGranted="ADMINISTRADOR">
+            <menu:category id="c_inscripcion" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w="> 
                 <menu:item id="i_inscripcion_new" messageCode="global_menu_new" url="/inscripcions?form" z="c/fKPa6XZ8IWr+NnUZsDmwBVAoo="/>
                 <menu:item id="i_inscripcion_list" messageCode="global_menu_list" url="/inscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EtJRFL7zVP9IpwmuzMtP1k1M0P0="/>
             </menu:category>
+         </sec:authorize>
+         
             <menu:category id="c_puesto" z="c9nj8gVLub4rc0mI2/Kdt82w5UU=">
                 <menu:item id="i_puesto_new" messageCode="global_menu_new" url="/puestoes?form" z="rzennAJW1UB/Pr561CwGbtPHyW8="/>
                 <menu:item id="i_puesto_list" messageCode="global_menu_list" url="/puestoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nX70xhyoThA4YBS5Ti2aXVkvY3k="/>
