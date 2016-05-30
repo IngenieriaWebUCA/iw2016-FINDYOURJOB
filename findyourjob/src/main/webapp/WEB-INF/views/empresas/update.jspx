@@ -10,5 +10,9 @@
         <field:input field="actividadProfesional" id="c_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" max="30" min="3" required="true" z="7lndUu9UFc3odtFhJIXwUOBWaQc="/>
         <field:input field="numeroEmpleados" id="c_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" min="0" required="true" z="uACmGhl0pTrUCWjkfzijfLu31NY="/>
         <field:checkbox field="gestion_propia" id="c_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" z="hOKkKiTcFDIp6xeE2hkDHJ4nwNM="/>
+        <field:input field="username" id="c_es_uca_iw_findyourjob_domain_Empresa_username" max="10" min="5" required="true" z="CF8BuWSE1RCNpBBo0d+mLmYof2c="/>
+        <field:input field="password" id="c_es_uca_iw_findyourjob_domain_Empresa_password" max="10" min="5" required="true" z="mJDqlS1nG53mtNJERRrW+DxbjeQ="/>
+        <field:input field="rol" id="c_es_uca_iw_findyourjob_domain_Empresa_rol" z="rX8/neBlqySMNSGR58+Ay6Zh5gY="/>
+        <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_Empresa_enabled" z="tO7/5j6zqpzWa/DcGp55p7Wg8bQ="/>
     </form:update>
 </div>

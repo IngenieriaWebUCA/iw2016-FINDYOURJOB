@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "EMPRESA_SEQ")
-public class Empresa {
+public class Empresa extends Usuario{
 	/**
      */
     @NotNull

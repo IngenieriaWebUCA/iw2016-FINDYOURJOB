@@ -5,18 +5,11 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
 import java.util.List;
-import javax.persistence.EntityManager;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Empresa_Roo_Jpa_ActiveRecord {
     
     public static final List<String> Empresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("nombre", "cif", "email", "actividadProfesional", "numeroEmpleados", "ofertas", "entityManager", "gestion_propia");
-    
-    public static final EntityManager Empresa.entityManager() {
-        EntityManager em = new Empresa().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
-    }
     
     public static long Empresa.countEmpresas() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Empresa o", Long.class).getSingleResult();
@@ -55,35 +48,6 @@ privileged aspect Empresa_Roo_Jpa_ActiveRecord {
             }
         }
         return entityManager().createQuery(jpaQuery, Empresa.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
-    @Transactional
-    public void Empresa.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
-    }
-    
-    @Transactional
-    public void Empresa.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Empresa attached = Empresa.findEmpresa(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Empresa.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Empresa.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
     }
     
     @Transactional
