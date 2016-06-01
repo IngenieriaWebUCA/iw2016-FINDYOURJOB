@@ -14,6 +14,7 @@
         <field:select field="empresa" id="c_es_uca_iw_findyourjob_domain_Oferta_empresa" itemValue="id" items="${empresas}" path="/empresas" required="true" z="Q31YAYf+cz/L+e2sUGuuYAtE8/k="/>
         <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Oferta_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="KpFNOuw8Ny9KWq4wJHGHlem9y04="/>
         <field:select field="puestoTrabajo" id="c_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" itemValue="id" items="${puestoes}" path="/puestoes" z="jbP4QvFRn3kNVIGTK3PagIob/EY="/>
+    <field:checkbox field="estado" id="c_es_uca_iw_findyourjob_domain_Oferta_eestado" render="true" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Oferta" render="${not empty dependencies}" z="tx4FcZ2C5C1OGgF0YUSj4XzCNYs="/>
 </div>
