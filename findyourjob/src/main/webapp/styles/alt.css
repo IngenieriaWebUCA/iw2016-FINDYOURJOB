@@ -65,7 +65,7 @@ body {
 
 #menu h2 {
 	color: #fff;
-	background: #648C1D;
+	background: #66CCFF;
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
@@ -79,7 +79,7 @@ body {
 }
 
 #menu a:hover {
-	color: #648C1D;
+	color: #66CCFF;
 	background: #fff;
 }
 
@@ -94,7 +94,7 @@ body {
 	float:left;
 }
 
-#footer a:link {color: #7db223;}
+#footer a:link {color: #66CCFF;}
 
 .quicklinks {
 	clear:both; 
@@ -146,7 +146,7 @@ a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;}
 
 h1,h2,h3 {
 	font-family: Helvetica, sans-serif;
-	color: #7db223;
+	color: #66CCFF;
 }
 
 h1 {
@@ -196,19 +196,19 @@ tr:nth-child(even) {
 }
 
 a:link {
-	color: #7db223;
+	color: #66CCFF;
 }
 
 a:hover {
-	color: #456314;
+	color: #66CCFF;
 }
 
 a:active {
-	color: #7db223;
+	color: #66CCFF;
 }
 
 a:visited {
-	color: #7db223;
+	color: #66CCFF;
 }
 
 li {
