@@ -13,4 +13,7 @@
 <definition extends="default" name="puestoes/update">
         <put-attribute name="body" value="/WEB-INF/views/puestoes/update.jspx"/>
     </definition>
+<definition extends="default" name="puestoes/findPuestoesByNombre">
+        <put-attribute name="body" value="/WEB-INF/views/puestoes/findPuestoesByNombre.jspx"/>
+    </definition>
 </tiles-definitions>

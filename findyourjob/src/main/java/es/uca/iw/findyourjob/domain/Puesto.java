@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "PUESTO_SEQ")
+@RooJpaActiveRecord(sequenceName = "PUESTO_SEQ", finders = { "findPuestoesByNombre" })
 public class Puesto {
 
     /**

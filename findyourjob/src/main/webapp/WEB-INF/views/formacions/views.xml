@@ -13,4 +13,7 @@
 <definition extends="default" name="formacions/update">
         <put-attribute name="body" value="/WEB-INF/views/formacions/update.jspx"/>
     </definition>
+<definition extends="default" name="formacions/findFormacionsByCursosIdiomasAndTitulosAcademicos">
+        <put-attribute name="body" value="/WEB-INF/views/formacions/findFormacionsByCursosIdiomasAndTitulosAcademicos.jspx"/>
+    </definition>
 </tiles-definitions>

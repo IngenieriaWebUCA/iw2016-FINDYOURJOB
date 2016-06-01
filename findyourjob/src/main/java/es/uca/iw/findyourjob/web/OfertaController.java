@@ -4,18 +4,18 @@ import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
+import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 
 @RequestMapping("/ofertas")
 @Controller
 @RooWebScaffold(path = "ofertas", formBackingObject = Oferta.class)
 @GvNIXWebJQuery
+@RooWebFinder
 public class OfertaController {
-	@RequestMapping(params = "find=candidatos", method = RequestMethod.GET)
-	public String buscarCandidatos(){
 
-		
-		return "hola";
-	}
+    @RequestMapping(params = "find=candidatos", method = RequestMethod.GET)
+    public String buscarCandidatos() {
+        return "hola";
+    }
 }

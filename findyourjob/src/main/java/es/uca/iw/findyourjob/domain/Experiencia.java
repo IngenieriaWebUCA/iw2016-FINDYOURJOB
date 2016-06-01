@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ")
+@RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ", finders = { "findExperienciasByNombreEmpresa" })
 public class Experiencia {
 
     /**
