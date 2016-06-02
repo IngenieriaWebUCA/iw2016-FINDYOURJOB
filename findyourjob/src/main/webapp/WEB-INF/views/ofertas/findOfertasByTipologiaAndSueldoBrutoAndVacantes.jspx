@@ -5,6 +5,6 @@
     <form:find finderName="ByTipologiaAndSueldoBrutoAndVacantes" id="ff_es_uca_iw_findyourjob_domain_Oferta" path="/ofertas" z="j6Htda9H0tO8FvKMy/F67kUNmSw=">
         <field:input disableFormBinding="true" field="tipologia" id="f_es_uca_iw_findyourjob_domain_Oferta_tipologia" max="30" min="3" required="true" z="haNp7Xc6hRh10BOKDThSMtdW2q4="/>
         <field:input disableFormBinding="true" field="sueldoBruto" id="f_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" min="0" required="true" validationMessageCode="field_invalid_number" z="lg6g8CAMtgq9U+iIEaEjZOTlJ3s="/>
-        <field:input disableFormBinding="true" field="vacantes" id="f_es_uca_iw_findyourjob_domain_Oferta_vacantes" max="30" min="3" required="true" z="VPjO9ouvwEMRVGTM1lfA51OQ36U="/>
+        <field:input disableFormBinding="true" field="vacantes" id="f_es_uca_iw_findyourjob_domain_Oferta_vacantes" required="true" z="QGb1z/ChFZa5BT+YMiefy8TR5mY="/>
     </form:find>
 </div>

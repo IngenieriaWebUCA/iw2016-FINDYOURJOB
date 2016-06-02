@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Localizacion" items="${localizacions}" z="EupLWATI6CKY7EppMVCXjvPSnp0=">
         <table:table data="${localizacions}" id="l_es_uca_iw_findyourjob_domain_Localizacion" path="/localizacions" z="M8CGYXtJUWUCMCowaFxBMY+vKF8=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_direccion" property="direccion" z="Lx4Ge4sJPWs99ytHcnM0KudCNCM="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_localidad" property="localidad" z="O178OjDQTXaZRiZX69tCbZFKGGQ="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_direccion" property="direccion" render="false" z="user-managed"/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Localizacion_localidad" property="localidad" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

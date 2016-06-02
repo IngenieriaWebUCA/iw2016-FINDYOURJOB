@@ -15,8 +15,9 @@ import javax.validation.constraints.Size;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "EMPRESA_SEQ")
-public class Empresa extends Usuario{
-	/**
+public class Empresa extends Usuario {
+
+    /**
      */
     @NotNull
     @Size(min = 3, max = 30)
@@ -46,17 +47,15 @@ public class Empresa extends Usuario{
     @Min(0L)
     private int numeroEmpleados;
 
-	
-    /**
-     */
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empresa")
-    private Set<Oferta> ofertas = new HashSet<Oferta>();
-    
-    @PersistenceContext
-    transient EntityManager entityManager;
-    
+    //@PersistenceContext
+    //transient EntityManager entityManager;
     /**
      */
     @NotNull
     private boolean gestion_propia;
+
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empresa")
+    private Set<Oferta> ofertas = new HashSet<Oferta>();
 }

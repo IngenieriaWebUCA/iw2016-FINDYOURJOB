@@ -145,7 +145,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Inscripcion, String> ApplicationConversionServiceFactoryBean.getInscripcionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Inscripcion, java.lang.String>() {
             public String convert(Inscripcion inscripcion) {
-                return new StringBuilder().append(inscripcion.getFecha()).append(' ').append(inscripcion.getEstado()).toString();
+                return new StringBuilder().append(inscripcion.getEstado()).append(' ').append(inscripcion.getFecha()).toString();
             }
         };
     }
@@ -193,7 +193,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Oferta, String> ApplicationConversionServiceFactoryBean.getOfertaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Oferta, java.lang.String>() {
             public String convert(Oferta oferta) {
-                return new StringBuilder().append(oferta.getTipologia()).append(' ').append(oferta.getSueldoBruto()).append(' ').append(oferta.getFechaInicioActividad()).append(' ').append(oferta.getVacantes()).toString();
+                return new StringBuilder().append(oferta.getEstado()).append(' ').append(oferta.getTipologia()).append(' ').append(oferta.getSueldoBruto()).append(' ').append(oferta.getVacantes()).toString();
             }
         };
     }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div id="user_info" xmlns:jsp="http://java.sun.com/JSP/Page"
+xmlns:userInfo="http://www.empresa.com/usermgmt/userInfo"
+xmlns:spring="http://www.springframework.org/tags"
+class="body_info"
+version="2.0">
+<jsp:output omit-xml-declaration="yes" />
+	<fieldset>
+		<legend>
+			<spring:message
+				code="label_usermgmt_user_username"
+				arguments="${user.username}" />
+		</legend>
+		<userInfo:userInfo />
+	</fieldset>
+</div>

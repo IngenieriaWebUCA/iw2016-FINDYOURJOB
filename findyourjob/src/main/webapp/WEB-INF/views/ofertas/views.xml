@@ -25,4 +25,7 @@
 <definition extends="default" name="ofertas/findOfertasByPuestoTrabajo">
         <put-attribute name="body" value="/WEB-INF/views/ofertas/findOfertasByPuestoTrabajo.jspx"/>
     </definition>
+<definition extends="default" name="ofertas/findOfertasByEstado">
+        <put-attribute name="body" value="/WEB-INF/views/ofertas/findOfertasByEstado.jspx"/>
+    </definition>
 </tiles-definitions>

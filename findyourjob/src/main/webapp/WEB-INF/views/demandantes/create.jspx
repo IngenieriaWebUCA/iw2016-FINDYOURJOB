@@ -5,7 +5,6 @@
     <form:create id="fc_es_uca_iw_findyourjob_domain_Demandante" modelAttribute="demandante" path="/demandantes" render="${empty dependencies}" z="pz8egUiZpWUtaOg7IeZQHaBwkjI=">
         <field:input field="nombre" id="c_es_uca_iw_findyourjob_domain_Demandante_nombre" max="30" min="3" required="true" z="vYbiX6N5QhYD4VrmVOwm9vcKz48="/>
         <field:input field="apellidos" id="c_es_uca_iw_findyourjob_domain_Demandante_apellidos" max="30" min="3" required="true" z="3iEXnIUD94dN8CLeCGupsNPukZo="/>
-        <field:input field="fechaNacimiento" id="c_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" max="30" min="3" required="true" z="hPLcqBrj3xtA9PbcDA5Xe1wj+U4="/>
         <field:input field="sexo" id="c_es_uca_iw_findyourjob_domain_Demandante_sexo" max="30" min="3" required="true" z="Adn0kFWNeokxyqHc+ggHNGt/CVk="/>
         <field:input field="email" id="c_es_uca_iw_findyourjob_domain_Demandante_email" max="30" min="3" required="true" validationMessageCode="field_invalid_email" z="9W16uwOdgUXFzsaNvuIlQJcOA6A="/>
         <field:input field="telefono" id="c_es_uca_iw_findyourjob_domain_Demandante_telefono" min="0" required="true" validationMessageCode="field_invalid_number" z="xxJFRYPSGYA09JH++JO3GCVI+/c="/>
@@ -15,6 +14,7 @@
         <field:input field="password" id="c_es_uca_iw_findyourjob_domain_Demandante_password" max="10" min="5" required="true" z="dGbqjOUEItLfBEV6KOR1SFkdpdM="/>
         <field:input field="rol" id="c_es_uca_iw_findyourjob_domain_Demandante_rol" render="false" z="user-managed"/>
         <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_Demandante_enabled" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${demandante_fechanacimiento_date_format}" field="fechaNacimiento" id="c_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" required="true" z="5BOVzTw2ebjIoK60ALFj/4ssO50="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Demandante" render="${not empty dependencies}" z="xwHoCzs3pQeTM7IEQswtFJqAbmk="/>
 </div>

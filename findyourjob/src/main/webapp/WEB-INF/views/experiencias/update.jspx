@@ -4,9 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Experiencia" modelAttribute="experiencia" path="/experiencias" versionField="Version" z="eMBlp5XpDVP4sTEUB6PAICpolwg=">
         <field:input field="nombreEmpresa" id="c_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" max="30" min="3" required="true" z="Vu/ZQwVcpasJZ/RmILY6NmimFwc="/>
-        <field:input field="fechaContratoInicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" max="30" min="3" required="true" z="+NUijYdH4YSFzY6lqLmukehWCLc="/>
-        <field:input field="fechaContratoFin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" max="30" min="3" required="true" z="3/50ujTo7So4zL2Co7HOdbyvkFs="/>
         <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="jwhADT6saPQprIAYa3mRqyHklZk="/>
         <field:simple field="puestos" id="c_es_uca_iw_findyourjob_domain_Experiencia_puestos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="yyMmZiJITcNwshmRfl/lVnSaALI="/>
+        <field:datetime dateTimePattern="${experiencia_fechacontratoinicio_date_format}" field="fechaContratoInicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" required="true" z="UZsBswcgeZMpsUPenOR5A6x3UoM="/>
+        <field:datetime dateTimePattern="${experiencia_fechacontratofin_date_format}" field="fechaContratoFin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" required="true" z="IccKmb4hXFSmtKD3EeT/V45rUPY="/>
     </form:update>
 </div>

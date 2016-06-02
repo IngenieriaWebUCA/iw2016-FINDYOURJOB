@@ -6,6 +6,7 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
+import java.util.Date;
 import java.util.Set;
 
 privileged aspect Demandante_Roo_JavaBean {
@@ -24,14 +25,6 @@ privileged aspect Demandante_Roo_JavaBean {
     
     public void Demandante.setApellidos(String apellidos) {
         this.apellidos = apellidos;
-    }
-    
-    public String Demandante.getFechaNacimiento() {
-        return this.fechaNacimiento;
-    }
-    
-    public void Demandante.setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
     }
     
     public String Demandante.getSexo() {
@@ -72,6 +65,14 @@ privileged aspect Demandante_Roo_JavaBean {
     
     public void Demandante.setCurriculum(Curriculum curriculum) {
         this.curriculum = curriculum;
+    }
+    
+    public Date Demandante.getFechaNacimiento() {
+        return this.fechaNacimiento;
+    }
+    
+    public void Demandante.setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
     
 }

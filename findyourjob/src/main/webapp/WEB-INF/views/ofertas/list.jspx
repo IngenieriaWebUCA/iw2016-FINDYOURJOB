@@ -4,12 +4,14 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Oferta" items="${ofertas}" z="HQVTgBZvPE36whcarOS9Tqxzs6I=">
         <table:table data="${ofertas}" id="l_es_uca_iw_findyourjob_domain_Oferta" path="/ofertas" z="BdSq7KZNmFIEaa/+RJyG21YMsHQ=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" property="tipologia" z="OVASZCY5xG1kydHAzU5ftKVx17E="/>
-            <!--  <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" property="sueldoBruto" z="yBmHf3FYYAerOR9nc0yTISiiPxo="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" property="fechaInicioActividad" z="VZGoAy1UIhj99Jlhrs1BDhK7O2k="/>-->
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" property="tipologia" render="false" z="user-managed"/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" property="fechaInicioActividad" render="false" z="VZGoAy1UIhj99Jlhrs1BDhK7O2k="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" property="vacantes" z="5q6JcqMl+wqo1kIjXUs5iSe9Reg="/>
-            <!--  <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" property="fechaDisponibleInicio" z="AWGIcZAI3FJdKcjUtyYjh6smJrE="/>-->
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" property="fechaDisponibleInicio" render="false" z="AWGIcZAI3FJdKcjUtyYjh6smJrE="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" property="sueldoBruto" render="false" z="user-managed"/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_estado" property="estado" render="false" z="user-managed"/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" property="localizacion" z="iE32f0O2pULwv+LTTkM6duBw0/U="/>
         </table:table>
     </page:list>
 </div>

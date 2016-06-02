@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Experiencia" object="${experiencia}" path="/experiencias" z="+CyMQ6DiNJT+9ZFmxQg0ejt4dZg=">
         <field:display field="nombreEmpresa" id="s_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" object="${experiencia}" z="OWXhwnAoFWVynpazodCmC5X1sog="/>
-        <field:display field="fechaContratoInicio" id="s_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" object="${experiencia}" z="vHg86D3p1bSTDQ9burGvTPW63Tk="/>
-        <field:display field="fechaContratoFin" id="s_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" object="${experiencia}" z="Pn8AcTi0c/stDObq54xLnO3sJck="/>
         <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Experiencia_curriculum" object="${experiencia}" z="lppea/juCWYVO8JAePRs+zQM+vU="/>
+        <field:display date="true" dateTimePattern="${experiencia_fechacontratoinicio_date_format}" field="fechaContratoInicio" id="s_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" object="${experiencia}" z="qePKODpnUQ+Q5Ed10WV5GTT2ZLE="/>
+        <field:display date="true" dateTimePattern="${experiencia_fechacontratofin_date_format}" field="fechaContratoFin" id="s_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" object="${experiencia}" z="euzLv0LrT8xP7QatxjycX/zvqV0="/>
     </page:show>
 </div>

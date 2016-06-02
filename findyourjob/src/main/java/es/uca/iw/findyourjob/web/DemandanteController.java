@@ -26,6 +26,6 @@ public class DemandanteController {
         demandante.setRol("DEMANDANTE");
         demandante.setEnabled(true);
         demandante.persist();
-        return "redirect:/demandantes/" + encodeUrlPathSegment(demandante.getId().toString(), httpServletRequest);
+        return "redirect:/login";
     }
 }

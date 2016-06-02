@@ -6,6 +6,7 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Puesto;
+import java.util.Date;
 import java.util.Set;
 
 privileged aspect Experiencia_Roo_JavaBean {
@@ -16,22 +17,6 @@ privileged aspect Experiencia_Roo_JavaBean {
     
     public void Experiencia.setNombreEmpresa(String nombreEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
-    }
-    
-    public String Experiencia.getFechaContratoInicio() {
-        return this.fechaContratoInicio;
-    }
-    
-    public void Experiencia.setFechaContratoInicio(String fechaContratoInicio) {
-        this.fechaContratoInicio = fechaContratoInicio;
-    }
-    
-    public String Experiencia.getFechaContratoFin() {
-        return this.fechaContratoFin;
-    }
-    
-    public void Experiencia.setFechaContratoFin(String fechaContratoFin) {
-        this.fechaContratoFin = fechaContratoFin;
     }
     
     public Curriculum Experiencia.getCurriculum() {
@@ -48,6 +33,22 @@ privileged aspect Experiencia_Roo_JavaBean {
     
     public void Experiencia.setPuestos(Set<Puesto> puestos) {
         this.puestos = puestos;
+    }
+    
+    public Date Experiencia.getFechaContratoInicio() {
+        return this.fechaContratoInicio;
+    }
+    
+    public void Experiencia.setFechaContratoInicio(Date fechaContratoInicio) {
+        this.fechaContratoInicio = fechaContratoInicio;
+    }
+    
+    public Date Experiencia.getFechaContratoFin() {
+        return this.fechaContratoFin;
+    }
+    
+    public void Experiencia.setFechaContratoFin(Date fechaContratoFin) {
+        this.fechaContratoFin = fechaContratoFin;
     }
     
 }

@@ -28,6 +28,7 @@ privileged aspect ExperienciaController_Roo_Controller_Finder {
         } else {
             uiModel.addAttribute("experiencias", Experiencia.findExperienciasByNombreEmpresa(nombreEmpresa, sortFieldName, sortOrder).getResultList());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "experiencias/list";
     }
     

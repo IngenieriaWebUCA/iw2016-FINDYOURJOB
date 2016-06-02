@@ -5,7 +5,7 @@
     <page:list id="pl_es_uca_iw_findyourjob_domain_Puesto" items="${puestoes}" z="rtmRL2bV9b6Jjrm0WqqWIJK0Al4=">
         <table:table data="${puestoes}" id="l_es_uca_iw_findyourjob_domain_Puesto" path="/puestoes" z="JusYWp5V8DlU7vXSkhsAD+wpHwQ=">
             <table:column id="c_es_uca_iw_findyourjob_domain_Puesto_nombre" property="nombre" z="65XEgNhGq+jJPzI2Cr/3lCe1oB8="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Puesto_experiencia" property="experiencia" z="C66WEMyTUu9mhXT1X0CjZqKFIxs="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Puesto_experiencia" property="experiencia" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>

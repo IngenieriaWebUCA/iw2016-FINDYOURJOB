@@ -3,9 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Inscripcion" object="${inscripcion}" path="/inscripcions" z="aA2sTA+B5gejFxG61IhdUd0eBXA=">
-        <field:display field="fecha" id="s_es_uca_iw_findyourjob_domain_Inscripcion_fecha" object="${inscripcion}" z="t3xTEwllYWInYbMYh+i3fJB87DA="/>
         <field:display field="estado" id="s_es_uca_iw_findyourjob_domain_Inscripcion_estado" object="${inscripcion}" z="L0E54jkd8hqUNvZdFQBm6tKq8+c="/>
         <field:display field="oferta" id="s_es_uca_iw_findyourjob_domain_Inscripcion_oferta" object="${inscripcion}" z="pgL+SHGGlyR2HmHd6Z2YaV1stUs="/>
         <field:display field="demandante" id="s_es_uca_iw_findyourjob_domain_Inscripcion_demandante" object="${inscripcion}" z="9QmHgde6tvOxg5U2BnRZilfSp/A="/>
+        <field:display date="true" dateTimePattern="${inscripcion_fecha_date_format}" field="fecha" id="s_es_uca_iw_findyourjob_domain_Inscripcion_fecha" object="${inscripcion}" z="9ahhKCPxGI+1tu0gWukOzLCsrhI="/>
     </page:show>
 </div>

@@ -179,3 +179,51 @@ web mvc finder all
 finder add --finderName findOfertasByPuestoTrabajo
 web mvc finder all
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-05-31 16:34:46
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-01 17:39:34
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-01 19:26:33
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-01 22:36:04
+web mvc all --package ~.web
+web mvc finder all
+help 
+field date --fieldName fecha --type java.util.Date --notNull --class ~.domain.Oferta
+field date --fieldName fechaDisponibleInicio --type java.util.Date --notNull --class ~.domain.Oferta
+field date --fieldName fechaDisponibleFin --type java.util.Date --notNull --class ~.domain.Oferta
+// [failed] field date --fieldName fechaNacimiento --type java.util.Date --notNull --class ~.domain.Demandante
+field date --fieldName fechaNacimiento --type java.util.Date --notNull --class ~.domain.Demandante
+field date --fieldName fecha --type java.util.Date --notNull --class ~.domain.Inscripcion
+field date --fieldName fechaContratoInicio --type java.util.Date --notNull --class ~.domain.Experiencia
+field date --fieldName fechaContratoFin --type java.util.Date --notNull --class ~.domain.Experiencia
+field date --fieldName fecha_nacimiento --type java.util.Date --notNull --class ~.domain.Demandante
+field date --fieldName fechaNacimiento --type java.util.Date --notNull --class ~.domain.Demandante
+// [failed] field date --fieldName fechaContratoInicio --type java.util.Date --notNull --class ~.domain.Experiencia
+field date --fieldName fechaContratoInicio --type java.util.Date --notNull --class ~.domain.Experiencia
+field date --fieldName fechaContratoFin --type java.util.Date --notNull --class ~.domain.Experiencia
+field date --fieldName fecha --type java.util.Date --notNull --class ~.domain.Inscripcion
+field date --fieldName fechaDisponibleInicio --type java.util.Date --notNull --class ~.domain.Oferta
+field date --fieldName fechaDisponibleFin --type java.util.Date --notNull --class ~.domain.Oferta
+// [failed] field date --fieldName fechaInicioActividad --type java.util.Date --notNull --class ~.domain.Oferta
+field date --fieldName fechaDisponibleFin --type java.util.Date --notNull --class ~.domain.Oferta
+field date --fieldName fechaInicioActividad --type java.util.Date --notNull --class ~.domain.Oferta
+field reference --fieldName usuario --type ~.domain.Usuario --notNull --class ~.domain.Oferta
+field set --class ~.domain.Usuario --fieldName ofertas --type ~.domain.Oferta --mappedBy usuario --notNull false --cardinality ONE_TO_MANY
+web mvc all --package ~.web
+web mvc all --package ~.web
+field reference --fieldName empresa --type ~.domain.Empresa --notNull --class ~.domain.Oferta
+field set --class ~.domain.Empresa --fieldName ofertas --type ~.domain.Oferta --mappedBy empresa --notNull false --cardinality ONE_TO_MANY
+finder add --finderName findOfertasByEstado --class ~.domain.Oferta
+web mvc finder all
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-02 04:26:53
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-02 15:18:07
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-02 15:28:05
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-02 15:28:20
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-02 15:33:30
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-02 15:51:01
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-02 16:05:28
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-02 16:27:33
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-02 17:04:14
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-02 17:28:08
+// [failed] field reference --fieldName empresa --type ~.domain.Empresa --notNull --class ~.domain.Oferta
+field reference --fieldName empresa --type ~.domain.Empresa --notNull --class ~.domain.Oferta
+field set --class ~.domain.Empresa --fieldName ofertas --type ~.domain.Oferta --mappedBy empresa --notNull false --cardinality ONE_TO_MANY

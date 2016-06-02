@@ -10,6 +10,8 @@ import es.uca.iw.findyourjob.web.DemandanteController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +31,7 @@ privileged aspect DemandanteController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String DemandanteController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("demandante", Demandante.findDemandante(id));
         uiModel.addAttribute("itemId", id);
         return "demandantes/show";
@@ -45,6 +48,7 @@ privileged aspect DemandanteController_Roo_Controller {
         } else {
             uiModel.addAttribute("demandantes", Demandante.findAllDemandantes(sortFieldName, sortOrder));
         }
+        addDateTimeFormatPatterns(uiModel);
         return "demandantes/list";
     }
     
@@ -75,8 +79,13 @@ privileged aspect DemandanteController_Roo_Controller {
         return "redirect:/demandantes";
     }
     
+    void DemandanteController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("demandante_fechanacimiento_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    }
+    
     void DemandanteController.populateEditForm(Model uiModel, Demandante demandante) {
         uiModel.addAttribute("demandante", demandante);
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
     }

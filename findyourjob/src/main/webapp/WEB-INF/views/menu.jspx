@@ -1,88 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.springframework.org/schema/security" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:sec="http://www.springframework.org/security/tags" id="menu" version="2.0">
-     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-     <jsp:output omit-xml-declaration="yes"/>
-     <div>
-         <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">         
-         	<menu:category id="c_inscripcion" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w=">
+<div xmlns="http://www.springframework.org/schema/security" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:sec="http://www.springframework.org/security/tags" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <div>
+        <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
             <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
-            	<menu:item id="i_inscripcion_new" messageCode="global_menu_new" url="/inscripcions?form" z="c/fKPa6XZ8IWr+NnUZsDmwBVAoo="/>
+                <menu:category id="c_inscripcion" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                        <menu:item id="i_inscripcion_new" messageCode="global_menu_new" url="/inscripcions?form" z="c/fKPa6XZ8IWr+NnUZsDmwBVAoo="/>
+                    </sec:authorize>
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                        <menu:item id="i_inscripcion_list" messageCode="global_menu_list" url="/inscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EtJRFL7zVP9IpwmuzMtP1k1M0P0="/>
+                    </sec:authorize>
+                </menu:category>
+            </sec:authorize>
+            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                <menu:category id="c_puesto" z="c9nj8gVLub4rc0mI2/Kdt82w5UU=">
+                    <menu:item id="i_puesto_new" messageCode="global_menu_new" url="/puestoes?form" z="rzennAJW1UB/Pr561CwGbtPHyW8="/>
+                    <menu:item id="i_puesto_list" messageCode="global_menu_list" url="/puestoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nX70xhyoThA4YBS5Ti2aXVkvY3k="/>
+                    <menu:item id="fi_puesto_nombre" messageCode="global_menu_find" url="/puestoes?find=ByNombre&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="+hn4d81C6V7swokecDs97STnzkM="/>
+                </menu:category>
+            </sec:authorize>
+            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
+                <menu:category id="c_experiencia" z="7VzRu69Pn14NUdTwSu3XRMs/sTI=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
+                        <menu:item id="i_experiencia_new" messageCode="global_menu_new" url="/experiencias?form" z="Gj9nsB/aDd/9cC/oyGqhopJQZKQ="/>
+                    </sec:authorize>
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
+                        <menu:item id="i_experiencia_list" messageCode="global_menu_list" url="/experiencias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3kfSOJO53kI+4hjcnrvpR+D+xW0="/>
+                    </sec:authorize>
+                    <menu:item id="fi_experiencia_nombreempresa" messageCode="global_menu_find" url="/experiencias?find=ByNombreEmpresa&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="uYVamyaTJzd3FcSIwEys5+kSqMw="/>
+                </menu:category>
+            </sec:authorize>
+            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                <menu:category id="c_oferta" z="hAFpA26H1SoEOzHx9qIuh9xoiFY=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                        <menu:item id="i_oferta_new" messageCode="global_menu_new" url="/ofertas?form" z="XL2la3mMU88KBAljrX+q6go8ogw="/>
+                    </sec:authorize>
+                    <menu:item id="i_oferta_list" messageCode="global_menu_list" url="/ofertas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YFpuok8se1icruycVP1Ngny6x3c="/>
+                    <menu:item id="fi_oferta_estado" messageCode="global_menu_find" url="/ofertas?find=ByEstado&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="zm1TgkQaCA7A5vmrF3bq/uOkkrA="/>
+                </menu:category>
             </sec:authorize>
             <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
-                <menu:item id="i_inscripcion_list" messageCode="global_menu_list" url="/inscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EtJRFL7zVP9IpwmuzMtP1k1M0P0="/>
-            </sec:authorize>
-            </menu:category>
-
-            
-            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
-	            <menu:category id="c_puesto" z="c9nj8gVLub4rc0mI2/Kdt82w5UU=">
-	                <menu:item id="i_puesto_new" messageCode="global_menu_new" url="/puestoes?form" z="rzennAJW1UB/Pr561CwGbtPHyW8="/>
-	                <menu:item id="i_puesto_list" messageCode="global_menu_list" url="/puestoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nX70xhyoThA4YBS5Ti2aXVkvY3k="/>
-	                <menu:item id="fi_puesto_nombre" messageCode="global_menu_find" url="/puestoes?find=ByNombre&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="+hn4d81C6V7swokecDs97STnzkM="/>
-	            </menu:category>
-            </sec:authorize>
-            
-            <menu:category id="c_experiencia" z="7VzRu69Pn14NUdTwSu3XRMs/sTI=">
-            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
-                 <menu:item id="i_experiencia_new" messageCode="global_menu_new" url="/experiencias?form" z="Gj9nsB/aDd/9cC/oyGqhopJQZKQ="/>
+                <menu:category id="c_demandante" z="ap7hcwTTE7QpwHyV1OnSKrPHdQc=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
+                        <menu:item id="i_demandante_new" messageCode="global_menu_new" url="/demandantes?form" z="8+S2ulD0VSXmoyyhDfXJ+CNxgh8="/>
+                    </sec:authorize>
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_EMPRESA', 'GESTOR_ETT')">
+                        <menu:item id="i_demandante_list" messageCode="global_menu_list" url="/demandantes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1MtvqFaAsZmIa4hZR8pApwIOdDY="/>
+                    </sec:authorize>
+                </menu:category>
             </sec:authorize>
             <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
-                 <menu:item id="i_experiencia_list" messageCode="global_menu_list" url="/experiencias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3kfSOJO53kI+4hjcnrvpR+D+xW0="/>
-            </sec:authorize>
-                <menu:item id="fi_experiencia_nombreempresa" messageCode="global_menu_find" url="/experiencias?find=ByNombreEmpresa&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="uYVamyaTJzd3FcSIwEys5+kSqMw="/>
-            </menu:category>
-            
-            <menu:category id="c_oferta" z="hAFpA26H1SoEOzHx9qIuh9xoiFY=">
-            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT')">
-            	<menu:item id="i_oferta_new" messageCode="global_menu_new" url="/ofertas?form" z="XL2la3mMU88KBAljrX+q6go8ogw="/>
-            </sec:authorize>    
-                <menu:item id="i_oferta_list" messageCode="global_menu_list" url="/ofertas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YFpuok8se1icruycVP1Ngny6x3c="/>
-                <menu:item id="fi_oferta_empresa" messageCode="global_menu_find" url="/ofertas?find=ByEmpresa&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="SBgE07Jrp3rC/RpVLeS5RBUU34g="/>
-                <menu:item id="fi_oferta_perfil" messageCode="global_menu_find" url="/ofertas?find=ByPerfil&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="Swf0RI2XrgBNAmm+/t/ttBd4MWk="/>
-                <menu:item id="fi_oferta_puestotrabajo" messageCode="global_menu_find" url="/ofertas?find=ByPuestoTrabajo&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="7TBiD7oC7AwKIW3xZACD4/1Jf1U="/>
-                <menu:item id="fi_oferta_tipologiaandsueldobrutoandvacantes" messageCode="global_menu_find" url="/ofertas?find=ByTipologiaAndSueldoBrutoAndVacantes&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="NcQTeeRrND/8YEXkMaVjkKfdmKA="/>
-            </menu:category>
-            
-            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT')"> 
-	            <menu:category id="c_demandante" z="ap7hcwTTE7QpwHyV1OnSKrPHdQc=">
-	                <menu:item id="i_demandante_new" messageCode="global_menu_new" url="/demandantes?form" z="8+S2ulD0VSXmoyyhDfXJ+CNxgh8="/>+	                <menu:item id="i_demandante_list" messageCode="global_menu_list" url="/demandantes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1MtvqFaAsZmIa4hZR8pApwIOdDY="/>
-	            </menu:category>
-            </sec:authorize>
-            
-            <menu:category id="c_formacion" z="IeUE1qUB60SvsVjUpyu3CKjAwcQ=">
-            	<menu:item id="i_formacion_new" messageCode="global_menu_new" url="/formacions?form" z="J5LIhWh+qugo3BonD7DqT+MNhdk="/>
-                <menu:item id="i_formacion_list" messageCode="global_menu_list" url="/formacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HUwg6eWuyi/+bXE5Mnr+igrwIkc="/>
-                <menu:item id="fi_formacion_cursosidiomasandtitulosacademicos" messageCode="global_menu_find" url="/formacions?find=ByCursosIdiomasAndTitulosAcademicos&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="QL473rZSnzeksBb8gZB6htasado="/>
-            </menu:category>
-             
-            <menu:category id="c_curriculum" z="LktIPOcgSf6R03MYws0FOpXRymQ=">
-            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
-                <menu:item id="i_curriculum_new" messageCode="global_menu_new" url="/curriculums?form" z="CgoaCt/ZFSiTVLLesxgHSXy2Q/I="/>
+                <menu:category id="c_formacion" z="IeUE1qUB60SvsVjUpyu3CKjAwcQ=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
+                        <menu:item id="i_formacion_new" messageCode="global_menu_new" url="/formacions?form" z="J5LIhWh+qugo3BonD7DqT+MNhdk="/>
+                    </sec:authorize>
+                    <menu:item id="i_formacion_list" messageCode="global_menu_list" url="/formacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HUwg6eWuyi/+bXE5Mnr+igrwIkc="/>
+                    <menu:item id="fi_formacion_cursosidiomasandtitulosacademicos" messageCode="global_menu_find" url="/formacions?find=ByCursosIdiomasAndTitulosAcademicos&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="QL473rZSnzeksBb8gZB6htasado="/>
+                </menu:category>
             </sec:authorize>
             <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
-                <menu:item id="i_curriculum_list" messageCode="global_menu_list" url="/curriculums?page=1&amp;size=${empty param.size ? 10 : param.size}" z="mz8jOwvZQAQIzi0/ZAvTYX5pzFA="/>
+                <menu:category id="c_curriculum" z="LktIPOcgSf6R03MYws0FOpXRymQ=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE')">
+                        <menu:item id="i_curriculum_new" messageCode="global_menu_new" url="/curriculums?form" z="CgoaCt/ZFSiTVLLesxgHSXy2Q/I="/>
+                    </sec:authorize>
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                        <menu:item id="i_curriculum_list" messageCode="global_menu_list" url="/curriculums?page=1&amp;size=${empty param.size ? 10 : param.size}" z="mz8jOwvZQAQIzi0/ZAvTYX5pzFA="/>
+                    </sec:authorize>
+                </menu:category>
             </sec:authorize>
-            </menu:category>
-             
-            <menu:category id="c_empresa" z="Xy2UIEQBwGL74OghlgyDNqDXG44=">
-            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT')">
-                <menu:item id="i_empresa_new" messageCode="global_menu_new" url="/empresas?form" z="TBXez8QM+aB2tzcjHN1lQJYrewc="/>
+            <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'DEMANDANTE', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
+                <menu:category id="c_empresa" z="Xy2UIEQBwGL74OghlgyDNqDXG44=">
+                    <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT')">
+                        <menu:item id="i_empresa_new" messageCode="global_menu_new" url="/empresas?form" z="TBXez8QM+aB2tzcjHN1lQJYrewc="/>
+                    </sec:authorize>
+                    <menu:item id="i_empresa_list" messageCode="global_menu_list" url="/empresas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/YQYlSdehDz3lrOGSSpWZYe++Zk="/>
+                </menu:category>
             </sec:authorize>
-                <menu:item id="i_empresa_list" messageCode="global_menu_list" url="/empresas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/YQYlSdehDz3lrOGSSpWZYe++Zk="/>
-            </menu:category>
-
             <sec:authorize access="hasAnyRole('ADMINISTRADOR', 'GESTOR_ETT', 'GESTOR_EMPRESA')">
-	            <menu:category id="c_localizacion" z="Xz23btBvQalu0fOfODfDsPk458k=">
-	                <menu:item id="i_localizacion_new" messageCode="global_menu_new" url="/localizacions?form" z="zkpqXsv93tOCNQokTOLb8lKILmQ="/>
-	                <menu:item id="i_localizacion_list" messageCode="global_menu_list" url="/localizacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="InM8yKFoMAdXifon78tQEBD/Y28="/>
-	            </menu:category>
+                <menu:category id="c_localizacion" z="Xz23btBvQalu0fOfODfDsPk458k=">
+                    <menu:item id="i_localizacion_new" messageCode="global_menu_new" url="/localizacions?form" z="zkpqXsv93tOCNQokTOLb8lKILmQ="/>
+                    <menu:item id="i_localizacion_list" messageCode="global_menu_list" url="/localizacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="InM8yKFoMAdXifon78tQEBD/Y28="/>
+                </menu:category>
             </sec:authorize>
             <sec:authorize access="hasRole('ADMINISTRADOR')">
-	            <menu:category id="c_usuario" z="g6oG0656PcsmmvUYeBtpgiQROck=">   	
-	                <menu:item id="i_usuario_new" messageCode="global_menu_new" url="/usuarios?form" z="RG1gCsiZQjg1HLDzXbHKht6yDkw="/>
-	                <menu:item id="i_usuario_list" messageCode="global_menu_list" url="/usuarios?page=1&amp;size=${empty param.size ? 10 : param.size}" z="P7ZIPrcTTBR41JYD0QldbYgsZrM="/>	
-	            </menu:category>
+                <menu:category id="c_usuario" z="g6oG0656PcsmmvUYeBtpgiQROck=">
+                    <menu:item id="i_usuario_new" messageCode="global_menu_new" url="/usuarios?form" z="RG1gCsiZQjg1HLDzXbHKht6yDkw="/>
+                    <menu:item id="i_usuario_list" messageCode="global_menu_list" url="/usuarios?page=1&amp;size=${empty param.size ? 10 : param.size}" z="P7ZIPrcTTBR41JYD0QldbYgsZrM="/>
+                </menu:category>
             </sec:authorize>
-         </menu:menu>
-     </div>
- </div>
+        </menu:menu>
+    </div>
+</div>

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,17 +27,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect OfertaController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String OfertaController.create(@Valid Oferta oferta, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, oferta);
-            return "ofertas/create";
-        }
-        uiModel.asMap().clear();
-        oferta.persist();
-        return "redirect:/ofertas/" + encodeUrlPathSegment(oferta.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String OfertaController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Oferta());
@@ -44,7 +35,7 @@ privileged aspect OfertaController_Roo_Controller {
             dependencies.add(new String[] { "localizacion", "localizacions" });
         }
         if (Empresa.countEmpresas() == 0) {
-            dependencies.add(new String[] { "empresa", "empresas" });
+            dependencies.add(new String[] { "puestoTrabajo", "empresas" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "ofertas/create";
@@ -52,12 +43,12 @@ privileged aspect OfertaController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String OfertaController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("oferta", Oferta.findOferta(id));
         uiModel.addAttribute("itemId", id);
         return "ofertas/show";
     }
     
-        
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
     public String OfertaController.update(@Valid Oferta oferta, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -85,8 +76,15 @@ privileged aspect OfertaController_Roo_Controller {
         return "redirect:/ofertas";
     }
     
+    void OfertaController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("oferta_fechadisponibleinicio_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("oferta_fechadisponiblefin_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("oferta_fechainicioactividad_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    }
+    
     void OfertaController.populateEditForm(Model uiModel, Oferta oferta) {
         uiModel.addAttribute("oferta", oferta);
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("empresas", Empresa.findAllEmpresas());
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
         uiModel.addAttribute("localizacions", Localizacion.findAllLocalizacions());

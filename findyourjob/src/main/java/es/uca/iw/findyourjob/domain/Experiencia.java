@@ -9,6 +9,10 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @RooJavaBean
 @RooToString
@@ -24,18 +28,6 @@ public class Experiencia {
     /**
      */
     @NotNull
-    @Size(min = 3, max = 30)
-    private String fechaContratoInicio;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String fechaContratoFin;
-
-    /**
-     */
-    @NotNull
     @ManyToOne
     private Curriculum curriculum;
 
@@ -43,4 +35,18 @@ public class Experiencia {
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "experiencia")
     private Set<Puesto> puestos = new HashSet<Puesto>();
+
+    /**
+     */
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date fechaContratoInicio;
+
+    /**
+     */
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date fechaContratoFin;
 }

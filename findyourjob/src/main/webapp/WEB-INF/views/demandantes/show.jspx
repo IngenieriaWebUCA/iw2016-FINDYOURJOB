@@ -5,7 +5,6 @@
     <page:show id="ps_es_uca_iw_findyourjob_domain_Demandante" object="${demandante}" path="/demandantes" z="uQZNrz1/nEwdscEPZME8bRnpbq4=">
         <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Demandante_nombre" object="${demandante}" z="gBAy9UQ31v5VhAae0P3R0cRPHXI="/>
         <field:display field="apellidos" id="s_es_uca_iw_findyourjob_domain_Demandante_apellidos" object="${demandante}" z="XtNid3DuMcVtaGJLKe6D4/chcdw="/>
-        <field:display field="fechaNacimiento" id="s_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" object="${demandante}" z="A++FqPyNSqLGK/c1l9E/75W3+W0="/>
         <field:display field="sexo" id="s_es_uca_iw_findyourjob_domain_Demandante_sexo" object="${demandante}" z="UcfNYoevvb3VXXtK3HJxb52dpx4="/>
         <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Demandante_email" object="${demandante}" z="kEXEjrPUirxCKh96+WCk4rSicqg="/>
         <field:display field="telefono" id="s_es_uca_iw_findyourjob_domain_Demandante_telefono" object="${demandante}" z="+U8H280kxV8rFXpZ5JDqXqpGF0M="/>
@@ -14,5 +13,6 @@
         <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Demandante_password" object="${demandante}" z="j2/BEV+0JazWaUhLRaGdMTC6yPE="/>
         <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Demandante_rol" object="${demandante}" z="zmbFiL5VYs+fG3kwPxUDuYu4KSI="/>
         <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Demandante_enabled" object="${demandante}" z="2jVthBRQFWTEjexGYflApShNw7g="/>
+        <field:display date="true" dateTimePattern="${demandante_fechanacimiento_date_format}" field="fechaNacimiento" id="s_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" object="${demandante}" z="ZBzC3FKanpIcQo8iAsKejeGN5s4="/>
     </page:show>
 </div>

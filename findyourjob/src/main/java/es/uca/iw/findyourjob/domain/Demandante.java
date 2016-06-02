@@ -11,31 +11,27 @@ import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord(sequenceName = "DEMANDANTE_SEQ")
-public class Demandante extends Usuario{
-
+public class Demandante extends Usuario {
+	
     /**
      */
     @NotNull
     @Size(min = 3, max = 30)
     private String nombre;
 
-
-    
     /**
      */
     @NotNull
     @Size(min = 3, max = 30)
     private String apellidos;
-
-    /**
-     */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String fechaNacimiento;
 
     /**
      */
@@ -62,15 +58,11 @@ public class Demandante extends Usuario{
 
     @ManyToOne
     private Curriculum curriculum;
-    
-    /*private String username;
-    private String password;
-    private String rol;
-    
-    @OneToOne(cascade={CascadeType.ALL})
-    private Usuario usuario;*/
-    
- 
-    
-    
+
+    /**
+     */
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Date fechaNacimiento;
 }

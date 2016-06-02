@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,6 +52,7 @@ privileged aspect InscripcionController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String InscripcionController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("inscripcion", Inscripcion.findInscripcion(id));
         uiModel.addAttribute("itemId", id);
         return "inscripcions/show";
@@ -66,6 +69,7 @@ privileged aspect InscripcionController_Roo_Controller {
         } else {
             uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions(sortFieldName, sortOrder));
         }
+        addDateTimeFormatPatterns(uiModel);
         return "inscripcions/list";
     }
     
@@ -96,8 +100,13 @@ privileged aspect InscripcionController_Roo_Controller {
         return "redirect:/inscripcions";
     }
     
+    void InscripcionController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("inscripcion_fecha_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    }
+    
     void InscripcionController.populateEditForm(Model uiModel, Inscripcion inscripcion) {
         uiModel.addAttribute("inscripcion", inscripcion);
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
         uiModel.addAttribute("ofertas", Oferta.findAllOfertas());
     }

@@ -5,9 +5,9 @@
     <page:list id="pl_es_uca_iw_findyourjob_domain_Experiencia" items="${experiencias}" z="2XJzWT1rR18F3zuA6uPUnZSukYc=">
         <table:table data="${experiencias}" id="l_es_uca_iw_findyourjob_domain_Experiencia" path="/experiencias" z="wttAhy8/qvv+tVG7b3eSPvcolIQ=">
             <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" property="nombreEmpresa" z="QBOihj8C392Qonu+D7zy2slY57M="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" property="fechaContratoInicio" z="MK3/ulEFGi8s7XBltNedazMIcmo="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" property="fechaContratoFin" z="NKUuvJkI1oowXq3zBBG9QoEwxAQ="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" property="curriculum" z="J1aL5jlV82O/odhZQlQS8Yw/pFQ="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" property="curriculum" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${experiencia_fechacontratoinicio_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" property="fechaContratoInicio" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${experiencia_fechacontratofin_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" property="fechaContratoFin" render="false" z="user-managed"/>
         </table:table>
     </page:list>
 </div>
