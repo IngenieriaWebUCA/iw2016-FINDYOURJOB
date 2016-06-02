@@ -2,8 +2,8 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_es_uca_iw_findyourjob_domain_Demandante" items="${demandantes}" z="Be7S41cS7O5aF6MyPnkACPeCvCw=">
-        <table:table data="${demandantes}" id="l_es_uca_iw_findyourjob_domain_Demandante" path="/demandantes" z="HkfBmjhQVu43SdU9rzVPsurDBOk=">
+    <page:list id="pl_es_uca_iw_findyourjob_domain_Demandante" items="${demandantes}" z="Be7S41cS7O5aF6MyPnkACPeCvCw=" >
+        <table:table data="${demandantes}" id="l_es_uca_iw_findyourjob_domain_Demandante" path="/demandantes" z="HkfBmjhQVu43SdU9rzVPsurDBOk=" delete="false">
             <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_nombre" property="nombre" z="UERpAsMWc5qRzewh2iKB4XgeoJE="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_apellidos" property="apellidos" z="evcMMwtpVCvMJLyWVKaDgN8fgO4="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Demandante_username" property="username" render="false" z="user-managed"/>

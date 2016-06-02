@@ -227,3 +227,25 @@ web mvc all --package ~.web
 // [failed] field reference --fieldName empresa --type ~.domain.Empresa --notNull --class ~.domain.Oferta
 field reference --fieldName empresa --type ~.domain.Empresa --notNull --class ~.domain.Oferta
 field set --class ~.domain.Empresa --fieldName ofertas --type ~.domain.Oferta --mappedBy empresa --notNull false --cardinality ONE_TO_MANY
+web mvc all --package ~.web
+test mock --entity ~.domain.Curriculum
+test mock --entity ~.domain.Demandante
+test mock --entity ~.domain.Empresa
+test mock --entity ~.domain.Experiencia
+test mock --entity ~.domain.Formacion
+test mock --entity ~.domain.Inscripcion
+test mock --entity ~.domain.Localizacion
+test mock --entity ~.domain.Oferta
+test mock --entity ~.domain.Puesto
+test mock --entity ~.domain.Usuario
+test integration --entity ~.domain.Curriculum
+test integration --entity ~.domain.Demandante
+// [failed] test integration --entity ~.domain.Empresa
+test integration --entity ~.domain.Experiencia
+test integration --entity ~.domain.Empresa
+test integration --entity ~.domain.Formacion
+test integration --entity ~.domain.Inscripcion
+test integration --entity ~.domain.Localizacion
+test integration --entity ~.domain.Oferta
+test integration --entity ~.domain.Puesto
+test integration --entity ~.domain.Usuario
