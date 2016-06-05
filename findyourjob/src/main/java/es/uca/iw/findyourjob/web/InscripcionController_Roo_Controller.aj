@@ -7,8 +7,10 @@ import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.web.InscripcionController;
+import es.uca.iw.reference.InscripcionEstado;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -41,10 +43,10 @@ privileged aspect InscripcionController_Roo_Controller {
         populateEditForm(uiModel, new Inscripcion());
         List<String[]> dependencies = new ArrayList<String[]>();
         if (Oferta.countOfertas() == 0) {
-            dependencies.add(new String[] { "oferta", "ofertas" });
+            dependencies.add(new String[] { "inscripcion_estado", "ofertas" });
         }
         if (Demandante.countDemandantes() == 0) {
-            dependencies.add(new String[] { "demandante", "demandantes" });
+            dependencies.add(new String[] { "oferta", "demandantes" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "inscripcions/create";
@@ -109,6 +111,7 @@ privileged aspect InscripcionController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
         uiModel.addAttribute("ofertas", Oferta.findAllOfertas());
+        uiModel.addAttribute("inscripcionestadoes", Arrays.asList(InscripcionEstado.values()));
     }
     
     String InscripcionController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

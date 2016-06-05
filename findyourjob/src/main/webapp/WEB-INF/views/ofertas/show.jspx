@@ -9,10 +9,10 @@
         <field:display field="perfil" id="s_es_uca_iw_findyourjob_domain_Oferta_perfil" object="${oferta}" z="4L8OaUWRk3fwKsnXUmUbax32uXw="/>
         <field:display field="localizacion" id="s_es_uca_iw_findyourjob_domain_Oferta_localizacion" object="${oferta}" z="4gp/hODGaAJZKhcw+5jrev+/9V8="/>
         <field:display field="puestoTrabajo" id="s_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" object="${oferta}" z="sk2l/fcglwvFXJAXv5im3lUc/P8="/>
-        <field:display field="estado" id="s_es_uca_iw_findyourjob_domain_Oferta_estado" object="${oferta}" z="aHXj+qk9Q/KkVcuFTAjayMXKnm0="/>
         <field:display date="true" dateTimePattern="${oferta_fechadisponibleinicio_date_format}" field="fechaDisponibleInicio" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" object="${oferta}" z="1wlmlyrlFIrkQHMexK0e5N8JNdE="/>
         <field:display date="true" dateTimePattern="${oferta_fechadisponiblefin_date_format}" field="fechaDisponibleFin" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleFin" object="${oferta}" z="Aa67AS+E36QYfJvnUxvyzLXJq/A="/>
         <field:display date="true" dateTimePattern="${oferta_fechainicioactividad_date_format}" field="fechaInicioActividad" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" object="${oferta}" z="U4l6YoCZBkxUEA/Kccj3x6z2jqQ="/>
         <field:display field="empresa" id="s_es_uca_iw_findyourjob_domain_Oferta_empresa" object="${oferta}" z="XIxD1kaeDfp6fn2y4PfutDNO1oQ="/>
+        <field:display field="oferta_estado" id="s_es_uca_iw_findyourjob_domain_Oferta_oferta_estado" object="${oferta}" z="hiLc8wyt8+pfJaFo5+o35Nf9IRc="/>
     </page:show>
 </div>

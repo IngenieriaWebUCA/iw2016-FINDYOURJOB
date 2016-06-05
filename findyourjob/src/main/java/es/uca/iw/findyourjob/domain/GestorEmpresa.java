@@ -1,19 +1,20 @@
 package es.uca.iw.findyourjob.domain;
+import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-
-import es.uca.iw.reference.Sexo;
 import es.uca.iw.reference.UsuarioRol;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import javax.persistence.Enumerated;
-
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "PUESTO_SEQ", finders = { "findUsuariosByUsername" })
-public class Usuario {
+@RooJpaActiveRecord(sequenceName = "PUESTO_SEQ", finders = { "findGestorEmpresasByUsername" })
+public class GestorEmpresa {
 
     /**
      */
@@ -31,8 +32,11 @@ public class Usuario {
      */
     @Enumerated
     private UsuarioRol rol;
-    /**
-     */
+
     private boolean enabled;
 
+    /**
+     */
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gestor")
+    private Set<Empresa> empresasGestionadas = new HashSet<Empresa>();
 }

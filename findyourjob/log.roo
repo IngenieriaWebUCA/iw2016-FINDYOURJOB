@@ -249,3 +249,37 @@ test integration --entity ~.domain.Localizacion
 test integration --entity ~.domain.Oferta
 test integration --entity ~.domain.Puesto
 test integration --entity ~.domain.Usuario
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-03 12:39:36
+web mvc all --package ~.web
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-03 16:36:43
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-03 16:55:06
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-03 17:56:08
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-03 18:04:23
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-03 18:06:05
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-03 18:06:20
+finder add --finderName findCurriculumsByDemandante --class ~.domain.Curriculum
+finder add --finderName findUsuariosByUsername --class ~.domain.Usuario
+entity jpa --class ~.domain.GestorEmpresa --sequenceName PUESTO_SEQ
+field reference --fieldName gestorEmpresa --type ~.domain.GestorEmpresa --notNull --class ~.domain.Empresa
+field set --class ~.domain.GestorEmpresa --fieldName empresas --type ~.domain.Empresa --mappedBy gestorEmpresa --notNull false --cardinality ONE_TO_MANY
+// [failed] field reference --fieldName usuario --type ~.domain.Usuario --notNull --class ~.domain.Empresa
+field set --class ~.domain.Usuario --fieldName empresas --type ~.domain.Empresa --mappedBy usuario --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName gestor --type ~.domain.Usuario --notNull --class ~.domain.Empresa
+field set --class ~.domain.Usuario --fieldName empresasGestionadas --type ~.domain.Empresa --mappedBy gestor --notNull false --cardinality ONE_TO_MANY
+field reference --fieldName gestor --type ~.domain.Usuario --notNull --class ~.domain.Empresa
+field set --class ~.domain.Usuario --fieldName empresasGestionadas --type ~.domain.Empresa --mappedBy gestor --notNull false --cardinality ONE_TO_MANY
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-04 01:32:48
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-04 01:37:01
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-04 02:09:32
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-04 02:12:07
+entity jpa --class ~.domain.GestorEmpresa --sequenceName PUESTO_SEQ
+// [failed] field reference --fieldName gestor --type ~.domain.GestorEmpresa --notNull --class ~.domain.Empresa
+field reference --fieldName gestor --type ~.domain.GestorEmpresa --notNull --class ~.domain.Empresa
+field set --class ~.domain.GestorEmpresa --fieldName empresasGestionadas --type ~.domain.Empresa --mappedBy gestor --notNull false --cardinality ONE_TO_MANY
+finder add --finderName findUsuariosByUsername --class ~.domain.GestorEmpresa
+finder add --finderName findGestorEmpresasByUsername --class ~.domain.GestorEmpresa
+field reference --fieldName gestor --type ~.domain.GestorEmpresa --notNull --class ~.domain.Empresa
+field set --class ~.domain.GestorEmpresa --fieldName empresasGestionadas --type ~.domain.Empresa --mappedBy gestor --notNull false --cardinality ONE_TO_MANY
+// [failed] field enum --fieldName rol --type ~.model.UsuarioRol --enumType STRING
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-04 03:30:05

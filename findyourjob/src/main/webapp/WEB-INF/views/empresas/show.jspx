@@ -8,10 +8,11 @@
         <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Empresa_email" object="${empresa}" z="upaCJxF5tGg2zUdaIx9tcAgmVL4="/>
         <field:display field="actividadProfesional" id="s_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" object="${empresa}" z="9XFULsT6d4kYLfbgx7DGo/958T8="/>
         <field:display field="numeroEmpleados" id="s_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" object="${empresa}" z="F0OkddxPtrr10kKhCzqrQ3jJOJ0="/>
-        <field:display field="gestion_propia" id="s_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" object="${empresa}" z="Y+u/k1jHwYv6FcJsLcEFNEYqYrw="/>
         <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Empresa_username" object="${empresa}" z="l8T3sAo0G9XvYiD/o5Qpb+m57CQ="/>
         <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Empresa_password" object="${empresa}" z="UcQ5RvZGrF4iFy9Bb+ZMD60S8Fg="/>
-        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Empresa_rol" object="${empresa}" z="IpZ4QAAeUF52WMfg/6ac/Fbnbtw="/>
         <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Empresa_enabled" object="${empresa}" z="lqOwO9ftFCMjfIcsv0QF4yP+jcM="/>
+        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Empresa_rol" object="${empresa}" z="IpZ4QAAeUF52WMfg/6ac/Fbnbtw="/>
+        <field:display field="gestion_propia" id="s_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" object="${empresa}" z="Y+u/k1jHwYv6FcJsLcEFNEYqYrw="/>
+        <field:display field="gestor" id="s_es_uca_iw_findyourjob_domain_Empresa_gestor" object="${empresa}" z="BqoMXp3URrmGFFoGr8l2ChCDXUI="/>
     </page:show>
 </div>

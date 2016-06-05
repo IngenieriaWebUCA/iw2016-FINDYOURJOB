@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
@@ -47,8 +48,6 @@ public class Empresa extends Usuario {
     @Min(0L)
     private int numeroEmpleados;
 
-    //@PersistenceContext
-    //transient EntityManager entityManager;
     /**
      */
     @NotNull
@@ -58,4 +57,9 @@ public class Empresa extends Usuario {
      */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "empresa")
     private Set<Oferta> ofertas = new HashSet<Oferta>();
+
+    /**
+     */
+    @ManyToOne
+    private GestorEmpresa gestor;
 }

@@ -3,9 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Inscripcion" modelAttribute="inscripcion" path="/inscripcions" versionField="Version" z="crG/ETJhZkE9njjjFxFc11IjpLg=">
-        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Inscripcion_estado" max="30" min="3" required="true" z="q2PgqgREL+MB36qE6ddeijEZPPI="/>
         <field:select field="oferta" id="c_es_uca_iw_findyourjob_domain_Inscripcion_oferta" itemValue="id" items="${ofertas}" path="/ofertas" required="true" z="bw0i5zK1a2CGGrGa0HWedKgJYFk="/>
         <field:select field="demandante" id="c_es_uca_iw_findyourjob_domain_Inscripcion_demandante" itemValue="id" items="${demandantes}" path="/demandantes" required="true" z="1nJzREQp/oTIsp0iwqrQJKC6uyQ="/>
         <field:datetime dateTimePattern="${inscripcion_fecha_date_format}" field="fecha" id="c_es_uca_iw_findyourjob_domain_Inscripcion_fecha" required="true" z="Es6TzPok9/7JAyG2V3alFVHV3Vg="/>
+        <field:select field="inscripcion_estado" id="c_es_uca_iw_findyourjob_domain_Inscripcion_inscripcion_estado" items="${inscripcionestadoes}" path="inscripcionestadoes" z="3oCiEstsVkj6U717SDaIPTVkuPU="/>
     </form:update>
 </div>

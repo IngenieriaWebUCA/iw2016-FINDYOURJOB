@@ -9,7 +9,8 @@ import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.LocalizacionDataOnDemand;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.domain.OfertaDataOnDemand;
-import es.uca.iw.findyourjob.domain.Puesto;
+import es.uca.iw.findyourjob.domain.PuestoDataOnDemand;
+import es.uca.iw.reference.OfertaEstado;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -37,16 +38,18 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     @Autowired
     LocalizacionDataOnDemand OfertaDataOnDemand.localizacionDataOnDemand;
     
+    @Autowired
+    PuestoDataOnDemand OfertaDataOnDemand.puestoDataOnDemand;
+    
     public Oferta OfertaDataOnDemand.getNewTransientOferta(int index) {
         Oferta obj = new Oferta();
         setEmpresa(obj, index);
-        setEstado(obj, index);
         setFechaDisponibleFin(obj, index);
         setFechaDisponibleInicio(obj, index);
         setFechaInicioActividad(obj, index);
         setLocalizacion(obj, index);
+        setOferta_estado(obj, index);
         setPerfil(obj, index);
-        setPuestoTrabajo(obj, index);
         setSueldoBruto(obj, index);
         setTipologia(obj, index);
         setVacantes(obj, index);
@@ -56,14 +59,6 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     public void OfertaDataOnDemand.setEmpresa(Oferta obj, int index) {
         Empresa empresa = empresaDataOnDemand.getRandomEmpresa();
         obj.setEmpresa(empresa);
-    }
-    
-    public void OfertaDataOnDemand.setEstado(Oferta obj, int index) {
-        String estado = "estado_" + index;
-        if (estado.length() > 30) {
-            estado = estado.substring(0, 30);
-        }
-        obj.setEstado(estado);
     }
     
     public void OfertaDataOnDemand.setFechaDisponibleFin(Oferta obj, int index) {
@@ -86,6 +81,11 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
         obj.setLocalizacion(localizacion);
     }
     
+    public void OfertaDataOnDemand.setOferta_estado(Oferta obj, int index) {
+        OfertaEstado oferta_estado = OfertaEstado.class.getEnumConstants()[0];
+        obj.setOferta_estado(oferta_estado);
+    }
+    
     public void OfertaDataOnDemand.setPerfil(Oferta obj, int index) {
         String perfil = "perfil_" + index;
         if (perfil.length() > 30) {
@@ -94,13 +94,8 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
         obj.setPerfil(perfil);
     }
     
-    public void OfertaDataOnDemand.setPuestoTrabajo(Oferta obj, int index) {
-        Puesto puestoTrabajo = null;
-        obj.setPuestoTrabajo(puestoTrabajo);
-    }
-    
     public void OfertaDataOnDemand.setSueldoBruto(Oferta obj, int index) {
-        Float sueldoBruto = new Integer(index).floatValue();
+        float sueldoBruto = new Integer(index).floatValue();
         obj.setSueldoBruto(sueldoBruto);
     }
     

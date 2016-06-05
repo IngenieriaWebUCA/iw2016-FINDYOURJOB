@@ -9,11 +9,12 @@
         <field:input field="actividadProfesional" id="c_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" max="30" min="3" required="true" z="7lndUu9UFc3odtFhJIXwUOBWaQc="/>
         <field:input field="numeroEmpleados" id="c_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" min="0" required="true" z="uACmGhl0pTrUCWjkfzijfLu31NY="/>
         <field:simple field="ofertas" id="c_es_uca_iw_findyourjob_domain_Empresa_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" render="false" z="user-managed"/>
-        <field:checkbox field="gestion_propia" id="c_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" z="hOKkKiTcFDIp6xeE2hkDHJ4nwNM="/>
         <field:input field="username" id="c_es_uca_iw_findyourjob_domain_Empresa_username" max="10" min="5" required="true" z="CF8BuWSE1RCNpBBo0d+mLmYof2c="/>
         <field:input field="password" id="c_es_uca_iw_findyourjob_domain_Empresa_password" max="10" min="5" required="true" z="mJDqlS1nG53mtNJERRrW+DxbjeQ="/>
         <field:input field="rol" id="c_es_uca_iw_findyourjob_domain_Empresa_rol" render="false" z="user-managed"/>
         <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_Empresa_enabled" render="false" z="user-managed"/>
+        <field:select field="gestor" id="c_es_uca_iw_findyourjob_domain_Empresa_gestor" itemValue="id" items="${usuarios}" path="/usuarios" render="false" required="true" z="user-managed"/>
+        <field:checkbox field="gestion_propia" id="c_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" z="hOKkKiTcFDIp6xeE2hkDHJ4nwNM="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Empresa" render="${not empty dependencies}" z="r9++XDftEDBxu3NVHgwzqdq6VCM="/>
 </div>

@@ -3,7 +3,7 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.Usuario;
+import es.uca.iw.findyourjob.domain.GestorEmpresa;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,33 +12,33 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Version;
 
-privileged aspect Usuario_Roo_Jpa_Entity {
+privileged aspect GestorEmpresa_Roo_Jpa_Entity {
     
-    declare @type: Usuario: @Entity;
+    declare @type: GestorEmpresa: @Entity;
     
     @Id
-    @SequenceGenerator(name = "usuarioGen", sequenceName = "PUESTO_SEQ")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "usuarioGen")
+    @SequenceGenerator(name = "gestorEmpresaGen", sequenceName = "PUESTO_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "gestorEmpresaGen")
     @Column(name = "id")
-    private Long Usuario.id;
+    private Long GestorEmpresa.id;
     
     @Version
     @Column(name = "version")
-    private Integer Usuario.version;
+    private Integer GestorEmpresa.version;
     
-    public Long Usuario.getId() {
+    public Long GestorEmpresa.getId() {
         return this.id;
     }
     
-    public void Usuario.setId(Long id) {
+    public void GestorEmpresa.setId(Long id) {
         this.id = id;
     }
     
-    public Integer Usuario.getVersion() {
+    public Integer GestorEmpresa.getVersion() {
         return this.version;
     }
     
-    public void Usuario.setVersion(Integer version) {
+    public void GestorEmpresa.setVersion(Integer version) {
         this.version = version;
     }
     

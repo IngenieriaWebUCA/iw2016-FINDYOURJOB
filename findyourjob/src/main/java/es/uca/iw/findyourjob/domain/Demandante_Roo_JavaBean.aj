@@ -6,6 +6,7 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
+import es.uca.iw.reference.Sexo;
 import java.util.Date;
 import java.util.Set;
 
@@ -27,11 +28,11 @@ privileged aspect Demandante_Roo_JavaBean {
         this.apellidos = apellidos;
     }
     
-    public String Demandante.getSexo() {
+    public Sexo Demandante.getSexo() {
         return this.sexo;
     }
     
-    public void Demandante.setSexo(String sexo) {
+    public void Demandante.setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
     

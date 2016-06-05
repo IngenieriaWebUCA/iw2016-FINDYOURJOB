@@ -4,10 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_findyourjob_domain_Oferta" modelAttribute="oferta" path="/ofertas" render="${empty dependencies}" z="yuNszLyOp354mxNl5NRdJX/LmM8=">
         <field:input field="tipologia" id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" max="30" min="3" required="true" z="CgBRQoDQF31YEbjb2/lo8c28RKY="/>
-        <field:input field="sueldoBruto" id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" min="0" required="true" validationMessageCode="field_invalid_number" z="fojLW7CqsKRI1J9swetgFBHFXqs="/>
+        <field:input field="sueldoBruto" id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" min="0" required="true" z="GNS/PQHDHjXs0I4RwsSzrriGicM="/>
         <field:input field="vacantes" id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" required="true" z="iDP6idbYF2+900ye7x+1jzdXSqw="/>
         <field:input field="perfil" id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" max="30" min="3" required="true" z="sr/89I4B/w27L3bR5Z/K27P34VE="/>
-        <field:input field="estado" id="c_es_uca_iw_findyourjob_domain_Oferta_estado" max="30" min="3" required="true" z="user-managed"/>
         <field:select field="localizacion" id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" itemValue="id" items="${localizacions}" path="/localizacions" required="true" z="P3F+O/84GdgW+jIERMLP3HAzmcw="/>
         <field:simple field="inscripciones" id="c_es_uca_iw_findyourjob_domain_Oferta_inscripciones" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" render="false" z="user-managed"/>
         <field:select field="puestoTrabajo" id="c_es_uca_iw_findyourjob_domain_Oferta_puestoTrabajo" itemValue="id" items="${puestoes}" path="/puestoes" z="jbP4QvFRn3kNVIGTK3PagIob/EY="/>
@@ -15,6 +14,7 @@
         <field:datetime dateTimePattern="${oferta_fechadisponiblefin_date_format}" field="fechaDisponibleFin" id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleFin" required="true" z="bxS7sM6STYKdcEb1plq2ox7rzDA="/>
         <field:datetime dateTimePattern="${oferta_fechainicioactividad_date_format}" field="fechaInicioActividad" id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" required="true" z="Rqc1F7gn0t2RhbSnYaNQMHNnlSQ="/>
         <field:select field="empresa" id="c_es_uca_iw_findyourjob_domain_Oferta_empresa" itemValue="id" items="${empresas}" path="/empresas" required="true" z="Q31YAYf+cz/L+e2sUGuuYAtE8/k="/>
+        <field:select field="oferta_estado" id="c_es_uca_iw_findyourjob_domain_Oferta_oferta_estado" items="${ofertaestadoes}" path="ofertaestadoes" render="false" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Oferta" render="${not empty dependencies}" z="tx4FcZ2C5C1OGgF0YUSj4XzCNYs="/>
 </div>

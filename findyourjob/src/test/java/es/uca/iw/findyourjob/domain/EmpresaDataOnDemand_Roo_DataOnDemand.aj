@@ -5,6 +5,8 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.EmpresaDataOnDemand;
+import es.uca.iw.findyourjob.domain.GestorEmpresa;
+import es.uca.iw.reference.UsuarioRol;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,6 +31,7 @@ privileged aspect EmpresaDataOnDemand_Roo_DataOnDemand {
         setEmail(obj, index);
         setEnabled(obj, index);
         setGestion_propia(obj, index);
+        setGestor(obj, index);
         setNombre(obj, index);
         setNumeroEmpleados(obj, index);
         setPassword(obj, index);
@@ -71,6 +74,11 @@ privileged aspect EmpresaDataOnDemand_Roo_DataOnDemand {
         obj.setGestion_propia(gestion_propia);
     }
     
+    public void EmpresaDataOnDemand.setGestor(Empresa obj, int index) {
+        GestorEmpresa gestor = null;
+        obj.setGestor(gestor);
+    }
+    
     public void EmpresaDataOnDemand.setNombre(Empresa obj, int index) {
         String nombre = "nombre_" + index;
         if (nombre.length() > 30) {
@@ -96,7 +104,7 @@ privileged aspect EmpresaDataOnDemand_Roo_DataOnDemand {
     }
     
     public void EmpresaDataOnDemand.setRol(Empresa obj, int index) {
-        String rol = "rol_" + index;
+        UsuarioRol rol = UsuarioRol.class.getEnumConstants()[0];
         obj.setRol(rol);
     }
     

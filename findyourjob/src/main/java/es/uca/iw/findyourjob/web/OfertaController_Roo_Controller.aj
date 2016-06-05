@@ -9,8 +9,10 @@ import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.domain.Puesto;
 import es.uca.iw.findyourjob.web.OfertaController;
+import es.uca.iw.reference.OfertaEstado;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -32,10 +34,10 @@ privileged aspect OfertaController_Roo_Controller {
         populateEditForm(uiModel, new Oferta());
         List<String[]> dependencies = new ArrayList<String[]>();
         if (Localizacion.countLocalizacions() == 0) {
-            dependencies.add(new String[] { "localizacion", "localizacions" });
+            dependencies.add(new String[] { "oferta_estado", "localizacions" });
         }
         if (Empresa.countEmpresas() == 0) {
-            dependencies.add(new String[] { "puestoTrabajo", "empresas" });
+            dependencies.add(new String[] { "localizacion", "empresas" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "ofertas/create";
@@ -89,6 +91,7 @@ privileged aspect OfertaController_Roo_Controller {
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
         uiModel.addAttribute("localizacions", Localizacion.findAllLocalizacions());
         uiModel.addAttribute("puestoes", Puesto.findAllPuestoes());
+        uiModel.addAttribute("ofertaestadoes", Arrays.asList(OfertaEstado.values()));
     }
     
     String OfertaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

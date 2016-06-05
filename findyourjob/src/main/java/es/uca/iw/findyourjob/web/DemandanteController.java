@@ -1,5 +1,7 @@
 package es.uca.iw.findyourjob.web;
 import es.uca.iw.findyourjob.domain.Demandante;
+import es.uca.iw.reference.UsuarioRol;
+import es.uca.iw.findyourjob.domain.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
@@ -23,7 +25,7 @@ public class DemandanteController {
             return "demandantes/create";
         }
         uiModel.asMap().clear();
-        demandante.setRol("DEMANDANTE");
+        demandante.setRol(UsuarioRol.DEMANDANTE);
         demandante.setEnabled(true);
         demandante.persist();
         return "redirect:/login";

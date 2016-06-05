@@ -1,10 +1,15 @@
 package es.uca.iw.findyourjob.web;
+import es.uca.iw.findyourjob.domain.Usuario;
 import es.uca.iw.findyourjob.domain.Empresa;
+import es.uca.iw.findyourjob.domain.GestorEmpresa;
 import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.reference.UsuarioRol;
+
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,7 +26,15 @@ import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
 @RooWebScaffold(path = "empresas", formBackingObject = Empresa.class)
 @GvNIXWebJQuery
 public class EmpresaController {
-
+	
+    private Usuario getUsuarioSesion() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        return Usuario.findUsuariosByUsername(username).getSingleResult();
+    }
+    private GestorEmpresa getGestorSesion() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        return GestorEmpresa.findGestorEmpresasByUsername(username).getSingleResult();
+    }
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String create(@Valid Empresa empresa, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -30,9 +43,14 @@ public class EmpresaController {
         }
         uiModel.asMap().clear();
         if (empresa.isGestion_propia()) {
-            empresa.setRol("GESTOR_EMPRESA");
+            empresa.setRol(UsuarioRol.GESTOR_EMPRESA);
             empresa.setEnabled(true);
-        } else empresa.setEnabled(false);
+        } else{
+        	empresa.setEnabled(false);
+        	GestorEmpresa gestor_ett = getGestorSesion();
+        	gestor_ett.getEmpresasGestionadas().add(empresa);
+        	empresa.setGestor(gestor_ett);
+        } 
         empresa.persist();
         return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId().toString(), httpServletRequest);
     }
@@ -52,7 +70,7 @@ public class EmpresaController {
 
     @RequestMapping(produces = "text/html")
     public String list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
-        if (page != null || size != null) {
+    	if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
             uiModel.addAttribute("empresas", Empresa.findEmpresaEntries(firstResult, sizeNo, sortFieldName, sortOrder));

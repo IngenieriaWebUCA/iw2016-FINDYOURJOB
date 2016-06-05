@@ -8,6 +8,8 @@ import es.uca.iw.findyourjob.domain.DemandanteDataOnDemand;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.InscripcionDataOnDemand;
 import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.findyourjob.domain.OfertaDataOnDemand;
+import es.uca.iw.reference.InscripcionEstado;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,11 +34,14 @@ privileged aspect InscripcionDataOnDemand_Roo_DataOnDemand {
     @Autowired
     DemandanteDataOnDemand InscripcionDataOnDemand.demandanteDataOnDemand;
     
+    @Autowired
+    OfertaDataOnDemand InscripcionDataOnDemand.ofertaDataOnDemand;
+    
     public Inscripcion InscripcionDataOnDemand.getNewTransientInscripcion(int index) {
         Inscripcion obj = new Inscripcion();
         setDemandante(obj, index);
-        setEstado(obj, index);
         setFecha(obj, index);
+        setInscripcion_estado(obj, index);
         setOferta(obj, index);
         return obj;
     }
@@ -46,21 +51,18 @@ privileged aspect InscripcionDataOnDemand_Roo_DataOnDemand {
         obj.setDemandante(demandante);
     }
     
-    public void InscripcionDataOnDemand.setEstado(Inscripcion obj, int index) {
-        String estado = "estado_" + index;
-        if (estado.length() > 30) {
-            estado = estado.substring(0, 30);
-        }
-        obj.setEstado(estado);
-    }
-    
     public void InscripcionDataOnDemand.setFecha(Inscripcion obj, int index) {
         Date fecha = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setFecha(fecha);
     }
     
+    public void InscripcionDataOnDemand.setInscripcion_estado(Inscripcion obj, int index) {
+        InscripcionEstado inscripcion_estado = InscripcionEstado.class.getEnumConstants()[0];
+        obj.setInscripcion_estado(inscripcion_estado);
+    }
+    
     public void InscripcionDataOnDemand.setOferta(Inscripcion obj, int index) {
-        Oferta oferta = null;
+        Oferta oferta = ofertaDataOnDemand.getRandomOferta();
         obj.setOferta(oferta);
     }
     

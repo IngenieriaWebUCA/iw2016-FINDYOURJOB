@@ -6,7 +6,8 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.CurriculumDataOnDemand;
 import es.uca.iw.findyourjob.domain.Demandante;
-import es.uca.iw.findyourjob.domain.Formacion;
+import es.uca.iw.findyourjob.domain.DemandanteDataOnDemand;
+import es.uca.iw.findyourjob.domain.FormacionDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect CurriculumDataOnDemand_Roo_DataOnDemand {
@@ -24,23 +26,23 @@ privileged aspect CurriculumDataOnDemand_Roo_DataOnDemand {
     
     private List<Curriculum> CurriculumDataOnDemand.data;
     
+    @Autowired
+    DemandanteDataOnDemand CurriculumDataOnDemand.demandanteDataOnDemand;
+    
+    @Autowired
+    FormacionDataOnDemand CurriculumDataOnDemand.formacionDataOnDemand;
+    
     public Curriculum CurriculumDataOnDemand.getNewTransientCurriculum(int index) {
         Curriculum obj = new Curriculum();
         setDemandante(obj, index);
-        setFormacion(obj, index);
         setFoto(obj, index);
         setTrayectoria(obj, index);
         return obj;
     }
     
     public void CurriculumDataOnDemand.setDemandante(Curriculum obj, int index) {
-        Demandante demandante = null;
+        Demandante demandante = demandanteDataOnDemand.getRandomDemandante();
         obj.setDemandante(demandante);
-    }
-    
-    public void CurriculumDataOnDemand.setFormacion(Curriculum obj, int index) {
-        Formacion formacion = null;
-        obj.setFormacion(formacion);
     }
     
     public void CurriculumDataOnDemand.setFoto(Curriculum obj, int index) {

@@ -4,6 +4,7 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
+import es.uca.iw.findyourjob.domain.GestorEmpresa;
 import es.uca.iw.findyourjob.domain.Oferta;
 import java.util.Set;
 
@@ -63,6 +64,14 @@ privileged aspect Empresa_Roo_JavaBean {
     
     public void Empresa.setOfertas(Set<Oferta> ofertas) {
         this.ofertas = ofertas;
+    }
+    
+    public GestorEmpresa Empresa.getGestor() {
+        return this.gestor;
+    }
+    
+    public void Empresa.setGestor(GestorEmpresa gestor) {
+        this.gestor = gestor;
     }
     
 }

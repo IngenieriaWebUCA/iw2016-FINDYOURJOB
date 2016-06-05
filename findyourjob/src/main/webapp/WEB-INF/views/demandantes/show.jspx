@@ -11,8 +11,8 @@
         <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Demandante_curriculum" object="${demandante}" z="Yd6Fm6Kt7fR3TeKL5wZnP0t9Ur8="/>
         <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Demandante_username" object="${demandante}" z="ShDuONkmCrT7KrThFcKaTgrb19o="/>
         <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Demandante_password" object="${demandante}" z="j2/BEV+0JazWaUhLRaGdMTC6yPE="/>
-        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Demandante_rol" object="${demandante}" z="zmbFiL5VYs+fG3kwPxUDuYu4KSI="/>
         <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Demandante_enabled" object="${demandante}" z="2jVthBRQFWTEjexGYflApShNw7g="/>
         <field:display date="true" dateTimePattern="${demandante_fechanacimiento_date_format}" field="fechaNacimiento" id="s_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" object="${demandante}" z="ZBzC3FKanpIcQo8iAsKejeGN5s4="/>
+        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Demandante_rol" object="${demandante}" z="zmbFiL5VYs+fG3kwPxUDuYu4KSI="/>
     </page:show>
 </div>

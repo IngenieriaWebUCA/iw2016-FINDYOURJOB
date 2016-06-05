@@ -8,6 +8,7 @@
             <table:column id="c_es_uca_iw_findyourjob_domain_Inscripcion_oferta" property="oferta" z="qMdrb6ELNyXzv/t3TAdcU9paSUQ="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Inscripcion_demandante" property="demandante" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${inscripcion_fecha_date_format}" id="c_es_uca_iw_findyourjob_domain_Inscripcion_fecha" property="fecha" z="I6QmPwPenNnE4nL+UP+zRCr1pxg="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Inscripcion_inscripcion_estado" property="inscripcion_estado" z="oWsHM3nYVaM50he/CWEQMUpX0zQ="/>
         </table:table>
     </page:list>
 </div>

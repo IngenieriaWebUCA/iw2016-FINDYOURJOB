@@ -2,8 +2,12 @@ package es.uca.iw.findyourjob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
+
+import es.uca.iw.reference.InscripcionEstado;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import java.util.Date;
 import javax.persistence.Temporal;
@@ -17,9 +21,8 @@ public class Inscripcion {
 
     /**
      */
-    @NotNull
-    @Size(min = 3, max = 30)
-    private String estado;
+    @Enumerated
+    private InscripcionEstado inscripcion_estado;
 
     /**
      */

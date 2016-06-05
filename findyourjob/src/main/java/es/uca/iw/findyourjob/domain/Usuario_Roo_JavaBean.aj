@@ -4,6 +4,7 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Usuario;
+import es.uca.iw.reference.UsuarioRol;
 
 privileged aspect Usuario_Roo_JavaBean {
     
@@ -23,11 +24,11 @@ privileged aspect Usuario_Roo_JavaBean {
         this.password = password;
     }
     
-    public String Usuario.getRol() {
+    public UsuarioRol Usuario.getRol() {
         return this.rol;
     }
     
-    public void Usuario.setRol(String rol) {
+    public void Usuario.setRol(UsuarioRol rol) {
         this.rol = rol;
     }
     

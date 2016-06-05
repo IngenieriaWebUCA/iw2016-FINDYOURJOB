@@ -4,7 +4,6 @@
 package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Curriculum;
-import es.uca.iw.findyourjob.domain.CurriculumDataOnDemand;
 import es.uca.iw.findyourjob.domain.Formacion;
 import es.uca.iw.findyourjob.domain.FormacionDataOnDemand;
 import java.security.SecureRandom;
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect FormacionDataOnDemand_Roo_DataOnDemand {
@@ -25,9 +23,6 @@ privileged aspect FormacionDataOnDemand_Roo_DataOnDemand {
     
     private List<Formacion> FormacionDataOnDemand.data;
     
-    @Autowired
-    CurriculumDataOnDemand FormacionDataOnDemand.curriculumDataOnDemand;
-    
     public Formacion FormacionDataOnDemand.getNewTransientFormacion(int index) {
         Formacion obj = new Formacion();
         setCurriculum(obj, index);
@@ -37,7 +32,7 @@ privileged aspect FormacionDataOnDemand_Roo_DataOnDemand {
     }
     
     public void FormacionDataOnDemand.setCurriculum(Formacion obj, int index) {
-        Curriculum curriculum = curriculumDataOnDemand.getRandomCurriculum();
+        Curriculum curriculum = null;
         obj.setCurriculum(curriculum);
     }
     

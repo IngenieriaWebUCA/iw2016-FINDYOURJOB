@@ -8,6 +8,7 @@ import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.domain.Puesto;
+import es.uca.iw.reference.OfertaEstado;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,11 +22,11 @@ privileged aspect Oferta_Roo_JavaBean {
         this.tipologia = tipologia;
     }
     
-    public Float Oferta.getSueldoBruto() {
+    public float Oferta.getSueldoBruto() {
         return this.sueldoBruto;
     }
     
-    public void Oferta.setSueldoBruto(Float sueldoBruto) {
+    public void Oferta.setSueldoBruto(float sueldoBruto) {
         this.sueldoBruto = sueldoBruto;
     }
     
@@ -45,8 +46,8 @@ privileged aspect Oferta_Roo_JavaBean {
         this.perfil = perfil;
     }
     
-    public void Oferta.setEstado(String estado) {
-        this.estado = estado;
+    public void Oferta.setOferta_estado(OfertaEstado oferta_estado) {
+        this.oferta_estado = oferta_estado;
     }
     
     public Localizacion Oferta.getLocalizacion() {

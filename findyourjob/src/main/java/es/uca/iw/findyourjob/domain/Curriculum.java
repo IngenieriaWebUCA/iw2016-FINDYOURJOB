@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "CURRICULUM_SEQ")
+@RooJpaActiveRecord(sequenceName = "CURRICULUM_SEQ", finders = { "findCurriculumsByDemandante" })
 public class Curriculum {
 
     /**
@@ -27,8 +27,6 @@ public class Curriculum {
     @Size(min = 3, max = 30)
     private String foto;
 
-
-
     /**
      */
     @NotNull
@@ -37,7 +35,6 @@ public class Curriculum {
 
     /**
      */
-   
     @ManyToOne
     private Formacion formacion;
 

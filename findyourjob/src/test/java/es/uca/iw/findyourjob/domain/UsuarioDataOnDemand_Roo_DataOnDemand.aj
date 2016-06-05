@@ -5,6 +5,7 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Usuario;
 import es.uca.iw.findyourjob.domain.UsuarioDataOnDemand;
+import es.uca.iw.reference.UsuarioRol;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -45,7 +46,7 @@ privileged aspect UsuarioDataOnDemand_Roo_DataOnDemand {
     }
     
     public void UsuarioDataOnDemand.setRol(Usuario obj, int index) {
-        String rol = "rol_" + index;
+        UsuarioRol rol = UsuarioRol.class.getEnumConstants()[0];
         obj.setRol(rol);
     }
     

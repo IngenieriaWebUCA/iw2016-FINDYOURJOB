@@ -7,7 +7,9 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.web.DemandanteController;
+import es.uca.iw.reference.Sexo;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
@@ -88,6 +90,7 @@ privileged aspect DemandanteController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
+        uiModel.addAttribute("sexoes", Arrays.asList(Sexo.values()));
     }
     
     String DemandanteController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

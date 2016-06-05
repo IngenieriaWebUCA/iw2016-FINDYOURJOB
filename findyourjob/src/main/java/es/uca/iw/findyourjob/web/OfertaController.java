@@ -2,6 +2,7 @@ package es.uca.iw.findyourjob.web;
 import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.domain.Usuario;
+import es.uca.iw.reference.OfertaEstado;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -78,11 +79,9 @@ public class OfertaController {
         }
         uiModel.asMap().clear();
         Date fechaHoy = (Calendar.getInstance()).getTime(); //style="M-"
-        if (oferta.getEstado() != "Cancelada" && oferta.getEstado() != "En Tramite" && oferta.getEstado() != "Resuelta") {
-            if (fechaHoy.compareTo(oferta.getFechaDisponibleInicio()) < 0) oferta.setEstado("En espera");
-            if (fechaHoy.compareTo(oferta.getFechaDisponibleInicio()) >= 0 && fechaHoy.compareTo(oferta.getFechaDisponibleFin()) <= 0) oferta.setEstado("Activa");
-            if (fechaHoy.compareTo(oferta.getFechaDisponibleFin()) > 0) oferta.setEstado("Detenida");
-        }
+        if (fechaHoy.compareTo(oferta.getFechaDisponibleInicio()) < 0) oferta.setOferta_estado(OfertaEstado.En_Espera);
+        if (fechaHoy.compareTo(oferta.getFechaDisponibleInicio()) >= 0 && fechaHoy.compareTo(oferta.getFechaDisponibleFin()) <= 0) oferta.setOferta_estado(OfertaEstado.Activa);
+        if (fechaHoy.compareTo(oferta.getFechaDisponibleFin()) > 0) oferta.setOferta_estado(OfertaEstado.Detenida);
         oferta.persist();
         return "redirect:/ofertas/" + encodeUrlPathSegment(oferta.getId().toString(), httpServletRequest);
     }

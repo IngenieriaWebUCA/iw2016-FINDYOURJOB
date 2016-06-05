@@ -12,6 +12,7 @@
             <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_estado" property="estado" render="false" z="user-managed"/>
             <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" property="localizacion" z="iE32f0O2pULwv+LTTkM6duBw0/U="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_oferta_estado" property="oferta_estado" z="qVQ+KdmTLV3yxsYhbZuLBBKSBWQ="/>
         </table:table>
     </page:list>
 </div>

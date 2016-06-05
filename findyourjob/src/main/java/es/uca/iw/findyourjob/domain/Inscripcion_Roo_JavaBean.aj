@@ -6,16 +6,17 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.reference.InscripcionEstado;
 import java.util.Date;
 
 privileged aspect Inscripcion_Roo_JavaBean {
     
-    public String Inscripcion.getEstado() {
-        return this.estado;
+    public InscripcionEstado Inscripcion.getInscripcion_estado() {
+        return this.inscripcion_estado;
     }
     
-    public void Inscripcion.setEstado(String estado) {
-        this.estado = estado;
+    public void Inscripcion.setInscripcion_estado(InscripcionEstado inscripcion_estado) {
+        this.inscripcion_estado = inscripcion_estado;
     }
     
     public Oferta Inscripcion.getOferta() {
