@@ -13,4 +13,7 @@
 <definition extends="default" name="inscripcions/update">
         <put-attribute name="body" value="/WEB-INF/views/inscripcions/update.jspx"/>
     </definition>
+<definition extends="default" name="inscripcions/findInscripcionsByOferta">
+        <put-attribute name="body" value="/WEB-INF/views/inscripcions/findInscripcionsByOferta.jspx"/>
+    </definition>
 </tiles-definitions>

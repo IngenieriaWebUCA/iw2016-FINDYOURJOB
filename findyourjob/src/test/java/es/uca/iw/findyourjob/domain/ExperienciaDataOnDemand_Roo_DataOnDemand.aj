@@ -7,6 +7,8 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.CurriculumDataOnDemand;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.ExperienciaDataOnDemand;
+import es.uca.iw.findyourjob.domain.Puesto;
+import es.uca.iw.findyourjob.domain.PuestoDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,12 +33,16 @@ privileged aspect ExperienciaDataOnDemand_Roo_DataOnDemand {
     @Autowired
     CurriculumDataOnDemand ExperienciaDataOnDemand.curriculumDataOnDemand;
     
+    @Autowired
+    PuestoDataOnDemand ExperienciaDataOnDemand.puestoDataOnDemand;
+    
     public Experiencia ExperienciaDataOnDemand.getNewTransientExperiencia(int index) {
         Experiencia obj = new Experiencia();
         setCurriculum(obj, index);
         setFechaContratoFin(obj, index);
         setFechaContratoInicio(obj, index);
         setNombreEmpresa(obj, index);
+        setPuesto(obj, index);
         return obj;
     }
     
@@ -61,6 +67,11 @@ privileged aspect ExperienciaDataOnDemand_Roo_DataOnDemand {
             nombreEmpresa = nombreEmpresa.substring(0, 30);
         }
         obj.setNombreEmpresa(nombreEmpresa);
+    }
+    
+    public void ExperienciaDataOnDemand.setPuesto(Experiencia obj, int index) {
+        Puesto puesto = puestoDataOnDemand.getRandomPuesto();
+        obj.setPuesto(puesto);
     }
     
     public Experiencia ExperienciaDataOnDemand.getSpecificExperiencia(int index) {

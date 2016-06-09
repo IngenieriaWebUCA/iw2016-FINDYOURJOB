@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:security="http://www.springframework.org/security/tags" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Empresa" items="${empresas}" z="9DOolGBsThjJTJ9I+mgGZoMfjBI=">
-        <table:table data="${empresas}" id="l_es_uca_iw_findyourjob_domain_Empresa" path="/empresas" z="LFpbUiVethSgdxqSGa4JZa1MNlE=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_nombre" property="nombre" z="km5YPGTItTKGc7bBEgIhvhDkbWE="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_cif" property="cif" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_username" property="username" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_password" property="password" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_rol" property="rol" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_enabled" property="enabled" render="false" z="user-managed"/>
-        </table:table>
+        <security:authorize access="hasAnyRole('0', '3')">
+	        <table:table data="${empresas}" id="l_es_uca_iw_findyourjob_domain_Empresa" path="/empresas" z="LFpbUiVethSgdxqSGa4JZa1MNlE=">
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_nombre" property="nombre" z="km5YPGTItTKGc7bBEgIhvhDkbWE="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_cif" property="cif" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_username" property="username" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_password" property="password" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_rol" property="rol" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_enabled" property="enabled" render="false" z="user-managed"/>
+	        </table:table>
+        </security:authorize>
+        <security:authorize access="hasAnyRole('1', '2')">
+	        <table:table data="${empresas}" id="l_es_uca_iw_findyourjob_domain_Empresa" create="false" update="false" delete="false" path="/empresas" z="LFpbUiVethSgdxqSGa4JZa1MNlE=">
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_nombre" property="nombre" z="km5YPGTItTKGc7bBEgIhvhDkbWE="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_cif" property="cif" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_username" property="username" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_password" property="password" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_rol" property="rol" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Empresa_enabled" property="enabled" render="false" z="user-managed"/>
+	        </table:table>
+        </security:authorize>
+
     </page:list>
+    <!--  <security:authorize access="hasRole('3')">
+<button type="button" class="btn-success btn-lg" onclick="window.location.href='/findyourjob/empresas/listGestionadas'">
+            Mis empresas
+        </button>
+        <a href="/findyourjob/empresas/listGestionadas">Empresas gestionadas</a>
+    </security:authorize> -->
 </div>

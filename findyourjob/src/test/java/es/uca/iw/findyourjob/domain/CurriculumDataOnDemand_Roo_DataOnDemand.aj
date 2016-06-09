@@ -7,7 +7,6 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.CurriculumDataOnDemand;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.DemandanteDataOnDemand;
-import es.uca.iw.findyourjob.domain.FormacionDataOnDemand;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,9 +27,6 @@ privileged aspect CurriculumDataOnDemand_Roo_DataOnDemand {
     
     @Autowired
     DemandanteDataOnDemand CurriculumDataOnDemand.demandanteDataOnDemand;
-    
-    @Autowired
-    FormacionDataOnDemand CurriculumDataOnDemand.formacionDataOnDemand;
     
     public Curriculum CurriculumDataOnDemand.getNewTransientCurriculum(int index) {
         Curriculum obj = new Curriculum();

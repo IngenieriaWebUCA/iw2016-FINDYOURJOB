@@ -46,8 +46,12 @@ privileged aspect Oferta_Roo_JavaBean {
         this.perfil = perfil;
     }
     
-    public void Oferta.setOferta_estado(OfertaEstado oferta_estado) {
-        this.oferta_estado = oferta_estado;
+    public OfertaEstado Oferta.getEstado() {
+        return this.estado;
+    }
+    
+    public void Oferta.setEstado(OfertaEstado estado) {
+        this.estado = estado;
     }
     
     public Localizacion Oferta.getLocalizacion() {

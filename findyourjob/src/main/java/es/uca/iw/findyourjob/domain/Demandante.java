@@ -2,9 +2,7 @@ package es.uca.iw.findyourjob.domain;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-
 import es.uca.iw.reference.Sexo;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Min;
@@ -21,9 +19,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "DEMANDANTE_SEQ")
+@RooJpaActiveRecord(sequenceName = "DEMANDANTE_SEQ", finders = { "findDemandantesByUsername" })
 public class Demandante extends Usuario {
-	
+
     /**
      */
     @NotNull

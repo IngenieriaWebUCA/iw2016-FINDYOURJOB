@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:security="http://www.springframework.org/security/tags" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Oferta" items="${ofertas}" z="HQVTgBZvPE36whcarOS9Tqxzs6I=">
-        <table:table data="${ofertas}" id="l_es_uca_iw_findyourjob_domain_Oferta" path="/ofertas" z="BdSq7KZNmFIEaa/+RJyG21YMsHQ=">
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" property="tipologia" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" property="fechaInicioActividad" render="false" z="VZGoAy1UIhj99Jlhrs1BDhK7O2k="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" property="vacantes" z="5q6JcqMl+wqo1kIjXUs5iSe9Reg="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" property="fechaDisponibleInicio" render="false" z="AWGIcZAI3FJdKcjUtyYjh6smJrE="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" property="sueldoBruto" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_estado" property="estado" render="false" z="user-managed"/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" property="localizacion" z="iE32f0O2pULwv+LTTkM6duBw0/U="/>
-            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_oferta_estado" property="oferta_estado" z="qVQ+KdmTLV3yxsYhbZuLBBKSBWQ="/>
-        </table:table>
+        <security:authorize access="hasAnyRole('0', '2', '3')">
+	        <table:table data="${ofertas}" id="l_es_uca_iw_findyourjob_domain_Oferta" path="/ofertas" z="BdSq7KZNmFIEaa/+RJyG21YMsHQ=">
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" property="tipologia" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" property="fechaInicioActividad" render="false" z="VZGoAy1UIhj99Jlhrs1BDhK7O2k="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" property="vacantes" z="5q6JcqMl+wqo1kIjXUs5iSe9Reg="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" property="fechaDisponibleInicio" render="false" z="AWGIcZAI3FJdKcjUtyYjh6smJrE="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" property="sueldoBruto" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_estado" property="estado" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" property="localizacion" z="iE32f0O2pULwv+LTTkM6duBw0/U="/>
+	        </table:table>
+        </security:authorize>
+        <security:authorize access="hasRole('1')">
+	        <table:table data="${ofertas}" id="l_es_uca_iw_findyourjob_domain_Oferta" create="false" update="false" delete="false" path="/ofertas" z="BdSq7KZNmFIEaa/+RJyG21YMsHQ=">
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_tipologia" property="tipologia" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" property="fechaInicioActividad" render="false" z="VZGoAy1UIhj99Jlhrs1BDhK7O2k="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_vacantes" property="vacantes" z="5q6JcqMl+wqo1kIjXUs5iSe9Reg="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleInicio" property="fechaDisponibleInicio" render="false" z="AWGIcZAI3FJdKcjUtyYjh6smJrE="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" property="sueldoBruto" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_perfil" property="perfil" z="9EviKHUmHcjr6C89vEHAieYtPIg="/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_estado" property="estado" render="false" z="user-managed"/>
+	            <table:column id="c_es_uca_iw_findyourjob_domain_Oferta_localizacion" property="localizacion" z="iE32f0O2pULwv+LTTkM6duBw0/U="/>
+	        </table:table>
+        </security:authorize>
     </page:list>
 </div>

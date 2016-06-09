@@ -7,7 +7,7 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.Experiencia;
-import es.uca.iw.findyourjob.domain.Formacion;
+import es.uca.iw.findyourjob.domain.GestorEmpresa;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.Oferta;
@@ -118,26 +118,26 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<Formacion, String> ApplicationConversionServiceFactoryBean.getFormacionToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.Formacion, java.lang.String>() {
-            public String convert(Formacion formacion) {
-                return new StringBuilder().append(formacion.getTitulosAcademicos()).append(' ').append(formacion.getCursosIdiomas()).toString();
+    public Converter<GestorEmpresa, String> ApplicationConversionServiceFactoryBean.getGestorEmpresaToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.findyourjob.domain.GestorEmpresa, java.lang.String>() {
+            public String convert(GestorEmpresa gestorEmpresa) {
+                return new StringBuilder().append(gestorEmpresa.getUsername()).append(' ').append(gestorEmpresa.getPassword()).toString();
             }
         };
     }
     
-    public Converter<Long, Formacion> ApplicationConversionServiceFactoryBean.getIdToFormacionConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.findyourjob.domain.Formacion>() {
-            public es.uca.iw.findyourjob.domain.Formacion convert(java.lang.Long id) {
-                return Formacion.findFormacion(id);
+    public Converter<Long, GestorEmpresa> ApplicationConversionServiceFactoryBean.getIdToGestorEmpresaConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, es.uca.iw.findyourjob.domain.GestorEmpresa>() {
+            public es.uca.iw.findyourjob.domain.GestorEmpresa convert(java.lang.Long id) {
+                return GestorEmpresa.findGestorEmpresa(id);
             }
         };
     }
     
-    public Converter<String, Formacion> ApplicationConversionServiceFactoryBean.getStringToFormacionConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.findyourjob.domain.Formacion>() {
-            public es.uca.iw.findyourjob.domain.Formacion convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Formacion.class);
+    public Converter<String, GestorEmpresa> ApplicationConversionServiceFactoryBean.getStringToGestorEmpresaConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.findyourjob.domain.GestorEmpresa>() {
+            public es.uca.iw.findyourjob.domain.GestorEmpresa convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), GestorEmpresa.class);
             }
         };
     }
@@ -275,9 +275,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getExperienciaToStringConverter());
         registry.addConverter(getIdToExperienciaConverter());
         registry.addConverter(getStringToExperienciaConverter());
-        registry.addConverter(getFormacionToStringConverter());
-        registry.addConverter(getIdToFormacionConverter());
-        registry.addConverter(getStringToFormacionConverter());
+        registry.addConverter(getGestorEmpresaToStringConverter());
+        registry.addConverter(getIdToGestorEmpresaConverter());
+        registry.addConverter(getStringToGestorEmpresaConverter());
         registry.addConverter(getInscripcionToStringConverter());
         registry.addConverter(getIdToInscripcionConverter());
         registry.addConverter(getStringToInscripcionConverter());

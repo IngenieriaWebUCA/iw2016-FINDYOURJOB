@@ -6,7 +6,6 @@ package es.uca.iw.findyourjob.web;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Experiencia;
-import es.uca.iw.findyourjob.domain.Formacion;
 import es.uca.iw.findyourjob.web.CurriculumController;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -24,17 +23,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect CurriculumController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String CurriculumController.create(@Valid Curriculum curriculum, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, curriculum);
-            return "curriculums/create";
-        }
-        uiModel.asMap().clear();
-        curriculum.persist();
-        return "redirect:/curriculums/" + encodeUrlPathSegment(curriculum.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String CurriculumController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Curriculum());
@@ -51,20 +39,6 @@ privileged aspect CurriculumController_Roo_Controller {
         uiModel.addAttribute("curriculum", Curriculum.findCurriculum(id));
         uiModel.addAttribute("itemId", id);
         return "curriculums/show";
-    }
-    
-    @RequestMapping(produces = "text/html")
-    public String CurriculumController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
-        if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("curriculums", Curriculum.findCurriculumEntries(firstResult, sizeNo, sortFieldName, sortOrder));
-            float nrOfPages = (float) Curriculum.countCurriculums() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums(sortFieldName, sortOrder));
-        }
-        return "curriculums/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
@@ -98,7 +72,6 @@ privileged aspect CurriculumController_Roo_Controller {
         uiModel.addAttribute("curriculum", curriculum);
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
         uiModel.addAttribute("experiencias", Experiencia.findAllExperiencias());
-        uiModel.addAttribute("formacions", Formacion.findAllFormacions());
     }
     
     String CurriculumController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

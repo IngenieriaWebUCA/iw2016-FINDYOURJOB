@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:security="http://www.springframework.org/security/tags" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+    
+    <!-- <security:authorize access="hasAnyRole('0', '2', '3')">
+        <button type="button" class="btn-danger btn-block" onclick="window.location.href='/adjob/peticionofertas/peticiones/${oferta.id}'">
+            Ver y gestionar las peticiones de esta oferta
+        </button>
+    </security:authorize> -->
+    
     <page:show id="ps_es_uca_iw_findyourjob_domain_Oferta" object="${oferta}" path="/ofertas" z="HQX5sFKRW/bPp6chOuVHb1Sx+R0=">
         <field:display field="tipologia" id="s_es_uca_iw_findyourjob_domain_Oferta_tipologia" object="${oferta}" z="oF6G1qEWTrC8iVPssV14c7fUkDk="/>
         <field:display field="sueldoBruto" id="s_es_uca_iw_findyourjob_domain_Oferta_sueldoBruto" object="${oferta}" z="OcUsDXw+2d2rBkvhQzl6z47H1Y4="/>
@@ -13,6 +20,21 @@
         <field:display date="true" dateTimePattern="${oferta_fechadisponiblefin_date_format}" field="fechaDisponibleFin" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaDisponibleFin" object="${oferta}" z="Aa67AS+E36QYfJvnUxvyzLXJq/A="/>
         <field:display date="true" dateTimePattern="${oferta_fechainicioactividad_date_format}" field="fechaInicioActividad" id="s_es_uca_iw_findyourjob_domain_Oferta_fechaInicioActividad" object="${oferta}" z="U4l6YoCZBkxUEA/Kccj3x6z2jqQ="/>
         <field:display field="empresa" id="s_es_uca_iw_findyourjob_domain_Oferta_empresa" object="${oferta}" z="XIxD1kaeDfp6fn2y4PfutDNO1oQ="/>
-        <field:display field="oferta_estado" id="s_es_uca_iw_findyourjob_domain_Oferta_oferta_estado" object="${oferta}" z="hiLc8wyt8+pfJaFo5+o35Nf9IRc="/>
+        <field:display field="estado" id="s_es_uca_iw_findyourjob_domain_Oferta_estado" object="${oferta}" z="aHXj+qk9Q/KkVcuFTAjayMXKnm0="/>
     </page:show>
+    <!-- Si un usuario es demandante, podrá apuntarse a la oferta. Si es ora cosa, podrá gestionarla -->
+    <security:authorize access="hasRole('1')">
+        <button type="button" class="btn-success btn-lg" onclick="window.location.href='/findyourjob/inscripcions/inscribir/${oferta.id}'">
+            Inscribir
+        </button>
+    </security:authorize>
+
+ 	<security:authorize access="hasAnyRole('0', '2', '3')">
+        <button type="button" class="btn-success btn-lg" onclick="window.location.href='/findyourjob/demandantes/buscarcandidatos/${oferta.id}'">
+            Buscar candidatos
+        </button>
+        <button type="button" class="btn-success btn-lg" onclick="window.location.href='/findyourjob/demandantes/inscritos/${oferta.id}'">
+            Ver demandates inscritos
+        </button>
+    </security:authorize> 
 </div>

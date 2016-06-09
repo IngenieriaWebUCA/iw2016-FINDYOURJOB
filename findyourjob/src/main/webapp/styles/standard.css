@@ -38,7 +38,7 @@ body {
   color: #cdbfe3;
 }
 .navbar .navbar-nav > li > a:hover {
-  color: #fff;
+  color: #000;
 }
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover {
@@ -72,12 +72,12 @@ body {
 	background-color: #66CCFF;
 }
 .navbar .navbar-nav > li > a {
-color: #acc47f;
+color: #fff;
 }
 
 @media (max-width: 767px){
 	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-		color: #acc47f;
+		color: #000;
 		white-space: normal;
 	}
 	.navbar-nav .open .dropdown-menu{

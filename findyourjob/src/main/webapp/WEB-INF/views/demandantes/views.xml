@@ -13,4 +13,7 @@
 <definition extends="default" name="demandantes/update">
         <put-attribute name="body" value="/WEB-INF/views/demandantes/update.jspx"/>
     </definition>
+<definition extends="default" name="demandantes/findDemandantesByUsername">
+        <put-attribute name="body" value="/WEB-INF/views/demandantes/findDemandantesByUsername.jspx"/>
+    </definition>
 </tiles-definitions>

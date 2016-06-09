@@ -5,7 +5,6 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.EmpresaDataOnDemand;
-import es.uca.iw.findyourjob.domain.Localizacion;
 import es.uca.iw.findyourjob.domain.LocalizacionDataOnDemand;
 import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.domain.OfertaDataOnDemand;
@@ -44,11 +43,10 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     public Oferta OfertaDataOnDemand.getNewTransientOferta(int index) {
         Oferta obj = new Oferta();
         setEmpresa(obj, index);
+        setEstado(obj, index);
         setFechaDisponibleFin(obj, index);
         setFechaDisponibleInicio(obj, index);
         setFechaInicioActividad(obj, index);
-        setLocalizacion(obj, index);
-        setOferta_estado(obj, index);
         setPerfil(obj, index);
         setSueldoBruto(obj, index);
         setTipologia(obj, index);
@@ -59,6 +57,11 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     public void OfertaDataOnDemand.setEmpresa(Oferta obj, int index) {
         Empresa empresa = empresaDataOnDemand.getRandomEmpresa();
         obj.setEmpresa(empresa);
+    }
+    
+    public void OfertaDataOnDemand.setEstado(Oferta obj, int index) {
+        OfertaEstado estado = OfertaEstado.class.getEnumConstants()[0];
+        obj.setEstado(estado);
     }
     
     public void OfertaDataOnDemand.setFechaDisponibleFin(Oferta obj, int index) {
@@ -74,16 +77,6 @@ privileged aspect OfertaDataOnDemand_Roo_DataOnDemand {
     public void OfertaDataOnDemand.setFechaInicioActividad(Oferta obj, int index) {
         Date fechaInicioActividad = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH), Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), Calendar.getInstance().get(Calendar.SECOND) + new Double(Math.random() * 1000).intValue()).getTime();
         obj.setFechaInicioActividad(fechaInicioActividad);
-    }
-    
-    public void OfertaDataOnDemand.setLocalizacion(Oferta obj, int index) {
-        Localizacion localizacion = localizacionDataOnDemand.getRandomLocalizacion();
-        obj.setLocalizacion(localizacion);
-    }
-    
-    public void OfertaDataOnDemand.setOferta_estado(Oferta obj, int index) {
-        OfertaEstado oferta_estado = OfertaEstado.class.getEnumConstants()[0];
-        obj.setOferta_estado(oferta_estado);
     }
     
     public void OfertaDataOnDemand.setPerfil(Oferta obj, int index) {

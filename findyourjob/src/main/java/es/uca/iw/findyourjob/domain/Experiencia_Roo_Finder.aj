@@ -3,11 +3,20 @@
 
 package es.uca.iw.findyourjob.domain;
 
+import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 privileged aspect Experiencia_Roo_Finder {
+    
+    public static Long Experiencia.countFindExperienciasByCurriculum(Curriculum curriculum) {
+        if (curriculum == null) throw new IllegalArgumentException("The curriculum argument is required");
+        EntityManager em = Experiencia.entityManager();
+        TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Experiencia AS o WHERE o.curriculum = :curriculum", Long.class);
+        q.setParameter("curriculum", curriculum);
+        return ((Long) q.getSingleResult());
+    }
     
     public static Long Experiencia.countFindExperienciasByNombreEmpresa(String nombreEmpresa) {
         if (nombreEmpresa == null || nombreEmpresa.length() == 0) throw new IllegalArgumentException("The nombreEmpresa argument is required");
@@ -15,6 +24,29 @@ privileged aspect Experiencia_Roo_Finder {
         TypedQuery q = em.createQuery("SELECT COUNT(o) FROM Experiencia AS o WHERE o.nombreEmpresa = :nombreEmpresa", Long.class);
         q.setParameter("nombreEmpresa", nombreEmpresa);
         return ((Long) q.getSingleResult());
+    }
+    
+    public static TypedQuery<Experiencia> Experiencia.findExperienciasByCurriculum(Curriculum curriculum) {
+        if (curriculum == null) throw new IllegalArgumentException("The curriculum argument is required");
+        EntityManager em = Experiencia.entityManager();
+        TypedQuery<Experiencia> q = em.createQuery("SELECT o FROM Experiencia AS o WHERE o.curriculum = :curriculum", Experiencia.class);
+        q.setParameter("curriculum", curriculum);
+        return q;
+    }
+    
+    public static TypedQuery<Experiencia> Experiencia.findExperienciasByCurriculum(Curriculum curriculum, String sortFieldName, String sortOrder) {
+        if (curriculum == null) throw new IllegalArgumentException("The curriculum argument is required");
+        EntityManager em = Experiencia.entityManager();
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Experiencia AS o WHERE o.curriculum = :curriculum");
+        if (fieldNames4OrderClauseFilter.contains(sortFieldName)) {
+            queryBuilder.append(" ORDER BY ").append(sortFieldName);
+            if ("ASC".equalsIgnoreCase(sortOrder) || "DESC".equalsIgnoreCase(sortOrder)) {
+                queryBuilder.append(" ").append(sortOrder);
+            }
+        }
+        TypedQuery<Experiencia> q = em.createQuery(queryBuilder.toString(), Experiencia.class);
+        q.setParameter("curriculum", curriculum);
+        return q;
     }
     
     public static TypedQuery<Experiencia> Experiencia.findExperienciasByNombreEmpresa(String nombreEmpresa) {

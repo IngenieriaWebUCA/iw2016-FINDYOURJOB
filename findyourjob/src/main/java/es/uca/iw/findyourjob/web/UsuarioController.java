@@ -1,9 +1,21 @@
 package es.uca.iw.findyourjob.web;
+import es.uca.iw.findyourjob.domain.Oferta;
+import es.uca.iw.findyourjob.domain.Curriculum;
+import es.uca.iw.findyourjob.domain.Demandante;
+import es.uca.iw.findyourjob.domain.Experiencia;
+import es.uca.iw.findyourjob.domain.GestorEmpresa;
+import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Usuario;
+import es.uca.iw.reference.Role;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,27 +25,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+import org.gvnix.addon.datatables.annotations.GvNIXDatatables;
+import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
+import org.gvnix.addon.loupefield.annotations.GvNIXLoupeController;
+import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
 
 @RequestMapping("/usuarios")
 @Controller
 @RooWebScaffold(path = "usuarios", formBackingObject = Usuario.class)
+@RooWebFinder
+@GvNIXDatatables(ajax = true)
+@GvNIXLoupeController
+@GvNIXWebJQuery
 public class UsuarioController {
 
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String create(@Valid Usuario usuario, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, usuario);
-            return "usuarios/create";
-        }
-        uiModel.asMap().clear();
-        usuario.persist();
-        return "redirect:/login";
-    }
-
-    @RequestMapping(params = "form", produces = "text/html")
-    public String createForm(Model uiModel) {
-        populateEditForm(uiModel, new Usuario());
-        return "usuarios/create";
+    private Usuario getUsuarioSesion() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        return Usuario.findUsuariosByUsername(username).getSingleResult();
     }
 
     @RequestMapping(value = "/{id}", produces = "text/html")
@@ -98,5 +107,23 @@ public class UsuarioController {
         } catch (UnsupportedEncodingException uee) {
         }
         return pathSegment;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
+    public String create(@Valid Usuario usuario, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            populateEditForm(uiModel, usuario);
+            return "usuarios/create";
+        }
+        uiModel.asMap().clear();
+        usuario.persist();
+        if (usuario.getRol() == Role.GESTOR_ETT) {
+            GestorEmpresa ge = new GestorEmpresa();
+            ge.setUsername(usuario.getUsername());
+            ge.setPassword(usuario.getPassword());
+            ge.setEnabled(usuario.isEnabled());
+            ge.persist();
+        }
+        return "redirect:/login";
     }
 }

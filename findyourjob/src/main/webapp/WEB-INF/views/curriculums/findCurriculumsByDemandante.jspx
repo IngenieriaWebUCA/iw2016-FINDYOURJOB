@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:find finderName="ByDemandante" id="ff_es_uca_iw_findyourjob_domain_Curriculum" path="/curriculums" z="9UDRAxg77eyn7oLn7byp3N7C+f0=">
+        <field:select disableFormBinding="true" field="demandante" id="f_es_uca_iw_findyourjob_domain_Curriculum_demandante" itemValue="id" items="${demandantes}" path="/demandantes" required="true" z="E7Cu457fpEZ2KeY2tgA0yKVX8Kw="/>
+    </form:find>
+</div>

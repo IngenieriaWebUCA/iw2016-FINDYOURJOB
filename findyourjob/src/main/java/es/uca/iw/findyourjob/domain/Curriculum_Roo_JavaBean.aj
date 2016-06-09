@@ -6,7 +6,6 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Experiencia;
-import es.uca.iw.findyourjob.domain.Formacion;
 import java.util.Set;
 
 privileged aspect Curriculum_Roo_JavaBean {
@@ -33,14 +32,6 @@ privileged aspect Curriculum_Roo_JavaBean {
     
     public void Curriculum.setDemandante(Demandante demandante) {
         this.demandante = demandante;
-    }
-    
-    public Formacion Curriculum.getFormacion() {
-        return this.formacion;
-    }
-    
-    public void Curriculum.setFormacion(Formacion formacion) {
-        this.formacion = formacion;
     }
     
     public Set<Experiencia> Curriculum.getExperiencias() {

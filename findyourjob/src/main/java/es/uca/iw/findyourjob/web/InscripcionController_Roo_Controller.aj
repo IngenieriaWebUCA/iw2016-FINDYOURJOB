@@ -9,15 +9,11 @@ import es.uca.iw.findyourjob.domain.Oferta;
 import es.uca.iw.findyourjob.web.InscripcionController;
 import es.uca.iw.reference.InscripcionEstado;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,28 +23,9 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect InscripcionController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String InscripcionController.create(@Valid Inscripcion inscripcion, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, inscripcion);
-            return "inscripcions/create";
-        }
-        uiModel.asMap().clear();
-        inscripcion.persist();
-        return "redirect:/inscripcions/" + encodeUrlPathSegment(inscripcion.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String InscripcionController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Inscripcion());
-        List<String[]> dependencies = new ArrayList<String[]>();
-        if (Oferta.countOfertas() == 0) {
-            dependencies.add(new String[] { "inscripcion_estado", "ofertas" });
-        }
-        if (Demandante.countDemandantes() == 0) {
-            dependencies.add(new String[] { "oferta", "demandantes" });
-        }
-        uiModel.addAttribute("dependencies", dependencies);
         return "inscripcions/create";
     }
     
@@ -73,17 +50,6 @@ privileged aspect InscripcionController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "inscripcions/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String InscripcionController.update(@Valid Inscripcion inscripcion, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, inscripcion);
-            return "inscripcions/update";
-        }
-        uiModel.asMap().clear();
-        inscripcion.merge();
-        return "redirect:/inscripcions/" + encodeUrlPathSegment(inscripcion.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")

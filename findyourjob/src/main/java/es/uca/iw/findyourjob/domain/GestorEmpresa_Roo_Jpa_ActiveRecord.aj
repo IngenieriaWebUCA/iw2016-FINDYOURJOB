@@ -14,7 +14,7 @@ privileged aspect GestorEmpresa_Roo_Jpa_ActiveRecord {
     @PersistenceContext
     transient EntityManager GestorEmpresa.entityManager;
     
-    public static final List<String> GestorEmpresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("username", "password", "rol", "enabled", "empresasGestionadas");
+    public static final List<String> GestorEmpresa.fieldNames4OrderClauseFilter = java.util.Arrays.asList("username", "password", "enabled", "empresasGestionadas");
     
     public static final EntityManager GestorEmpresa.entityManager() {
         EntityManager em = new GestorEmpresa().entityManager;

@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
-import es.uca.iw.reference.UsuarioRol;
+import es.uca.iw.reference.Role;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -27,11 +27,6 @@ public class GestorEmpresa {
     @NotNull
     @Size(min = 5, max = 10)
     private String password;
-
-    /**
-     */
-    @Enumerated
-    private UsuarioRol rol;
 
     private boolean enabled;
 

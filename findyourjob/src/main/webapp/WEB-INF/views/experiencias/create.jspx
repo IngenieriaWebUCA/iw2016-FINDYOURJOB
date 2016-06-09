@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_findyourjob_domain_Experiencia" modelAttribute="experiencia" path="/experiencias" render="${empty dependencies}" z="UMYApDqEE2jyh7izqprhU23ATr8=">
         <field:input field="nombreEmpresa" id="c_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" max="30" min="3" required="true" z="Vu/ZQwVcpasJZ/RmILY6NmimFwc="/>
-        <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="jwhADT6saPQprIAYa3mRqyHklZk="/>
-        <field:simple field="puestos" id="c_es_uca_iw_findyourjob_domain_Experiencia_puestos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="yyMmZiJITcNwshmRfl/lVnSaALI="/>
+        <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" render="false" z="user-managed"/>
         <field:datetime dateTimePattern="${experiencia_fechacontratoinicio_date_format}" field="fechaContratoInicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" required="true" z="UZsBswcgeZMpsUPenOR5A6x3UoM="/>
         <field:datetime dateTimePattern="${experiencia_fechacontratofin_date_format}" field="fechaContratoFin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" required="true" z="IccKmb4hXFSmtKD3EeT/V45rUPY="/>
+        <field:select field="puesto" id="c_es_uca_iw_findyourjob_domain_Experiencia_puesto" itemValue="id" items="${puestoes}" path="/puestoes" required="true" z="mmO3DYuYPUKYH4TOAyGGlQ8nu/E="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Experiencia" render="${not empty dependencies}" z="fntSK2iF+2poBgCRx5MTb1OSFdI="/>
 </div>

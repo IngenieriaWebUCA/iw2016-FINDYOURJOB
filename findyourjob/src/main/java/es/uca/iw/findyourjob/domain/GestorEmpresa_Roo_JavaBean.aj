@@ -5,7 +5,6 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.GestorEmpresa;
-import es.uca.iw.reference.UsuarioRol;
 import java.util.Set;
 
 privileged aspect GestorEmpresa_Roo_JavaBean {
@@ -24,14 +23,6 @@ privileged aspect GestorEmpresa_Roo_JavaBean {
     
     public void GestorEmpresa.setPassword(String password) {
         this.password = password;
-    }
-    
-    public UsuarioRol GestorEmpresa.getRol() {
-        return this.rol;
-    }
-    
-    public void GestorEmpresa.setRol(UsuarioRol rol) {
-        this.rol = rol;
     }
     
     public boolean GestorEmpresa.isEnabled() {

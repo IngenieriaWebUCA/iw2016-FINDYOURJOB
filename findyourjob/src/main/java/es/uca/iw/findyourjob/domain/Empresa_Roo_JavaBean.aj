@@ -74,4 +74,12 @@ privileged aspect Empresa_Roo_JavaBean {
         this.gestor = gestor;
     }
     
+    public String Empresa.getUsuarioGestor() {
+        return this.usuarioGestor;
+    }
+    
+    public void Empresa.setUsuarioGestor(String usuarioGestor) {
+        this.usuarioGestor = usuarioGestor;
+    }
+    
 }

@@ -6,8 +6,8 @@ package es.uca.iw.findyourjob.domain;
 import es.uca.iw.findyourjob.domain.CurriculumDataOnDemand;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.DemandanteDataOnDemand;
+import es.uca.iw.reference.Role;
 import es.uca.iw.reference.Sexo;
-import es.uca.iw.reference.UsuarioRol;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -90,7 +90,7 @@ privileged aspect DemandanteDataOnDemand_Roo_DataOnDemand {
     }
     
     public void DemandanteDataOnDemand.setRol(Demandante obj, int index) {
-        UsuarioRol rol = UsuarioRol.class.getEnumConstants()[0];
+        Role rol = Role.class.getEnumConstants()[0];
         obj.setRol(rol);
     }
     

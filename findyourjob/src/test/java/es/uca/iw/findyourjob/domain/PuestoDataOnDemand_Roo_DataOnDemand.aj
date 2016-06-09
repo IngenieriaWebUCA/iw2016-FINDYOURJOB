@@ -3,7 +3,6 @@
 
 package es.uca.iw.findyourjob.domain;
 
-import es.uca.iw.findyourjob.domain.ExperienciaDataOnDemand;
 import es.uca.iw.findyourjob.domain.Puesto;
 import es.uca.iw.findyourjob.domain.PuestoDataOnDemand;
 import java.security.SecureRandom;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect PuestoDataOnDemand_Roo_DataOnDemand {
@@ -23,9 +21,6 @@ privileged aspect PuestoDataOnDemand_Roo_DataOnDemand {
     private Random PuestoDataOnDemand.rnd = new SecureRandom();
     
     private List<Puesto> PuestoDataOnDemand.data;
-    
-    @Autowired
-    ExperienciaDataOnDemand PuestoDataOnDemand.experienciaDataOnDemand;
     
     public Puesto PuestoDataOnDemand.getNewTransientPuesto(int index) {
         Puesto obj = new Puesto();

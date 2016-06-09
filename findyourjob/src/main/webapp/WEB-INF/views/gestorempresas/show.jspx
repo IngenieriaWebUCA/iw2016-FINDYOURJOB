@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_findyourjob_domain_GestorEmpresa" object="${gestorempresa}" path="/gestorempresas" z="U0pvDFgHPSBW6kKhJwtcU8TVGq8=">
+        <field:display field="username" id="s_es_uca_iw_findyourjob_domain_GestorEmpresa_username" object="${gestorempresa}" z="GDGlxkPPaTmZK9s4TDXfiWge4Dw="/>
+        <field:display field="password" id="s_es_uca_iw_findyourjob_domain_GestorEmpresa_password" object="${gestorempresa}" z="zxePEfTWIa8ffmF53fOYbwMJ00g="/>
+        <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_GestorEmpresa_enabled" object="${gestorempresa}" z="lWJIoSGy6X2IVxbRRpJDtNMttIY="/>
+    </page:show>
+</div>

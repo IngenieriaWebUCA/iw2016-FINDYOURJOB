@@ -16,4 +16,7 @@
 <definition extends="default" name="experiencias/findExperienciasByNombreEmpresa">
         <put-attribute name="body" value="/WEB-INF/views/experiencias/findExperienciasByNombreEmpresa.jspx"/>
     </definition>
+<definition extends="default" name="experiencias/findExperienciasByCurriculum">
+        <put-attribute name="body" value="/WEB-INF/views/experiencias/findExperienciasByCurriculum.jspx"/>
+    </definition>
 </tiles-definitions>

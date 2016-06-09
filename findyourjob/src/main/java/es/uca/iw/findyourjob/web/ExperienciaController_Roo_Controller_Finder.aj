@@ -3,6 +3,7 @@
 
 package es.uca.iw.findyourjob.web;
 
+import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.web.ExperienciaController;
 import org.springframework.ui.Model;
@@ -11,6 +12,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 privileged aspect ExperienciaController_Roo_Controller_Finder {
+    
+    @RequestMapping(params = { "find=ByCurriculum", "form" }, method = RequestMethod.GET)
+    public String ExperienciaController.findExperienciasByCurriculumForm(Model uiModel) {
+        uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
+        return "experiencias/findExperienciasByCurriculum";
+    }
+    
+    @RequestMapping(params = "find=ByCurriculum", method = RequestMethod.GET)
+    public String ExperienciaController.findExperienciasByCurriculum(@RequestParam("curriculum") Curriculum curriculum, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
+        if (page != null || size != null) {
+            int sizeNo = size == null ? 10 : size.intValue();
+            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
+            uiModel.addAttribute("experiencias", Experiencia.findExperienciasByCurriculum(curriculum, sortFieldName, sortOrder).setFirstResult(firstResult).setMaxResults(sizeNo).getResultList());
+            float nrOfPages = (float) Experiencia.countFindExperienciasByCurriculum(curriculum) / sizeNo;
+            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
+        } else {
+            uiModel.addAttribute("experiencias", Experiencia.findExperienciasByCurriculum(curriculum, sortFieldName, sortOrder).getResultList());
+        }
+        addDateTimeFormatPatterns(uiModel);
+        return "experiencias/list";
+    }
     
     @RequestMapping(params = { "find=ByNombreEmpresa", "form" }, method = RequestMethod.GET)
     public String ExperienciaController.findExperienciasByNombreEmpresaForm(Model uiModel) {

@@ -5,6 +5,7 @@ package es.uca.iw.findyourjob.domain;
 
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Puesto;
+import java.util.Set;
 
 privileged aspect Puesto_Roo_JavaBean {
     
@@ -16,12 +17,12 @@ privileged aspect Puesto_Roo_JavaBean {
         this.nombre = nombre;
     }
     
-    public Experiencia Puesto.getExperiencia() {
-        return this.experiencia;
+    public Set<Experiencia> Puesto.getExperiencias() {
+        return this.experiencias;
     }
     
-    public void Puesto.setExperiencia(Experiencia experiencia) {
-        this.experiencia = experiencia;
+    public void Puesto.setExperiencias(Set<Experiencia> experiencias) {
+        this.experiencias = experiencias;
     }
     
 }

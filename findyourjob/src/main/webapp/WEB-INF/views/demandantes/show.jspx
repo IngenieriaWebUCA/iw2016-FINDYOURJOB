@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Demandante" object="${demandante}" path="/demandantes" z="uQZNrz1/nEwdscEPZME8bRnpbq4=">
@@ -9,10 +9,10 @@
         <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Demandante_email" object="${demandante}" z="kEXEjrPUirxCKh96+WCk4rSicqg="/>
         <field:display field="telefono" id="s_es_uca_iw_findyourjob_domain_Demandante_telefono" object="${demandante}" z="+U8H280kxV8rFXpZ5JDqXqpGF0M="/>
         <field:display field="curriculum" id="s_es_uca_iw_findyourjob_domain_Demandante_curriculum" object="${demandante}" z="Yd6Fm6Kt7fR3TeKL5wZnP0t9Ur8="/>
-        <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Demandante_username" object="${demandante}" z="ShDuONkmCrT7KrThFcKaTgrb19o="/>
-        <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Demandante_password" object="${demandante}" z="j2/BEV+0JazWaUhLRaGdMTC6yPE="/>
+        <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Demandante_username" object="${demandante}" render="false" z="user-managed"/>
+        <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Demandante_password" object="${demandante}" render="false" z="user-managed"/>
         <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Demandante_enabled" object="${demandante}" z="2jVthBRQFWTEjexGYflApShNw7g="/>
         <field:display date="true" dateTimePattern="${demandante_fechanacimiento_date_format}" field="fechaNacimiento" id="s_es_uca_iw_findyourjob_domain_Demandante_fechaNacimiento" object="${demandante}" z="ZBzC3FKanpIcQo8iAsKejeGN5s4="/>
-        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Demandante_rol" object="${demandante}" z="zmbFiL5VYs+fG3kwPxUDuYu4KSI="/>
+        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Demandante_rol" object="${demandante}" render="false" z="user-managed"/>
     </page:show>
 </div>

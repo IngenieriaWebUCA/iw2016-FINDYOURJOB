@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_findyourjob_domain_Curriculum" object="${curriculum}" path="/curriculums" z="gpSM5x3t235l+i5pQXKKIXuZdqM=">
         <field:display field="demandante" id="s_es_uca_iw_findyourjob_domain_Curriculum_demandante" object="${curriculum}" z="4XzKRxCG3oyXCt76QoKwdrHjfDY="/>
-        <field:display field="formacion" id="s_es_uca_iw_findyourjob_domain_Curriculum_formacion" object="${curriculum}" z="DIFY77Z1IXNrwRLwZKRTnJjyFEI="/>
         <field:display field="trayectoria" id="s_es_uca_iw_findyourjob_domain_Curriculum_trayectoria" object="${curriculum}" z="5d8fxV+kUKzaU8RhW00NABLNqmk="/>
         <field:display field="foto" id="s_es_uca_iw_findyourjob_domain_Curriculum_foto" object="${curriculum}" z="aUv9GYhfOpaPtnpxHcCwJaopmfE="/>
     </page:show>

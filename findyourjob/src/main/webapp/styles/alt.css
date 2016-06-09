@@ -73,14 +73,14 @@ body {
 
 #menu a {
 	color: #000000;
-	background: #efefef;
+	background: #fff;
 	text-decoration: none;
 	padding: 2px 12px;
 }
 
 #menu a:hover {
 	color: #66CCFF;
-	background: #fff;
+	background: #000;
 }
 
 #footer {

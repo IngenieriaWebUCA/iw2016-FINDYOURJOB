@@ -7,6 +7,7 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Demandante;
 import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.web.DemandanteController;
+import es.uca.iw.reference.Role;
 import es.uca.iw.reference.Sexo;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
@@ -90,6 +91,7 @@ privileged aspect DemandanteController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("curriculums", Curriculum.findAllCurriculums());
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
+        uiModel.addAttribute("roles", Arrays.asList(Role.values()));
         uiModel.addAttribute("sexoes", Arrays.asList(Sexo.values()));
     }
     

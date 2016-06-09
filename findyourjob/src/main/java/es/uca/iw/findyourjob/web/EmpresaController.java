@@ -2,13 +2,17 @@ package es.uca.iw.findyourjob.web;
 import es.uca.iw.findyourjob.domain.Usuario;
 import es.uca.iw.findyourjob.domain.Empresa;
 import es.uca.iw.findyourjob.domain.GestorEmpresa;
+import es.uca.iw.findyourjob.domain.Inscripcion;
 import es.uca.iw.findyourjob.domain.Oferta;
-import es.uca.iw.reference.UsuarioRol;
-
+import es.uca.iw.reference.Role;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,22 +23,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+import org.gvnix.addon.datatables.annotations.GvNIXDatatables;
 import org.gvnix.addon.web.mvc.annotations.jquery.GvNIXWebJQuery;
+import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 
 @RequestMapping("/empresas")
 @Controller
 @RooWebScaffold(path = "empresas", formBackingObject = Empresa.class)
 @GvNIXWebJQuery
+@GvNIXDatatables(ajax = true)
+@RooWebFinder
 public class EmpresaController {
-	
+
     private Usuario getUsuarioSesion() {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
         return Usuario.findUsuariosByUsername(username).getSingleResult();
     }
+
     private GestorEmpresa getGestorSesion() {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
         return GestorEmpresa.findGestorEmpresasByUsername(username).getSingleResult();
     }
+
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String create(@Valid Empresa empresa, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -42,15 +54,31 @@ public class EmpresaController {
             return "empresas/create";
         }
         uiModel.asMap().clear();
+        Usuario us = getUsuarioSesion();
         if (empresa.isGestion_propia()) {
-            empresa.setRol(UsuarioRol.GESTOR_EMPRESA);
+            empresa.setRol(Role.GESTOR_EMPRESA);
             empresa.setEnabled(true);
-        } else{
-        	empresa.setEnabled(false);
-        	GestorEmpresa gestor_ett = getGestorSesion();
-        	gestor_ett.getEmpresasGestionadas().add(empresa);
-        	empresa.setGestor(gestor_ett);
-        } 
+            empresa.setUsuarioGestor(empresa.getUsername());
+        } else {
+            if (us.getRol() == Role.ADMINISTRADOR) {
+                empresa.setEnabled(false);
+                String u = "gestor1"; //En el sistema hay un gestor por defecto que es gestor1
+                GestorEmpresa ge = GestorEmpresa.findGestorEmpresasByUsername(u).getSingleResult();
+                Set<Empresa> empresasges = ge.getEmpresasGestionadas();
+                empresasges.add(empresa);
+                ge.setEmpresasGestionadas(empresasges);
+                empresa.setGestor(ge);
+                empresa.setUsuarioGestor(ge.getUsername());
+            } else {
+                GestorEmpresa gestor_ett;
+                gestor_ett = GestorEmpresa.findGestorEmpresasByUsername(us.getUsername()).getSingleResult();
+                Set<Empresa> empresasges = gestor_ett.getEmpresasGestionadas();
+                empresasges.add(empresa);
+                gestor_ett.setEmpresasGestionadas(empresasges);
+                empresa.setGestor(gestor_ett);
+                empresa.setUsuarioGestor(gestor_ett.getUsername());
+            }
+        }
         empresa.persist();
         return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId().toString(), httpServletRequest);
     }
@@ -66,31 +94,6 @@ public class EmpresaController {
         uiModel.addAttribute("empresa", Empresa.findEmpresa(id));
         uiModel.addAttribute("itemId", id);
         return "empresas/show";
-    }
-
-    @RequestMapping(produces = "text/html")
-    public String list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
-    	if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("empresas", Empresa.findEmpresaEntries(firstResult, sizeNo, sortFieldName, sortOrder));
-            float nrOfPages = (float) Empresa.countEmpresas() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("empresas", Empresa.findAllEmpresas(sortFieldName, sortOrder));
-        }
-        return "empresas/list";
-    }
-
-    @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String update(@Valid Empresa empresa, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, empresa);
-            return "empresas/update";
-        }
-        uiModel.asMap().clear();
-        empresa.merge();
-        return "redirect:/empresas/" + encodeUrlPathSegment(empresa.getId().toString(), httpServletRequest);
     }
 
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")

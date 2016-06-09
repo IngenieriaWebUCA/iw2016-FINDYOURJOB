@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "EMPRESA_SEQ")
+@RooJpaActiveRecord(sequenceName = "EMPRESA_SEQ", finders = { "findEmpresasByGestor", "findEmpresasByUsuarioGestor" })
 public class Empresa extends Usuario {
 
     /**
@@ -62,4 +62,6 @@ public class Empresa extends Usuario {
      */
     @ManyToOne
     private GestorEmpresa gestor;
+
+    private String usuarioGestor;
 }

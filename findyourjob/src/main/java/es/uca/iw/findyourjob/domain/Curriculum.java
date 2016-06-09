@@ -17,13 +17,11 @@ public class Curriculum {
 
     /**
      */
-    @NotNull
     @Size(min = 3, max = 30)
     private String trayectoria;
 
     /**
      */
-    @NotNull
     @Size(min = 3, max = 30)
     private String foto;
 
@@ -35,11 +33,7 @@ public class Curriculum {
 
     /**
      */
-    @ManyToOne
-    private Formacion formacion;
-
-    /**
-     */
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "curriculum")
     private Set<Experiencia> experiencias = new HashSet<Experiencia>();
+
 }

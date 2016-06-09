@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_findyourjob_domain_GestorEmpresa" modelAttribute="gestorEmpresa" path="/gestorempresas" versionField="Version" z="VWRWlF7q+Ok5QHCyryMCgBsdeyI=">
+        <field:input field="username" id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_username" max="10" min="5" required="true" z="dBoc6pVIvCE754obb3F9MUwoL0Q="/>
+        <field:input field="password" id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_password" max="10" min="5" required="true" z="YyZLShZ482soCITRGG3PogO+y4M="/>
+        <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_enabled" z="QnRR/rmAoSDPJbnux94iOEzwt4Q="/>
+        <field:simple field="empresasGestionadas" id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_empresasGestionadas" messageCode="entity_reference_not_managed" messageCodeAttribute="Empresa" z="l/LNkHtbWFY3p8S+c/qwJzSy48M="/>
+    </form:update>
+</div>

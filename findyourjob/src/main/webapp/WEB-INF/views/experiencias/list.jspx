@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_findyourjob_domain_Experiencia" items="${experiencias}" z="2XJzWT1rR18F3zuA6uPUnZSukYc=">
@@ -8,6 +8,7 @@
             <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" property="curriculum" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${experiencia_fechacontratoinicio_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" property="fechaContratoInicio" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${experiencia_fechacontratofin_date_format}" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" property="fechaContratoFin" render="false" z="user-managed"/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_Experiencia_puesto" property="puesto" z="ALO8Dl+WhGpwMsFzbTzxExATiLE="/>
         </table:table>
     </page:list>
 </div>

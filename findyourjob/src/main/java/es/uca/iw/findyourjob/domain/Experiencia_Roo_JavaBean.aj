@@ -7,7 +7,6 @@ import es.uca.iw.findyourjob.domain.Curriculum;
 import es.uca.iw.findyourjob.domain.Experiencia;
 import es.uca.iw.findyourjob.domain.Puesto;
 import java.util.Date;
-import java.util.Set;
 
 privileged aspect Experiencia_Roo_JavaBean {
     
@@ -27,12 +26,12 @@ privileged aspect Experiencia_Roo_JavaBean {
         this.curriculum = curriculum;
     }
     
-    public Set<Puesto> Experiencia.getPuestos() {
-        return this.puestos;
+    public Puesto Experiencia.getPuesto() {
+        return this.puesto;
     }
     
-    public void Experiencia.setPuestos(Set<Puesto> puestos) {
-        this.puestos = puestos;
+    public void Experiencia.setPuesto(Puesto puesto) {
+        this.puesto = puesto;
     }
     
     public Date Experiencia.getFechaContratoInicio() {

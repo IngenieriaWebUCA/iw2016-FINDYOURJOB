@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:table="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_findyourjob_domain_GestorEmpresa" items="${gestorempresas}" z="cN8QbKPH2GZoGRHnyIW1aTJTZfQ=">
+        <table:table data="${gestorempresas}" id="l_es_uca_iw_findyourjob_domain_GestorEmpresa" path="/gestorempresas" z="FFtfZY6QqSvBKPdzUB+o7PPYEXc=">
+            <table:column id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_username" property="username" z="dzIjw5NDxLmCRnBf6y7SE4XMPIs="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_password" property="password" z="4QS2MwAXUOZ4uivAAQ8KpohDO8Q="/>
+            <table:column id="c_es_uca_iw_findyourjob_domain_GestorEmpresa_enabled" property="enabled" z="x4cKS4Aj0R1/S+KeCnAihRPXIu4="/>
+        </table:table>
+    </page:list>
+</div>

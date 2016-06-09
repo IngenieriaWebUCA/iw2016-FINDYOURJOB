@@ -25,23 +25,15 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect ExperienciaController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String ExperienciaController.create(@Valid Experiencia experiencia, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, experiencia);
-            return "experiencias/create";
-        }
-        uiModel.asMap().clear();
-        experiencia.persist();
-        return "redirect:/experiencias/" + encodeUrlPathSegment(experiencia.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String ExperienciaController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Experiencia());
         List<String[]> dependencies = new ArrayList<String[]>();
         if (Curriculum.countCurriculums() == 0) {
             dependencies.add(new String[] { "curriculum", "curriculums" });
+        }
+        if (Puesto.countPuestoes() == 0) {
+            dependencies.add(new String[] { "puesto", "puestoes" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "experiencias/create";
@@ -53,21 +45,6 @@ privileged aspect ExperienciaController_Roo_Controller {
         uiModel.addAttribute("experiencia", Experiencia.findExperiencia(id));
         uiModel.addAttribute("itemId", id);
         return "experiencias/show";
-    }
-    
-    @RequestMapping(produces = "text/html")
-    public String ExperienciaController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
-        if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("experiencias", Experiencia.findExperienciaEntries(firstResult, sizeNo, sortFieldName, sortOrder));
-            float nrOfPages = (float) Experiencia.countExperiencias() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("experiencias", Experiencia.findAllExperiencias(sortFieldName, sortOrder));
-        }
-        addDateTimeFormatPatterns(uiModel);
-        return "experiencias/list";
     }
     
     @RequestMapping(method = RequestMethod.PUT, produces = "text/html")

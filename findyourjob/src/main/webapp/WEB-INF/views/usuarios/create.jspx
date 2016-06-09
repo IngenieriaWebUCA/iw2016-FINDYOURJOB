@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:loupefield="urn:jsptagdir:/WEB-INF/tags/loupefield" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_findyourjob_domain_Usuario" modelAttribute="usuario" path="/usuarios" render="${empty dependencies}" z="l4SqSm6lmT7srJKdtLQV91rCf9Y=">
         <field:input field="username" id="c_es_uca_iw_findyourjob_domain_Usuario_username" max="10" min="5" required="true" z="N6q1q+nOIos81GpetXtqID69/y0="/>
         <field:input field="password" id="c_es_uca_iw_findyourjob_domain_Usuario_password" max="10" min="5" required="true" z="7ZVDmPDo85Pi4sDUit9bDctgVkk="/>
         <field:checkbox field="enabled" id="c_es_uca_iw_findyourjob_domain_Usuario_enabled" z="Z5aXFU7mEUKtzxs4ZpEC618VRAE="/>
-        <field:simple field="empresasGestionadas" id="c_es_uca_iw_findyourjob_domain_Usuario_empresasGestionadas" messageCode="entity_reference_not_managed" messageCodeAttribute="Empresa" render="false" z="user-managed"/>
-        <field:select field="rol" id="c_es_uca_iw_findyourjob_domain_Usuario_rol" items="${usuariorols}" path="usuariorols" z="Nec3D342iRaGfIS6k4yMkljeKRE="/>
+        <field:select field="rol" id="c_es_uca_iw_findyourjob_domain_Usuario_rol" items="${roles}" path="roles" z="VvO0mu1CabI5/DbtQrKS6Qk2aaY="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_findyourjob_domain_Usuario" render="${not empty dependencies}" z="yzJ9NbqOJqrY6wj2nBR3vCEN/XM="/>
 </div>

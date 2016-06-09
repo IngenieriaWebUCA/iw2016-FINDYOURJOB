@@ -13,4 +13,10 @@
 <definition extends="default" name="empresas/update">
         <put-attribute name="body" value="/WEB-INF/views/empresas/update.jspx"/>
     </definition>
+<definition extends="default" name="empresas/findEmpresasByGestor">
+        <put-attribute name="body" value="/WEB-INF/views/empresas/findEmpresasByGestor.jspx"/>
+    </definition>
+<definition extends="default" name="empresas/findEmpresasByUsuarioGestor">
+        <put-attribute name="body" value="/WEB-INF/views/empresas/findEmpresasByUsuarioGestor.jspx"/>
+    </definition>
 </tiles-definitions>

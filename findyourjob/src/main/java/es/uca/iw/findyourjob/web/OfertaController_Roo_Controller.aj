@@ -33,11 +33,8 @@ privileged aspect OfertaController_Roo_Controller {
     public String OfertaController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Oferta());
         List<String[]> dependencies = new ArrayList<String[]>();
-        if (Localizacion.countLocalizacions() == 0) {
-            dependencies.add(new String[] { "oferta_estado", "localizacions" });
-        }
         if (Empresa.countEmpresas() == 0) {
-            dependencies.add(new String[] { "localizacion", "empresas" });
+            dependencies.add(new String[] { "estado", "empresas" });
         }
         uiModel.addAttribute("dependencies", dependencies);
         return "ofertas/create";

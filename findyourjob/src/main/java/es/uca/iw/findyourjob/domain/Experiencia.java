@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ", finders = { "findExperienciasByNombreEmpresa" })
+@RooJpaActiveRecord(sequenceName = "EXPERIENCIA_SEQ", finders = { "findExperienciasByNombreEmpresa", "findExperienciasByCurriculum" })
 public class Experiencia {
 
     /**
@@ -33,8 +33,9 @@ public class Experiencia {
 
     /**
      */
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "experiencia")
-    private Set<Puesto> puestos = new HashSet<Puesto>();
+    @NotNull
+    @ManyToOne
+    private Puesto puesto;
 
     /**
      */

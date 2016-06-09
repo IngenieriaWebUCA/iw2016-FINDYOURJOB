@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/datatables" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_findyourjob_domain_Experiencia" modelAttribute="experiencia" path="/experiencias" versionField="Version" z="eMBlp5XpDVP4sTEUB6PAICpolwg=">
         <field:input field="nombreEmpresa" id="c_es_uca_iw_findyourjob_domain_Experiencia_nombreEmpresa" max="30" min="3" required="true" z="Vu/ZQwVcpasJZ/RmILY6NmimFwc="/>
         <field:select field="curriculum" id="c_es_uca_iw_findyourjob_domain_Experiencia_curriculum" itemValue="id" items="${curriculums}" path="/curriculums" required="true" z="jwhADT6saPQprIAYa3mRqyHklZk="/>
-        <field:simple field="puestos" id="c_es_uca_iw_findyourjob_domain_Experiencia_puestos" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="yyMmZiJITcNwshmRfl/lVnSaALI="/>
         <field:datetime dateTimePattern="${experiencia_fechacontratoinicio_date_format}" field="fechaContratoInicio" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoInicio" required="true" z="UZsBswcgeZMpsUPenOR5A6x3UoM="/>
         <field:datetime dateTimePattern="${experiencia_fechacontratofin_date_format}" field="fechaContratoFin" id="c_es_uca_iw_findyourjob_domain_Experiencia_fechaContratoFin" required="true" z="IccKmb4hXFSmtKD3EeT/V45rUPY="/>
+        <field:select field="puesto" id="c_es_uca_iw_findyourjob_domain_Experiencia_puesto" itemValue="id" items="${puestoes}" path="/puestoes" required="true" z="mmO3DYuYPUKYH4TOAyGGlQ8nu/E="/>
     </form:update>
 </div>

@@ -283,3 +283,104 @@ field reference --fieldName gestor --type ~.domain.GestorEmpresa --notNull --cla
 field set --class ~.domain.GestorEmpresa --fieldName empresasGestionadas --type ~.domain.Empresa --mappedBy gestor --notNull false --cardinality ONE_TO_MANY
 // [failed] field enum --fieldName rol --type ~.model.UsuarioRol --enumType STRING
 // Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-04 03:30:05
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-05 18:27:50
+web mvc all --package ~.web
+web mvc all --package ~.web
+web mvc all --package ~.web
+finder add --finderName findUsuarioByUsername --class ~.domain.Usuario
+web mvc all --package ~.web
+web mvc all --package ~.web
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-05 23:49:42
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-05 23:50:10
+web mvc all --package ~.web
+help
+help
+hint
+hint
+web mvc datatables setup
+web mvc loupe setup
+// [failed] web mvc loupe set --controller ~.web.OfertaController
+// [failed] web mvc loupe field --controller ~.web.OfertaController --field puestoTrabajo
+web mvc datatables add --type ~.web.OfertaController
+// [failed] finder add --finderName findInscripcionsByOferta --class ~.domain.Inscripcion
+finder add --finderName findInscripcionesByOferta --class ~.domain.Inscripcion
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-06 02:50:29
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-06 02:51:00
+finder add --finderName findInscripcionsByOferta --class ~.domain.Inscripcion
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-06 03:14:33
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-06 14:51:19
+web mvc finder all
+web mvc all --package ~.web
+// [failed] web mvc loupe set --controller ~.web.EmpresaController
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-06 16:50:37
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-06 16:51:04
+// [failed] web mvc loupe field --controller ~.web.UsuarioController --field rol
+// [failed] web mvc loupe field --controller ~.web.UsuarioController --field rol
+web mvc loupe field --controller ~.web.UsuarioController --field rol
+web mvc loupe field --controller ~.web.UsuarioController --field rol
+// [failed] web mvc loupe set --controller ~.web.Role
+web mvc loupe set --controller ~.reference.Role
+web mvc loupe field --controller ~.web.UsuarioController --field rol
+web mvc loupe set --controller ~.web.UsuarioController
+// [failed] web mvc loupe field --controller ~.web.UsuarioController --field rol
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-06 20:31:07
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-06 20:41:03
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-06 20:41:41
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-06 21:00:38
+web mvc loupe field --controller ~.web.UsuarioController --field rol
+// [failed] web mvc loupe field --controller ~.web.UsuarioController --field rol
+// [failed] web mvc loupe set --controller ~.web.Inscripcion
+// [failed] web mvc loupe set --controller ~.web.Inscripcion
+// [failed] web mvc loupe field --controller ~.web.Inscripcion --field demandante
+web mvc loupe field --controller ~.web.InscripcionController --field demandante
+web mvc loupe field --controller ~.web.InscripcionController --field Inscripcion --caption demandante --additionalFields username
+web mvc loupe field --controller ~.web.InscripcionController --field Inscripcion --caption demandante --additionalFields username
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-07 01:05:01
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-07 11:03:51
+web mvc all --package ~.web
+finder add --finderName findEmpresasByGestor --class ~.domain.Empresa
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-07 14:30:29
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-07 22:38:10
+finder add --finderName findEmpresasByUsuarioGestor --class ~.domain.Empresa
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 02:33:51
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-08 04:03:39
+field reference --fieldName formacion --type ~.domain.Formacion --class ~.domain.Curriculum
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 08:55:54
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-08 11:13:34
+field string --fieldName titulos --class ~.domain.Curriculum
+field string --fieldName cursos_idiomas --class ~.domain.Curriculum
+web mvc all --package ~.web
+// [failed] web mvc finder all
+finder add --finderName findDemandantesByUsername --class ~.domain.Demandante
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 12:42:56
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-08 13:13:28
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 13:43:14
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-08 14:34:23
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 17:06:26
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-08 17:10:00
+help
+web mvc jquery all
+web mvc all --package ~.web
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 17:30:53
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-08 17:31:07
+web mvc all --package ~.web
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log closed at 2016-06-08 18:24:02
+// Spring Roo 1.3.2.RELEASE [rev d18aef8] log opened at 2016-06-09 11:46:55
+// [failed] finder add --finderName findOfertasByEmpresa --class ~.domain.Oferta
+// [failed] finder add --finderName findOfertasByEmpresa --class ~.domain.Oferta
+finder add --finderName findExperienciasByDemandante --class ~.domain.Experiencia
+finder add --finderName findExperienciasByCurriculum --class ~.domain.Experiencia
+// [failed] finder add --finderName findOfertasByEmpresa --class ~.domain.Oferta
+// [failed] finder add --finderName findOfertasByPuestoTrabajo --class ~.domain.Oferta
+// [failed] finder add --finderName findOfertasByPuestoTrabajo --class ~.domain.Oferta
+finder add --finderName findOfertasByEstado --class ~.domain.Oferta
+// [failed] finder add --finderName findOfertasByEmpresa --class ~.domain.Oferta
+// [failed] finder add --finderName findOfertasByTipologia --class ~.domain.Oferta
+web mvc all --package ~.web
+web mvc jquery all
+web mvc finder all
+web mvc finder all
+// [failed] finder add --finderName findOfertasByTipologia --class ~.domain.Oferta

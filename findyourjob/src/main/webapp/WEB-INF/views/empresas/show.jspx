@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:security="http://www.springframework.org/security/tags" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/datatables" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_es_uca_iw_findyourjob_domain_Empresa" object="${empresa}" path="/empresas" z="pomEyUJjAbLlJVluT/ZXcdAi8gQ=">
-        <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Empresa_nombre" object="${empresa}" z="u1jO1JREEEGhR9h1TjnYIpyxeyo="/>
-        <field:display field="cif" id="s_es_uca_iw_findyourjob_domain_Empresa_cif" object="${empresa}" z="4ez7tjpZkSskFN9JOe3aCXd83A4="/>
-        <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Empresa_email" object="${empresa}" z="upaCJxF5tGg2zUdaIx9tcAgmVL4="/>
-        <field:display field="actividadProfesional" id="s_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" object="${empresa}" z="9XFULsT6d4kYLfbgx7DGo/958T8="/>
-        <field:display field="numeroEmpleados" id="s_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" object="${empresa}" z="F0OkddxPtrr10kKhCzqrQ3jJOJ0="/>
-        <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Empresa_username" object="${empresa}" z="l8T3sAo0G9XvYiD/o5Qpb+m57CQ="/>
-        <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Empresa_password" object="${empresa}" z="UcQ5RvZGrF4iFy9Bb+ZMD60S8Fg="/>
-        <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Empresa_enabled" object="${empresa}" z="lqOwO9ftFCMjfIcsv0QF4yP+jcM="/>
-        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Empresa_rol" object="${empresa}" z="IpZ4QAAeUF52WMfg/6ac/Fbnbtw="/>
-        <field:display field="gestion_propia" id="s_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" object="${empresa}" z="Y+u/k1jHwYv6FcJsLcEFNEYqYrw="/>
-        <field:display field="gestor" id="s_es_uca_iw_findyourjob_domain_Empresa_gestor" object="${empresa}" z="BqoMXp3URrmGFFoGr8l2ChCDXUI="/>
-    </page:show>
+    <security:authorize access="hasAnyRole('0', '2', '3')">
+	    <page:show id="ps_es_uca_iw_findyourjob_domain_Empresa" object="${empresa}" path="/empresas"  z="pomEyUJjAbLlJVluT/ZXcdAi8gQ=">
+	        <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Empresa_nombre"  object="${empresa}" z="u1jO1JREEEGhR9h1TjnYIpyxeyo="/>
+	        <field:display field="cif" id="s_es_uca_iw_findyourjob_domain_Empresa_cif" object="${empresa}" z="4ez7tjpZkSskFN9JOe3aCXd83A4="/>
+	        <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Empresa_email" object="${empresa}" z="upaCJxF5tGg2zUdaIx9tcAgmVL4="/>
+	        <field:display field="actividadProfesional" id="s_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" object="${empresa}" z="9XFULsT6d4kYLfbgx7DGo/958T8="/>
+	        <field:display field="numeroEmpleados" id="s_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" object="${empresa}" z="F0OkddxPtrr10kKhCzqrQ3jJOJ0="/>
+	        <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Empresa_username" object="${empresa}" z="l8T3sAo0G9XvYiD/o5Qpb+m57CQ="/>
+	        <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Empresa_password" object="${empresa}" render="false" z="user-managed"/>
+	        <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Empresa_enabled" object="${empresa}" z="lqOwO9ftFCMjfIcsv0QF4yP+jcM="/>
+	        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Empresa_rol" object="${empresa}" render="false" z="user-managed"/>
+	        <field:display field="gestion_propia" id="s_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" object="${empresa}" z="Y+u/k1jHwYv6FcJsLcEFNEYqYrw="/>
+	        <field:display field="gestor" id="s_es_uca_iw_findyourjob_domain_Empresa_gestor" object="${empresa}" render="false" z="user-managed"/>
+	        <field:display field="usuarioGestor" id="s_es_uca_iw_findyourjob_domain_Empresa_usuarioGestor" object="${empresa}" z="lPrLqXu9qj4Mbo0In5Ik6Bdmk9A="/>
+	    </page:show>
+    </security:authorize>
+    <security:authorize access="hasRole('1')">
+	    <page:show id="ps_es_uca_iw_findyourjob_domain_Empresa" object="${empresa}" path="/empresas"  z="pomEyUJjAbLlJVluT/ZXcdAi8gQ=">
+	        <field:display field="nombre" id="s_es_uca_iw_findyourjob_domain_Empresa_nombre"  object="${empresa}" z="u1jO1JREEEGhR9h1TjnYIpyxeyo="/>
+	        <field:display field="cif" id="s_es_uca_iw_findyourjob_domain_Empresa_cif" object="${empresa}" z="4ez7tjpZkSskFN9JOe3aCXd83A4="/>
+	        <field:display field="email" id="s_es_uca_iw_findyourjob_domain_Empresa_email" object="${empresa}" z="upaCJxF5tGg2zUdaIx9tcAgmVL4="/>
+	        <field:display field="actividadProfesional" id="s_es_uca_iw_findyourjob_domain_Empresa_actividadProfesional" object="${empresa}" z="9XFULsT6d4kYLfbgx7DGo/958T8="/>
+	        <field:display field="numeroEmpleados" id="s_es_uca_iw_findyourjob_domain_Empresa_numeroEmpleados" object="${empresa}" z="F0OkddxPtrr10kKhCzqrQ3jJOJ0="/>
+	        <field:display field="username" id="s_es_uca_iw_findyourjob_domain_Empresa_username" render="false" object="${empresa}" z="l8T3sAo0G9XvYiD/o5Qpb+m57CQ="/>
+	        <field:display field="password" id="s_es_uca_iw_findyourjob_domain_Empresa_password" render="false" object="${empresa}" z="user-managed"/>
+	        <field:display field="enabled" id="s_es_uca_iw_findyourjob_domain_Empresa_enabled" render="false" object="${empresa}" z="lqOwO9ftFCMjfIcsv0QF4yP+jcM="/>
+	        <field:display field="rol" id="s_es_uca_iw_findyourjob_domain_Empresa_rol" render="false" object="${empresa}" z="user-managed"/>
+	        <field:display field="gestion_propia" id="s_es_uca_iw_findyourjob_domain_Empresa_gestion_propia" render="false" object="${empresa}" z="Y+u/k1jHwYv6FcJsLcEFNEYqYrw="/>
+	        <field:display field="gestor" id="s_es_uca_iw_findyourjob_domain_Empresa_gestor" render="false" object="${empresa}" z="user-managed"/>
+	        <field:display field="usuarioGestor" id="s_es_uca_iw_findyourjob_domain_Empresa_usuarioGestor" render="false" object="${empresa}" z="lPrLqXu9qj4Mbo0In5Ik6Bdmk9A="/>
+	    </page:show>
+    </security:authorize>
 </div>
